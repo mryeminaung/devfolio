@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
 	title: "Personal Devfolio",
 	description:
-		"Web Developer specializing in React, Next.js and Laravel. Building high-performance web experiences.",
+		"A Web Developer specializing in React, Next.js and Laravel. Building high-performance web experiences.",
 	keywords: [
 		"Ye Min Aung",
 		"mryeminaung",
@@ -29,8 +29,8 @@ export const metadata: Metadata = {
 	openGraph: {
 		title: "Personal Devfolio",
 		description:
-			"Web Developer specializing in React, Next.js and Laravel. Building high-performance web experiences.",
-		url: "https://mryeminaung.dev",
+			"A Web Developer specializing in React, Next.js and Laravel. Building high-performance web experiences.",
+		url: "https://yeminaung-dev.vercel.app",
 		siteName: "Personal Devfolio",
 		locale: "en_US",
 		type: "website",
