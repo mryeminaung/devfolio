@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "motion/react";
 import { experiences } from "../constants/experiences";
 
 export default function ExperienceTimeline() {
@@ -10,12 +9,8 @@ export default function ExperienceTimeline() {
 				Experience Timeline
 			</h3>
 			{experiences.map((exp, index) => (
-				<motion.div
+				<div
 					key={index}
-					initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-					whileInView={{ opacity: 1, x: 0 }}
-					viewport={{ once: true }}
-					transition={{ delay: index * 0.1 }}
 					className="relative pl-8 pb-10 border-l-2 border-cyan-400/30 last:pb-0">
 					{/* Timeline Dot */}
 					<div className="absolute left-0 top-1 w-4 h-4 rounded-full bg-linear-to-br from-cyan-400 to-magenta-500 transform -translate-x-2.25 ring-4 ring-slate-950 shadow-lg shadow-cyan-400/50" />
@@ -32,7 +27,7 @@ export default function ExperienceTimeline() {
 						</p>
 						<p className="text-gray-400">{exp.description}</p>
 					</div>
-				</motion.div>
+				</div>
 			))}
 		</div>
 	);

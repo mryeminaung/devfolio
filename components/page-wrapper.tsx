@@ -9,11 +9,21 @@ type PageWrapperProps = {
 
 export default function PageWrapper({ children, className }: PageWrapperProps) {
 	return (
-		<div className={cn("max-w-7xl mx-auto p-5", className)}>
+		<div className={cn("min-h-screen flex flex-col", className)}>
 			<SiteNav />
-			<main className="mt-16 w-full mb-5 min-h-screen md:px-5 py-5 rounded-xl backdrop-blur-lg">
-				{children}
-			</main>
+
+			<div className="px-3">
+				{/*  Main Content Area */}
+				<main
+					className={cn(
+						"flex-1 max-w-7xl mx-auto w-full px-5 sm:px-6 lg:px-8 mt-24",
+						"border border-cyan-900 bg-slate-950/50 backdrop-blur-lg rounded-3xl",
+						"shadow-2xl shadow-cyan-500/5 py-10",
+					)}>
+					{children}
+				</main>
+			</div>
+
 			<SiteFooter />
 		</div>
 	);

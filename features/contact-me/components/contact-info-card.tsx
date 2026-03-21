@@ -1,7 +1,6 @@
 "use client";
 
 import { Mail, MapPin, Phone } from "lucide-react";
-import { motion } from "motion/react";
 import type {
 	ContactInfo,
 	ContactInfoIconName,
@@ -13,37 +12,14 @@ const iconMap: Record<ContactInfoIconName, typeof Mail> = {
 	location: MapPin,
 };
 
-const colorClasses = {
-	cyan: {
-		containerHover: "hover:border-cyan-500/50",
-		iconBox: "border-cyan-500/20 bg-cyan-500/10 text-cyan-400",
-		glow: "bg-cyan-500/5",
-	},
-	magenta: {
-		containerHover: "hover:border-fuchsia-500/50",
-		iconBox: "border-fuchsia-500/20 bg-fuchsia-500/10 text-fuchsia-400",
-		glow: "bg-fuchsia-500/5",
-	},
-	purple: {
-		containerHover: "hover:border-purple-500/50",
-		iconBox: "border-purple-500/20 bg-purple-500/10 text-purple-400",
-		glow: "bg-purple-500/5",
-	},
-} as const;
-
 export const ContactInfoCard = ({ info }: { info: ContactInfo }) => {
 	const Icon = iconMap[info.iconName];
-	const palette = colorClasses[info.color];
 
 	return (
-		<motion.div
-			initial={{ opacity: 0, y: 14 }}
-			whileInView={{ opacity: 1, y: 0 }}
-			viewport={{ once: true, amount: 0.4 }}
-			transition={{ duration: 0.35, ease: "easeOut" }}
-			className={`group relative flex items-center gap-4 rounded-2xl border bg-slate-950 p-4 transition-all hover:bg-slate-900 ${palette.containerHover}`}>
+		<div
+			className={`group relative flex items-center gap-4 rounded-2xl border bg-slate-950 p-4 transition-all border-cyan-400/30 shadow-xs hover:shadow-cyan-500/20 text-cyan-400`}>
 			<div
-				className={`flex h-14 w-14 items-center justify-center rounded-xl border transition-colors ${palette.iconBox}`}>
+				className={`flex h-14 w-14 items-center justify-center rounded-xl border transition-colors border-cyan-500/20 bg-cyan-500/10 text-cyan-400`}>
 				<Icon
 					size={24}
 					strokeWidth={2}
@@ -56,6 +32,6 @@ export const ContactInfoCard = ({ info }: { info: ContactInfo }) => {
 					{info.value}
 				</span>
 			</div>
-		</motion.div>
+		</div>
 	);
 };

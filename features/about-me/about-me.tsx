@@ -6,25 +6,23 @@ import SkillsSlider from "./components/skills-slider";
 export default function AboutMePage() {
 	return (
 		<div>
-			<h2 className="text-4xl md:text-5xl text-center mt-5 mb-10 text-white">
-				About Me
-			</h2>
-			<div className="grid grid-cols-1 items-center lg:grid-cols-2 gap-x-14 gap-y-10 mb-10">
-				<div className="">
+			<h2 className="text-4xl md:text-5xl text-center text-white">About Me</h2>
+			<div className="grid grid-cols-1 items-center lg:grid-cols-2 gap-x-14 gap-y-10 mb-10 mt-5">
+				<div className="relative w-full h-96">
 					<Image
 						src="https://images.unsplash.com/photo-1604964432806-254d07c11f32?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 						alt="Professional Worker"
-						// fill
+						fill
+						sizes="(max-width: 1024px) 100vw, 50vw"
+						fetchPriority="high"
 						loading="eager"
-						width={100}
-						height={100}
-						className="h-96 w-full object-center rounded-xl"
+						className="object-cover object-center rounded-xl"
 					/>
 				</div>
 				<div className=" text-white space-y-5">
-					<h4 className="text-2xl md:text-3xl font-semibold">
+					<h3 className="text-2xl md:text-3xl font-semibold">
 						Hello! I'm Ye Min Aung
-					</h4>
+					</h3>
 					<div className="space-y-3">
 						<p>
 							I'm a passionate Junior Web Developer and final year ECE student

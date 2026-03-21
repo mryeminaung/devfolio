@@ -92,6 +92,7 @@ export default function ProjectDetailModal({
 													onClick={() => setCurrentImage(shot)}
 													alt={`${project.title} screenshot ${index + 1}`}
 													fill
+													loading="eager"
 													sizes="(max-width: 640px) 50vw, 25vw"
 													className="object-cover"
 												/>

@@ -10,9 +10,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-	title: "Personal Devfolio",
+	metadataBase: new URL("https://yeminaung-dev.vercel.app"),
+
+	title: "Devfolio | Ye Min Aung",
 	description:
-		"A Web Developer specializing in React, Next.js and Laravel. Building high-performance web experiences.",
+		"A Junior Web Developer specializing in React, Next.js and Laravel. Building high-performance web experiences.",
 	keywords: [
 		"Ye Min Aung",
 		"mryeminaung",
@@ -27,18 +29,25 @@ export const metadata: Metadata = {
 	authors: [{ name: "Ye Min Aung", url: "https://github.com/mryeminaung" }],
 	creator: "Ye Min Aung",
 	openGraph: {
-		title: "Personal Devfolio",
+		title: "Devfolio | Ye Min Aung",
 		description:
 			"A Web Developer specializing in React, Next.js and Laravel. Building high-performance web experiences.",
 		url: "https://yeminaung-dev.vercel.app",
-		siteName: "Personal Devfolio",
+		siteName: "Ye Min Aung's Devfolio",
 		locale: "en_US",
 		type: "website",
-		images: ["/devfolio.png"],
+		images: [
+			{
+				url: "/devfolio.png",
+				width: 1200,
+				height: 630,
+				alt: "Ye Min Aung Devfolio Preview",
+			},
+		],
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Personal Devfolio",
+		title: "Devfolio | Ye Min Aung",
 		description:
 			"Web Developer specializing in React, Next.js and Laravel. Building high-performance web experiences.",
 		creator: "@mryeminaung",
