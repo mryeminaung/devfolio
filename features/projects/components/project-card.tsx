@@ -1,7 +1,6 @@
 "use client";
 
 import { ExternalLink, Info } from "lucide-react";
-import { motion } from "motion/react";
 import Image from "next/image";
 
 type ProjectProps = {
@@ -17,10 +16,9 @@ type ProjectProps = {
 
 export const ProjectCard = ({ project, onClick }: ProjectProps) => {
 	return (
-		<motion.div
-			whileHover={{ y: -5 }}
+		<div
 			onClick={onClick}
-			className="group relative w-full overflow-hidden rounded-3xl hover:shadow-lg hover:shadow-cyan-400/20 border border-slate-800 bg-slate-950 shadow-2xl transition-all hover:border-cyan-500/50">
+			className="group relative w-full overflow-hidden rounded-3xl hover:shadow-xs hover:shadow-cyan-400/20 border border-slate-800 bg-slate-950 shadow-2xl transition-all hover:border-cyan-500/50">
 			<div className="relative h-56 w-full overflow-hidden rounded-xl ">
 				<Image
 					src={project.image}
@@ -66,6 +64,6 @@ export const ProjectCard = ({ project, onClick }: ProjectProps) => {
 					</button>
 				</div>
 			</div>
-		</motion.div>
+		</div>
 	);
 };

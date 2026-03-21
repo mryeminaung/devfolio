@@ -1,7 +1,7 @@
 "use client";
 
 import { Briefcase, Home, Mail, Menu, User, X } from "lucide-react";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence } from "motion/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -28,14 +28,12 @@ export default function SiteNav() {
 	];
 
 	return (
-		<motion.nav
-			initial={{ y: -100 }}
-			animate={{ y: 0 }}
-			className={`fixed top-4 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300 w-full max-w-7xl px-5 ${
+		<nav
+			className={`fixed top-4 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300 w-full max-w-7xl px-3 lg:px-0 ${
 				isScrolled ? "top-2" : "top-4"
 			}`}>
 			<div
-				className={`rounded-4xl  transition-all duration-300 ${
+				className={`rounded-4xl transition-all duration-300 ${
 					isScrolled
 						? "bg-slate-900/70 backdrop-blur-md shadow-md shadow-cyan-400/10 border border-cyan-400/20"
 						: "bg-slate-950/30 backdrop-blur-sm border border-cyan-400/10"
@@ -46,13 +44,11 @@ export default function SiteNav() {
 						<Link
 							href="/"
 							className="flex items-center">
-							<motion.span
-								whileHover={{ scale: 1.05 }}
-								className="text-xl sm:text-2xl font-bold">
+							<span className="text-xl sm:text-2xl font-bold">
 								<span className="text-cyan-400">&lt;</span>
 								<span className="text-white">Devfolio</span>
-								<span className="text-magenta-500">/&gt;</span>
-							</motion.span>
+								<span className="text-cyan-400">/&gt;</span>
+							</span>
 						</Link>
 
 						{/* Desktop Navigation - Right Side */}
@@ -69,10 +65,7 @@ export default function SiteNav() {
 									<link.icon className="w-4 h-4 sm:w-5 sm:h-5" />
 									<span className="hidden sm:inline">{link.name}</span>
 									{location === link.path && (
-										<motion.div
-											layoutId="activeTab"
-											className="absolute -bottom-2 left-0 right-0 h-0.5 bg-linear-to-r from-cyan-400 to-magenta-500"
-										/>
+										<div className="absolute -bottom-2 left-0 right-0 h-0.5 bg-linear-to-r from-cyan-400 to-magenta-500" />
 									)}
 								</Link>
 							))}
@@ -95,11 +88,7 @@ export default function SiteNav() {
 				{/* Mobile Menu */}
 				<AnimatePresence>
 					{isMobileMenuOpen && (
-						<motion.div
-							initial={{ opacity: 0, height: 0 }}
-							animate={{ opacity: 1, height: "auto" }}
-							exit={{ opacity: 0, height: 0 }}
-							className="md:hidden border-t border-cyan-500/20">
+						<div className="md:hidden border-t border-cyan-500/20">
 							<div className="px-4 py-6 space-y-4">
 								{navLinks.map((link) => (
 									<Link
@@ -116,10 +105,10 @@ export default function SiteNav() {
 									</Link>
 								))}
 							</div>
-						</motion.div>
+						</div>
 					)}
 				</AnimatePresence>
 			</div>
-		</motion.nav>
+		</nav>
 	);
 }
