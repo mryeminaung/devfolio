@@ -2,9 +2,9 @@ import { Badge } from "@/components/ui/badge";
 
 export default function Home() {
 	return (
-		<section className="flex w-full flex-col  text-white dark:bg-black sm:items-start rounded-xl">
+		<section className="flex w-full flex-col sm:items-start rounded-xl">
 			<Badge className="mb-5 p-3 font-semibold bg-slate-900">
-				😁 Development In Progress
+				Development In Progress
 			</Badge>
 			<h1 className="text-3xl mb-5 font-bold tracking-tight  dark:text-white ">
 				Hi there!, My name is Ye Min Aung

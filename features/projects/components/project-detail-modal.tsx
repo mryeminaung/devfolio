@@ -1,3 +1,4 @@
+import CornerAccent from "@/components/corner-accent";
 import {
 	Dialog,
 	DialogContent,
@@ -48,12 +49,14 @@ export default function ProjectDetailModal({
 			}}>
 			<DialogContent
 				initialFocus={scrollContainerRef}
-				className="w-[calc(100vw-1.25rem)] max-w-[calc(100vw-1.25rem)] sm:max-w-5xl max-h-[92dvh] px-4 sm:px-5 overflow-hidden bg-slate-950 text-white pb-0 flex flex-col shadow-lg shadow-cyan-400/20">
+				className="w-[calc(100vw-1.25rem)] max-w-[calc(100vw-1.25rem)] sm:max-w-7xl max-h-[92dvh] px-4 sm:px-5 overflow-hidden dark:bg-primary-950  pb-0 flex flex-col shadow-lg shadow-secondary-400/20">
+				<CornerAccent position="top-left" />
+				<CornerAccent position="bottom-right" />
 				<DialogHeader>
 					<DialogTitle className="text-2xl font-bold">
 						{project.title}
 					</DialogTitle>
-					<DialogDescription className="text-slate-400">
+					<DialogDescription className="dark:text-primary-400">
 						{project.description}
 					</DialogDescription>
 				</DialogHeader>
@@ -64,7 +67,7 @@ export default function ProjectDetailModal({
 					className="min-h-0 flex-1 overflow-y-auto pb-5 overscroll-contain outline-none focus:outline-none focus-visible:outline-none">
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
 						<div className="col-span-1">
-							<div className="relative mb-5 h-64 w-full overflow-hidden rounded-2xl border border-slate-800">
+							<div className="relative mb-5 h-64 w-full overflow-hidden rounded-2xl border border-secondary-400">
 								<Image
 									src={currentImage}
 									alt={project.title}
@@ -82,10 +85,10 @@ export default function ProjectDetailModal({
 											<div
 												key={`${project.id}-${index}`}
 												className={cn(
-													"relative h-28 overflow-hidden rounded-lg border border-slate-800 sm:h-32",
+													"relative h-28 overflow-hidden rounded-lg border border-primary-800 sm:h-32",
 													currentImage === shot
-														? "border-cyan-500 shadow-lg shadow-cyan-500/30"
-														: "hover:border-slate-600 cursor-pointer",
+														? "border-secondary-500 shadow-lg shadow-secondary-500/30"
+														: "hover:border-primary-600 cursor-pointer",
 												)}>
 												<Image
 													src={shot}
@@ -105,40 +108,46 @@ export default function ProjectDetailModal({
 
 						<div className="space-y-5 col-span-1">
 							{/* overview */}
-							<div className="rounded-xl border border-slate-800 bg-slate-900/60 p-4">
+							<div className="relative overflow-hidden rounded-xl border border-secondary-400/30 dark:border-primary-800 dark:bg-primary-900/60 p-4">
 								<h3 className="text-xl mb-3 font-semibold">Overview</h3>
-								<p className="leading-relaxed text-slate-300">
+								<p className="leading-relaxed dark:text-primary-300">
 									{project.fullDescription}
 								</p>
+								<CornerAccent position="top-left" />
+								<CornerAccent position="bottom-right" />
 							</div>
 
 							{/* technologies */}
-							<div className="rounded-xl border border-slate-800 bg-slate-900/60 p-4">
+							<div className="relative overflow-hidden rounded-xl border border-secondary-400/30  dark:border-primary-800 dark:bg-primary-900/60 p-4">
 								<h4 className="mb-3 text-xl font-semibold">Technologies</h4>
 								<div className="flex flex-wrap gap-2 mt-3">
 									{project.tags.map((tag) => (
 										<span
 											key={tag}
-											className="rounded-full border border-cyan-500/30 bg-cyan-500/10 px-3 py-1 text-xs font-medium text-cyan-300">
+											className="rounded-full border border-secondary-500/30 bg-secondary-500/10 px-3 py-1 text-xs font-medium dark:text-secondary-300">
 											{tag}
 										</span>
 									))}
 								</div>
+								<CornerAccent position="top-left" />
+								<CornerAccent position="bottom-right" />
 							</div>
 
 							{/* key features */}
-							<div className="mb-5 rounded-xl border border-slate-800 bg-slate-900/60 p-4">
+							<div className="relative overflow-hidden mb-5 rounded-xl border border-secondary-400/30 dark:border-primary-800 dark:bg-primary-900/60 p-4">
 								<h4 className="mb-3 text-xl font-semibold">Key Features</h4>
-								<ul className="space-y-2 text-sm text-slate-300">
+								<ul className="space-y-2 text-sm dark:text-primary-300">
 									{project.features.map((feature) => (
 										<li
 											key={feature}
 											className="flex items-start gap-2">
-											<span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-400" />
+											<span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-secondary-400" />
 											<span>{feature}</span>
 										</li>
 									))}
 								</ul>
+								<CornerAccent position="top-left" />
+								<CornerAccent position="bottom-right" />
 							</div>
 
 							{/* live demo and source code */}
@@ -148,7 +157,7 @@ export default function ProjectDetailModal({
 										href={project.link}
 										target="_blank"
 										rel="noopener noreferrer"
-										className="inline-flex items-center gap-2 rounded-lg border border-cyan-500/40 bg-cyan-500/10 px-4 py-2 text-sm font-medium text-cyan-300 transition-colors hover:bg-cyan-500/20">
+										className="inline-flex items-center gap-2 rounded-lg border border-secondary-500/40 bg-secondary-500/10 px-4 py-2 text-sm font-medium dark:text-secondary-300 transition-colors hover:bg-secondary-500/20">
 										Live Demo <ExternalLink size={16} />
 									</Link>
 								)}
@@ -157,7 +166,7 @@ export default function ProjectDetailModal({
 										href={project.github}
 										target="_blank"
 										rel="noopener noreferrer"
-										className="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-900 px-4 py-2 text-sm font-medium text-slate-200 transition-colors hover:border-slate-600 hover:bg-slate-800">
+										className="inline-flex items-center gap-2 rounded-lg border border-primary-700 bg-primary-900 px-4 py-2 text-sm font-medium text-primary-200 transition-colors hover:border-primary-600 hover:bg-primary-800">
 										Source Code <Github size={16} />
 									</Link>
 								)}

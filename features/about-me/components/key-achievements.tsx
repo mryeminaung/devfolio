@@ -6,7 +6,7 @@ import { StatsCard } from "./stats-card";
 export default function KeyAchievements() {
 	return (
 		<div className="">
-			<h3 className="text-3xl md:text-4xl text-white text-center my-5">
+			<h3 className="text-3xl md:text-4xl dark:text-white text-center my-5">
 				Key Achievements
 			</h3>
 
