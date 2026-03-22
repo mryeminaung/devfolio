@@ -10,7 +10,7 @@ import { socialLinks } from "./constants/social-links";
 export default function ContactMePage() {
 	return (
 		<section>
-			<h3 className="text-3xl text-center md:text-5xl text-white">
+			<h3 className="text-3xl text-center md:text-5xl">
 				Get In Touch
 			</h3>
 
@@ -31,7 +31,7 @@ export default function ContactMePage() {
 
 					{/* Social Links */}
 					<div>
-						<h3 className="text-2xl font-semibold text-white mb-6">
+						<h3 className="text-2xl font-semibold dark:text-white mb-6">
 							Connect With Me
 						</h3>
 						<div className="grid grid-cols-2 gap-4">

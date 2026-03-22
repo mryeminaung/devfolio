@@ -46,8 +46,8 @@ const MarqueeRow = ({
 
 export default function SkillsSlider() {
 	return (
-		<div className="text-white">
-			<h3 className="text-3xl md:text-4xl text-center my-5">
+		<div className="">
+			<h3 className="text-3xl md:text-4xl dark:text-white text-center my-5">
 				Technical Skills
 			</h3>
 			<MarqueeRow

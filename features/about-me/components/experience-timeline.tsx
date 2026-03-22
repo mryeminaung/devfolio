@@ -1,5 +1,6 @@
 "use client";
 
+import CornerAccent from "@/components/corner-accent";
 import { experiences } from "../constants/experiences";
 
 export default function ExperienceTimeline() {
@@ -11,21 +12,26 @@ export default function ExperienceTimeline() {
 			{experiences.map((exp, index) => (
 				<div
 					key={index}
-					className="relative pl-8 pb-10 border-l-2 border-cyan-400/30 last:pb-0">
+					className="relative pl-8 pb-10 border-l-2 border-secondary-400/30 last:pb-0">
 					{/* Timeline Dot */}
-					<div className="absolute left-0 top-1 w-4 h-4 rounded-full bg-linear-to-br from-cyan-400 to-magenta-500 transform -translate-x-2.25 ring-4 ring-slate-950 shadow-lg shadow-cyan-400/50" />
+					<div className="absolute left-0 top-1 w-4 h-4 rounded-full bg-linear-to-br from-secondary-400 to-secondary-500 transform -translate-x-2.25 ring-4 ring-primary-900/90 shadow-lg shadow-secondary-400/50" />
 
 					{/* year badge */}
-					<span className="inline-block px-3 py-1 bg-cyan-400/10 text-cyan-400 border border-cyan-400/30 rounded-full text-sm font-medium mb-3">
+					<span className="inline-block px-3 py-1 bg-secondary-400/10 text-secondary-400 border border-secondary-400/30 rounded-full text-sm font-medium mb-3">
 						{exp.year}
 					</span>
 
-					<div className="bg-slate-950/50 border border-cyan-400/30 rounded-xl shadow-md p-6 hover:border-cyan-400/50 hover:shadow-cyan-500/20 transition-all backdrop-blur-sm">
-						<h3 className="text-xl font-bold text-white mb-1">{exp.title}</h3>
-						<p className="text-magenta-400 text-white font-medium mb-2">
-							{exp.company}
+					<div className="relative overflow-hidden dark:bg-primary-950/50 border border-secondary-400/30 rounded-xl shadow-md p-6 hover:border-secondary-400/50 hover:shadow-secondary-500/20 transition-all backdrop-blur-sm">
+						<CornerAccent position="top-right" />
+						<CornerAccent position="bottom-left" />
+
+						<h3 className="text-xl font-bold dark:text-white mb-1">
+							{exp.title}
+						</h3>
+						<p className="dark:text-white font-medium mb-2">{exp.company}</p>
+						<p className="text-gray-500 dark:text-gray-400">
+							{exp.description}
 						</p>
-						<p className="text-gray-400">{exp.description}</p>
 					</div>
 				</div>
 			))}

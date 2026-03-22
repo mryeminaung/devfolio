@@ -6,7 +6,7 @@ import SkillsSlider from "./components/skills-slider";
 export default function AboutMePage() {
 	return (
 		<div>
-			<h2 className="text-4xl md:text-5xl text-center text-white">About Me</h2>
+			<h2 className="text-4xl md:text-5xl text-center dark:text-white">About Me</h2>
 			<div className="grid grid-cols-1 items-center lg:grid-cols-2 gap-x-14 gap-y-10 mb-10 mt-5">
 				<div className="relative w-full h-96">
 					<Image
@@ -19,7 +19,7 @@ export default function AboutMePage() {
 						className="object-cover object-center rounded-xl"
 					/>
 				</div>
-				<div className=" text-white space-y-5">
+				<div className=" dark:text-white space-y-5">
 					<h3 className="text-2xl md:text-3xl font-semibold">
 						Hello! I'm Ye Min Aung
 					</h3>

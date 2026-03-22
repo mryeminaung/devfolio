@@ -32,8 +32,10 @@ export default function ProjectsPage() {
 	}, [selectedProject]);
 
 	return (
-		<section className="text-white">
-			<h3 className="text-3xl text-center md:text-5xl">Featured Projects</h3>
+		<section className="">
+			<h3 className="text-3xl text-center md:text-5xl dark:text-white">
+				Featured Projects
+			</h3>
 
 			<div className="grid grid-cols-1 justify-center sm:grid-cols-2 lg:grid-cols-3 mt-10 gap-8">
 				{projects.map((project) => (

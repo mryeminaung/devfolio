@@ -1,4 +1,5 @@
 import ScrollTopBtn from "@/components/scroll-top-btn";
+import { ThemeProvider } from "@/components/theme-provider";
 import AppLayout from "@/layouts/app-layout";
 import type { Metadata } from "next";
 import { Geist_Mono } from "next/font/google";
@@ -74,10 +75,18 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
+		<html
+			lang="en"
+			suppressHydrationWarning>
 			<body className={`${geistMono.variable} antialiased`}>
-				<AppLayout>{children}</AppLayout>
-				<ScrollTopBtn />
+				<ThemeProvider
+					attribute="class"
+					defaultTheme="system"
+					enableSystem
+					disableTransitionOnChange>
+					<AppLayout>{children}</AppLayout>
+					<ScrollTopBtn />
+				</ThemeProvider>
 			</body>
 		</html>
 	);

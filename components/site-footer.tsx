@@ -2,6 +2,7 @@
 
 import { Github, Heart, Linkedin, Mail, Twitter } from "lucide-react";
 import Link from "next/link";
+import CornerAccent from "./corner-accent";
 
 export default function SiteFooter() {
 	const socialLinks = [
@@ -21,12 +22,22 @@ export default function SiteFooter() {
 
 	return (
 		<footer className="max-w-7xl mx-auto w-full py-5 px-3 mt-auto">
-			<div className="bg-slate-950/30 backdrop-blur-md border border-cyan-500/10 rounded-xl px-4 sm:px-6 lg:px-8 py-4">
+			<div className="bg-white dark:bg-primary-950/30 backdrop-blur-md border dark:border-secondary-500/30 relative overflow-hidden border-secondary-300 rounded-xl px-4 sm:px-6 lg:px-8 py-4">
+				<CornerAccent position="top-left" />
+				<CornerAccent position="bottom-right" />
 				<div className="flex flex-col sm:flex-row items-center justify-between gap-4">
-					<p className="text-sm text-gray-400 flex items-center gap-1.5 order-2 sm:order-1">
+					<p className="text-sm text-black dark:text-gray-400 flex items-center gap-1.5 order-2 sm:order-1">
 						Made with{" "}
-						<Heart className="w-4 h-4 text-magenta-500 fill-magenta-500 animate-pulse" />{" "}
-						by <b>Ye Min Aung</b>
+						<Heart className="w-4 h-4 text-secondary-500 fill-secondary-500 animate-pulse" />{" "}
+						by{" "}
+						<b>
+							<Link
+								className="hover:underline underline-offset-4"
+								href={"https://github.com/mryeminaung"}
+								target="_blank">
+								Ye Min Aung
+							</Link>
+						</b>
 					</p>
 
 					{/* Social Links */}
@@ -40,7 +51,7 @@ export default function SiteFooter() {
 									target="_blank"
 									rel="noopener noreferrer"
 									aria-label={social.label}
-									className="w-9 h-9 rounded-full bg-gray-900/50 border border-cyan-400/20 flex items-center justify-center hover:bg-cyan-400/10 hover:border-cyan-400 transition-all text-cyan-400">
+									className="w-9 h-9 rounded-full dark:bg-gray-900/50 border dark:border-secondary-400/20 flex items-center justify-center  bg-secondary-400/10 hover:border-secondary-400 transition-all text-secondary-400">
 									<Icon className="w-4 h-4" />
 								</Link>
 							);
