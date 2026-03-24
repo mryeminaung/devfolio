@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
+import CornerAccent from "./corner-accent";
 import SiteFooter from "./site-footer";
 import SiteNav from "./site-nav";
-import CornerAccent from "./corner-accent";
 
 type PageWrapperProps = {
 	children: React.ReactNode;
@@ -12,6 +12,7 @@ export default function PageWrapper({ children, className }: PageWrapperProps) {
 	return (
 		<div className={cn("min-h-screen flex flex-col", className)}>
 			<SiteNav />
+			{/* <WorkCard /> */}
 
 			<div className="px-3">
 				{/*  Main Content Area */}

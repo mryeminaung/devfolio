@@ -6,6 +6,7 @@ import SkillCard from "./skill-card";
 type Skill = {
 	name: string;
 	logo: string;
+	progress: number;
 };
 
 const MarqueeRow = ({
@@ -32,12 +33,14 @@ const MarqueeRow = ({
 				<SkillCard
 					key={skill.name}
 					skill={skill}
+					type="slider"
 				/>
 			))}
 			{rowSkills.map((skill) => (
 				<SkillCard
 					key={`${skill.name}-duplicate`}
 					skill={skill}
+					type="slider"
 				/>
 			))}
 		</div>

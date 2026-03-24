@@ -1,7 +1,7 @@
 "use client";
 
 import { Briefcase, Home, Mail, Menu, User, X } from "lucide-react";
-import { AnimatePresence } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -104,7 +104,12 @@ export default function SiteNav() {
 				{/* Mobile Menu */}
 				<AnimatePresence>
 					{isMobileMenuOpen && (
-						<div className="md:hidden border-t border-secondary-500/20">
+						<motion.div
+							initial={{ height: 0, opacity: 0 }}
+							animate={{ height: "auto", opacity: 1 }}
+							exit={{ height: 0, opacity: 0 }}
+							transition={{ duration: 0.25, ease: "easeInOut" }}
+							className="md:hidden border-t border-secondary-500/20 overflow-hidden">
 							<div className="px-4 py-6 space-y-4 border">
 								{navLinks.map((link) => (
 									<Link
@@ -122,7 +127,7 @@ export default function SiteNav() {
 								))}
 								{mounted && <ThemeToggle />}
 							</div>
-						</div>
+						</motion.div>
 					)}
 				</AnimatePresence>
 			</div>

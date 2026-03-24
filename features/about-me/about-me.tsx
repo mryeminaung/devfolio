@@ -1,14 +1,34 @@
-import Image from "next/image";
 import ExperienceTimeline from "./components/experience-timeline";
 import KeyAchievements from "./components/key-achievements";
-import SkillsSlider from "./components/skills-slider";
+import SkillsListByCategory from "./components/skills-list-by-category";
 
 export default function AboutMePage() {
 	return (
-		<div>
-			<h2 className="text-4xl md:text-5xl text-center dark:text-white">About Me</h2>
-			<div className="grid grid-cols-1 items-center lg:grid-cols-2 gap-x-14 gap-y-10 mb-10 mt-5">
-				<div className="relative w-full h-96">
+		<section className="">
+			<div className="flex flex-col mb-10 gap-y-3">
+				<h2 className="text-4xl md:text-5xl text-center dark:text-white">
+					About Me
+				</h2>
+				<span className="border w-37.5 rounded-full mx-auto bg-secondary-400 h-0.5 border-secondary-400"></span>
+			</div>
+
+			<div className="grid grid-cols-1 items-center lg:grid-cols-2 gap-x-14 gap-y-10 mb-10">
+				{/* Image Container - Simplified Modern Style */}
+				<div className="relative group">
+					<div className="relative rounded-2xl overflow-hidden shadow-2xl">
+						<img
+							src="/profile.png"
+							alt="Ye Min Aung - Developer"
+							className="w-full h-auto object-cover"
+						/>
+						{/* Gradient Overlay on Hover */}
+						{/* <div className="absolute inset-0 bg-gradient-to-t from-blue-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" /> */}
+					</div>
+
+					{/* Floating Border Effect */}
+					{/* <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-500 via-blue-500 to-magenta-500 rounded-2xl opacity-20 group-hover:opacity-40 blur transition-opacity duration-300 -z-10" /> */}
+				</div>
+				{/* <div className="relative w-full h-96">
 					<Image
 						src="https://images.unsplash.com/photo-1604964432806-254d07c11f32?q=80&w=880&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
 						alt="Professional Worker"
@@ -18,7 +38,7 @@ export default function AboutMePage() {
 						loading="eager"
 						className="object-cover object-center rounded-xl"
 					/>
-				</div>
+				</div> */}
 				<div className=" dark:text-white space-y-5">
 					<h3 className="text-2xl md:text-3xl font-semibold">
 						Hello! I'm Ye Min Aung
@@ -46,11 +66,39 @@ export default function AboutMePage() {
 				</div>
 			</div>
 
-			<SkillsSlider />
+			{/* techinical skills section */}
+			<div className="mb-5">
+				<div className="flex my-8 flex-col gap-y-3">
+					<h3 className="text-2xl md:text-3xl lg:text-4xl dark:text-white text-center ">
+						Technical Skills
+					</h3>
+					<span className="border w-37.5 rounded-full mx-auto bg-secondary-400 h-0.5 border-secondary-400"></span>
+				</div>
+				{/* <SkillsSlider /> */}
+				<SkillsListByCategory />
+			</div>
 
-			<KeyAchievements />
+			{/* key achievements section */}
+			<div className="mb-10">
+				<div className="flex my-8 flex-col gap-y-3">
+					<h3 className="text-2xl md:text-3xl lg:text-4xl dark:text-white text-center ">
+						Key Achievements
+					</h3>
+					<span className="border w-37.5 rounded-full mx-auto bg-secondary-400 h-0.5 border-secondary-400"></span>
+				</div>
+				<KeyAchievements />
+			</div>
 
-			<ExperienceTimeline />
-		</div>
+			{/* experience timeline section */}
+			<div className="mb-5">
+				<div className="flex my-8 flex-col gap-y-3">
+					<h3 className="text-2xl md:text-3xl lg:text-4xl dark:text-white text-center ">
+						Experience Timeline
+					</h3>
+					<span className="border w-37.5 rounded-full mx-auto bg-secondary-400 h-0.5 border-secondary-400"></span>
+				</div>
+				<ExperienceTimeline />
+			</div>
+		</section>
 	);
 }
