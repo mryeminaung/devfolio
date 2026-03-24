@@ -1,3 +1,4 @@
 import AboutMePage from "./about-me";
+import WorkCard from "./components/work-card";
 
-export { AboutMePage };
+export { AboutMePage, WorkCard };

@@ -22,11 +22,11 @@ export const StatsCard = ({ achievement }: StatsCardProps) => {
 			<CornerAccent position="top-left" />
 			<CornerAccent position="bottom-right" />
 
-			<h3 className="mb-2 text-2xl font-extrabold tracking-tight dark:text-white">
+			<h3 className="mb-2 text-xl md:text-2xl font-semibold tracking-tight dark:text-white">
 				{achievement.title}
 			</h3>
 
-			<p className="text-base font-medium text-gray-500 dark:text-gray-400">
+			<p className="text-[15px] md:text-base font-medium text-gray-500 dark:text-gray-400">
 				{achievement.description}
 			</p>
 		</div>

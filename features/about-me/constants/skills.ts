@@ -1,74 +1,129 @@
+export const skillCategories = {
+	FRONTEND: 1,
+	BACKEND: 2,
+	MOBILE: 3,
+	TOOLS: 4,
+};
+
 export const skills = [
 	{
 		name: "HTML",
 		logo: "/skills/html5.svg",
+		progress: 95,
+		categoryId: 1,
 	},
 	{
 		name: "CSS",
 		logo: "/skills/css3.svg",
+		progress: 85,
+		categoryId: 1,
 	},
 	{
 		name: "JavaScript",
 		logo: "/skills/javascript.svg",
+		progress: 80,
+		categoryId: 1,
 	},
 	{
 		name: "TypeScript",
 		logo: "/skills/typescript.svg",
+		progress: 70,
+		categoryId: 1,
 	},
 	{
 		name: "React",
 		logo: "/skills/react.svg",
+		progress: 80,
+		categoryId: 1,
 	},
 	{
 		name: "Next.js",
 		logo: "/skills/nextjs.svg",
+		progress: 68,
+		categoryId: 1,
 	},
 	{
 		name: "PHP",
 		logo: "/skills/php.svg",
+		progress: 73,
+		categoryId: 2,
 	},
 	{
 		name: "Laravel",
 		logo: "/skills/laravel.svg",
+		progress: 65,
+		categoryId: 2,
 	},
-	{
-		name: "Supabase",
-		logo: "/skills/supabase.svg",
-	},
+	// {
+	// 	name: "Supabase",
+	// 	logo: "/skills/supabase.svg",
+	// 	progress: 75,
+	// 	categoryId: 2,
+	// },
 	{
 		name: "MySQL",
 		logo: "/skills/mysql.svg",
+		progress: 80,
+		categoryId: 2,
 	},
 	{
 		name: "PostgreSQL",
 		logo: "/skills/postgresql.svg",
+		progress: 80,
+		categoryId: 2,
 	},
 	{
 		name: "React Native",
 		logo: "/skills/react.svg",
+		progress: 50,
+		categoryId: 3,
 	},
 	{
 		name: "Tailwind CSS",
 		logo: "/skills/tailwindcss.svg",
+		progress: 95,
+		categoryId: 1,
 	},
 	{
 		name: "Bootstrap",
 		logo: "/skills/bootstrap.svg",
+		progress: 95,
+		categoryId: 1,
 	},
 	{
 		name: "Git",
 		logo: "/skills/git.svg",
+		progress: 90,
+		categoryId: 4,
 	},
 	{
 		name: "GitHub",
 		logo: "/skills/github.svg",
+		progress: 85,
+		categoryId: 4,
 	},
 	{
-		name: "Prisma",
-		logo: "/skills/prisma.svg",
+		name: "VS Code",
+		logo: "/skills/vscode.svg",
+		progress: 95,
+		categoryId: 4,
 	},
+	{
+		name: "Figma",
+		logo: "/skills/figma.svg",
+		progress: 50,
+		categoryId: 4,
+	},
+	// {
+	// 	name: "Prisma",
+	// 	logo: "/skills/prisma.svg",
+	// 	progress: 75,
+	// 	categoryId: 2,
+	// },
 	{
 		name: "Postman",
 		logo: "/skills/postman.svg",
+		progress: 60,
+		categoryId: 4,
 	},
 ];
