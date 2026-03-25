@@ -1,5 +1,6 @@
 "use client";
 
+import Underline from "@/components/underline";
 import { CollaborateCard } from "./components/collaborate-card";
 import ContactForm from "./components/contact-form";
 import { ContactInfoCard } from "./components/contact-info-card";
@@ -10,10 +11,12 @@ import { socialLinks } from "./constants/social-links";
 export default function ContactMePage() {
 	return (
 		<section>
-			<h3 className="text-3xl text-center md:text-5xl">
-				Get In Touch
-			</h3>
-
+			<div className="flex flex-col mb-10 gap-y-3">
+				<h2 className="text-3xl md:text-5xl font-semibold text-center dark:text-white">
+					Get In Touch
+				</h2>
+				<Underline />
+			</div>
 			{/* contact info */}
 			<div className="grid grid-cols-1 lg:grid-cols-3 gap-x-10 gap-y-5 mt-5">
 				{contactInfoList.map((info, index) => (
@@ -31,7 +34,7 @@ export default function ContactMePage() {
 
 					{/* Social Links */}
 					<div>
-						<h3 className="text-2xl font-semibold dark:text-white mb-6">
+						<h3 className="text-xl md:text-2xl font-semibold dark:text-white mb-6">
 							Connect With Me
 						</h3>
 						<div className="grid grid-cols-2 gap-4">

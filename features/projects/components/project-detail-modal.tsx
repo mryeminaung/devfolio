@@ -152,12 +152,12 @@ export default function ProjectDetailModal({
 
 							{/* live demo and source code */}
 							<div className="flex flex-wrap items-center gap-3">
-								{project.link && (
+								{project.link !== "#" && (
 									<Link
-										href={project.link}
+										href={project.link ?? "#"}
 										target="_blank"
 										rel="noopener noreferrer"
-										className="inline-flex items-center gap-2 rounded-lg border border-secondary-500/40 bg-secondary-500/10 px-4 py-2 text-sm font-medium dark:text-secondary-300 transition-colors hover:bg-secondary-500/20">
+										className={`inline-flex items-center gap-2 rounded-lg border border-secondary-500/40 bg-secondary-500/10 px-4 py-2 text-sm font-medium dark:text-secondary-300 transition-colors hover:bg-secondary-500/20`}>
 										Live Demo <ExternalLink size={16} />
 									</Link>
 								)}

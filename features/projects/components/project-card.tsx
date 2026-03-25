@@ -3,15 +3,11 @@
 import CornerAccent from "@/components/corner-accent";
 import { ExternalLink, Info } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+import { Project } from "../projects.type";
 
 type ProjectProps = {
-	project: {
-		title: string;
-		description: string;
-		tags: string[];
-		image: string;
-		isFeatured?: boolean;
-	};
+	project: Project;
 	onClick: () => void;
 };
 
@@ -23,7 +19,7 @@ export const ProjectCard = ({ project, onClick }: ProjectProps) => {
 			<CornerAccent position="top-right" />
 			<CornerAccent position="bottom-left" />
 
-			<div className="relative h-56 w-full overflow-hidden rounded-xl ">
+			<div className="relative h-56 w-full overflow-hidden rounded-xl">
 				<Image
 					src={project.image}
 					alt={project.title}
@@ -32,15 +28,15 @@ export const ProjectCard = ({ project, onClick }: ProjectProps) => {
 					sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
 					className="object-cover transition-transform duration-500 group-hover:scale-110"
 				/>
-				{project.isFeatured && (
+				{false && (
 					<span className="absolute right-4 top-4 rounded-full bg-magenta-500 bg-[#FF00E5] px-4 py-1 text-xs font-bold dark:text-white shadow-lg">
 						Featured
 					</span>
 				)}
 			</div>
 
-			<div className="p-6">
-				<h3 className="mb-2 text-2xl font-bold dark:text-white">
+			<div className="px-6 py-4">
+				<h3 className="mb-2 text-xl md:text-2xl font-semibold dark:text-white">
 					{project.title}
 				</h3>
 				<p className="mb-6 line-clamp-2 text-sm dark:text-primary-400">
@@ -60,12 +56,14 @@ export const ProjectCard = ({ project, onClick }: ProjectProps) => {
 				<hr className="mb-6 border-primary-800" />
 
 				<div className="flex items-center justify-between">
-					<a
-						href="#"
-						className="flex items-center gap-2 font-bold text-secondary-400 transition-colors hover:text-secondary-300">
+					<Link
+						target="_blank"
+						href={project.github ?? ""}
+						onClick={(e) => e.stopPropagation()}
+						className="flex items-center gap-2 font-semibold text-secondary-400 transition-colors hover:text-secondary-300">
 						View Project <ExternalLink size={18} />
-					</a>
-					<button className="flex items-center gap-1 text-sm text-primary-400 transition-colors hover:text-white">
+					</Link>
+					<button className="flex items-center gap-1 text-sm text-primary-400 transition-colors dark:hover:text-white">
 						Details <Info size={16} />
 					</button>
 				</div>

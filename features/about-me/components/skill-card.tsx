@@ -16,7 +16,7 @@ type SkillCardProps = {
 export default function SkillCard({ skill, type }: SkillCardProps) {
 	if (type === "list") {
 		return (
-			<div className="flex flex-col justify-between gap-3 px-4 py-3 md:py-4 bg-linear-to-br dark:from-primary-900 dark:to-primary-950 border-2 border-secondary-400/30 rounded-xl whitespace-nowrap font-semibold text-base hover:border-secondary-400/50 hover:shadow-md hover:shadow-secondary-500/20 transition-all">
+			<div className="flex flex-col justify-between gap-3 px-4 py-3 md:py-4 bg-linear-to-br dark:from-primary-900 dark:to-primary-950 border-2 border-secondary-400/30 rounded-xl whitespace-nowrap font-medium text-base hover:border-secondary-400/50 hover:shadow-md hover:shadow-secondary-500/20 transition-all hover:-translate-y-1.25">
 				<div className="flex items-center justify-between">
 					<div className="flex items-center	gap-3">
 						<img

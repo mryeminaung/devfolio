@@ -15,7 +15,7 @@ export default function ExperienceTimeline() {
 					<div className="absolute left-0 top-1 w-4 h-4 rounded-full bg-linear-to-br from-secondary-400 to-secondary-500 transform -translate-x-2.25 ring-4 ring-primary-900/90 shadow-lg shadow-secondary-400/50" />
 
 					{/* year badge */}
-					<span className="inline-block px-3 py-1 bg-secondary-400/10 text-secondary-400 border border-secondary-400/30 rounded-full text-sm font-medium mb-3">
+					<span className="inline-block px-3 py-1 bg-secondary-400/10 dark:text-secondary-400 border border-secondary-400/30 rounded-full text-sm font-medium mb-3">
 						{exp.year}
 					</span>
 
@@ -23,7 +23,7 @@ export default function ExperienceTimeline() {
 						<CornerAccent position="top-right" />
 						<CornerAccent position="bottom-left" />
 
-						<h3 className="text-base md:text-xl font-bold dark:text-white mb-1">
+						<h3 className="text-base md:text-xl font-semibold dark:text-white mb-1">
 							{exp.title}
 						</h3>
 						<p className="text-[14px] md:text-base dark:text-white font-medium mb-2">
