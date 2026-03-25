@@ -41,7 +41,7 @@ export default function SiteNav() {
 				className={`rounded-4xl relative overflow-hidden transition-all duration-300 ${
 					isScrolled
 						? "bg-white/90 dark:bg-primary-900/70 backdrop-blur-md shadow-md shadow-secondary-400/10 border border-secondary-500/20"
-						: "bg-white dark:bg-primary-950/30 backdrop-blur-sm border border-secondary-500/10"
+						: "bg-white dark:bg-primary-950/50 backdrop-blur-sm border border-secondary-500/10"
 				}`}>
 				<CornerAccent
 					className="-z-10"
@@ -74,13 +74,16 @@ export default function SiteNav() {
 									href={link.path}
 									className={`relative flex items-center gap-2 text-sm font-medium transition-colors ${
 										location === link.path
-											? "text-secondary-400"
+											? "text-secondary-400 font-semibold"
 											: "text-black dark:text-white hover:text-secondary-400"
 									}`}>
 									<link.icon className="w-4 h-4 sm:w-5 sm:h-5" />
 									<span className="hidden sm:inline">{link.name}</span>
 									{location === link.path && (
-										<div className="absolute -bottom-2 left-0 right-0 h-0.5 bg-linear-to-r from-secondary-400 to-magenta-500" />
+										<>
+											<div className="absolute -bottom-2 left-0 right-0 h-0.5 bg-linear-to-r from-secondary-400 to-magenta-500" />
+											{/* <div className="absolute -top-2 left-0 right-0 h-0.5 bg-linear-to-r from-secondary-400 to-magenta-500" /> */}
+										</>
 									)}
 								</Link>
 							))}
