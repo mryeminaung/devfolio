@@ -2,12 +2,12 @@ import ScrollTopBtn from "@/components/scroll-top-btn";
 import { ThemeProvider } from "@/components/theme-provider";
 import AppLayout from "@/layouts/app-layout";
 import type { Metadata } from "next";
-import { Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistMono = Geist_Mono({
-	variable: "--font-geist-mono",
-	subsets: ["latin"],
+import localFont from "next/font/local";
+
+const awsDiatype = localFont({
+	src: "./_fonts/AWSDiatypeRoundedMono.ttf",
 });
 
 export const metadata: Metadata = {
@@ -78,7 +78,7 @@ export default function RootLayout({
 		<html
 			lang="en"
 			suppressHydrationWarning>
-			<body className={`${geistMono.variable} antialiased`}>
+			<body className={`${awsDiatype.className} antialiased`}>
 				<ThemeProvider
 					attribute="class"
 					defaultTheme="system"

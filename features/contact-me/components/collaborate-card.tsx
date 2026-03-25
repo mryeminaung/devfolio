@@ -3,7 +3,7 @@ import { Mail } from "lucide-react";
 
 export const CollaborateCard = () => {
 	return (
-		<section className="flex justify-center ">
+		<section className="flex justify-center hover:-translate-y-1.25 transition-all">
 			<div className="relative w-full py-5 overflow-hidden rounded-3xl dark:bg-primary-950 p-px  border border-cyan-400/30">
 				<CornerAccent position="top-left" />
 				<CornerAccent position="bottom-right" />

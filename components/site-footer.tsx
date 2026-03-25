@@ -1,5 +1,3 @@
-"use client";
-
 import { Github, Heart, Linkedin, Mail, Twitter } from "lucide-react";
 import Link from "next/link";
 import CornerAccent from "./corner-accent";
@@ -22,7 +20,7 @@ export default function SiteFooter() {
 
 	return (
 		<footer className="max-w-7xl mx-auto w-full py-5 px-3 mt-auto">
-			<div className="bg-white dark:bg-primary-950/30 backdrop-blur-md border dark:border-secondary-500/30 relative overflow-hidden border-secondary-300 rounded-xl px-4 sm:px-6 lg:px-8 py-4">
+			<div className="bg-white dark:bg-primary-950 backdrop-blur-md border dark:border-secondary-500/30 relative overflow-hidden border-secondary-300 rounded-xl px-4 sm:px-6 lg:px-8 py-4">
 				<CornerAccent position="top-left" />
 				<CornerAccent position="bottom-right" />
 				<div className="flex flex-col sm:flex-row items-center justify-between gap-4">
@@ -51,7 +49,7 @@ export default function SiteFooter() {
 									target="_blank"
 									rel="noopener noreferrer"
 									aria-label={social.label}
-									className="w-9 h-9 rounded-full dark:bg-gray-900/50 border dark:border-secondary-400/20 flex items-center justify-center  bg-secondary-400/10 hover:border-secondary-400 transition-all text-secondary-400">
+									className="w-9 h-9 rounded-full dark:bg-gray-900/50 border dark:border-secondary-400/20 flex items-center justify-center  bg-secondary-400/10 hover:border-secondary-400 transition-all text-secondary-400 hover:-translate-y-1.25">
 									<Icon className="w-4 h-4" />
 								</Link>
 							);

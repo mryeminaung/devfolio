@@ -1,5 +1,6 @@
 "use client";
 
+import Underline from "@/components/underline";
 import { useEffect, useState } from "react";
 import { ProjectCard } from "./components/project-card";
 import ProjectDetailModal from "./components/project-detail-modal";
@@ -33,10 +34,12 @@ export default function ProjectsPage() {
 
 	return (
 		<section className="">
-			<h3 className="text-3xl text-center md:text-5xl dark:text-white">
-				Featured Projects
-			</h3>
-
+			<div className="flex flex-col mb-10 gap-y-3">
+				<h2 className="text-3xl md:text-5xl font-semibold text-center dark:text-white">
+					Featured Projects
+				</h2>
+				<Underline />
+			</div>
 			<div className="grid grid-cols-1 justify-center sm:grid-cols-2 lg:grid-cols-3 mt-10 gap-8">
 				{projects.map((project) => (
 					<ProjectCard

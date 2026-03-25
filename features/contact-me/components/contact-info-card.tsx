@@ -18,7 +18,7 @@ export const ContactInfoCard = ({ info }: { info: ContactInfo }) => {
 
 	return (
 		<div
-			className={`group relative overflow-hidden flex items-center gap-4 rounded-2xl border dark:bg-primary-950 p-4 transition-all border-secondary-400/30 shadow-xs hover:shadow-secondary-500/20 `}>
+			className={`group relative overflow-hidden flex items-center gap-4 rounded-2xl border dark:bg-primary-950 p-4 transition-all border-secondary-400/30 shadow-xs hover:shadow-secondary-500/20 hover:-translate-y-1.25`}>
 			<CornerAccent position="top-right" />
 			<CornerAccent position="bottom-left" />
 			<div
@@ -30,8 +30,10 @@ export const ContactInfoCard = ({ info }: { info: ContactInfo }) => {
 			</div>
 
 			<div className="flex flex-col">
-				<span className="text-lg font-bold  dark:text-white">{info.title}</span>
-				<span className="text-primary-400 transition-colors group-hover:text-primary-500">
+				<span className="text-base md:text-lg font-semibold dark:text-white">
+					{info.title}
+				</span>
+				<span className="text-primary-400 text-xs md:text-base transition-colors group-hover:text-primary-500">
 					{info.value}
 				</span>
 			</div>
