@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
 import { ExternalLink, Github } from "lucide-react";
+import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
@@ -66,7 +67,15 @@ export default function ProjectDetailModal({
 					tabIndex={-1}
 					className="min-h-0 flex-1 overflow-y-auto pb-5 overscroll-contain outline-none focus:outline-none focus-visible:outline-none">
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-						<div className="col-span-1">
+						<motion.div
+							initial={{ y: 24, opacity: 0 }}
+							animate={{ y: 0, opacity: 1 }}
+							transition={{
+								duration: 0.45,
+								delay: 0.05,
+								ease: [0.22, 1, 0.36, 1],
+							}}
+							className="col-span-1">
 							<div className="relative mb-5 h-64 w-full overflow-hidden rounded-2xl border border-secondary-400">
 								<Image
 									src={currentImage}
@@ -104,21 +113,37 @@ export default function ProjectDetailModal({
 									</div>
 								</div>
 							)}
-						</div>
+						</motion.div>
 
 						<div className="space-y-5 col-span-1">
 							{/* overview */}
-							<div className="relative overflow-hidden rounded-xl border border-secondary-400/30 dark:border-primary-800 dark:bg-primary-900/60 p-4">
+							<motion.div
+								initial={{ y: 24, opacity: 0 }}
+								animate={{ y: 0, opacity: 1 }}
+								transition={{
+									duration: 0.45,
+									delay: 0.12,
+									ease: [0.22, 1, 0.36, 1],
+								}}
+								className="relative overflow-hidden rounded-xl border border-secondary-400/30 dark:border-primary-800 dark:bg-primary-900/60 p-4">
 								<h3 className="text-xl mb-3 font-semibold">Overview</h3>
 								<p className="leading-relaxed dark:text-primary-300">
 									{project.fullDescription}
 								</p>
 								<CornerAccent position="top-left" />
 								<CornerAccent position="bottom-right" />
-							</div>
+							</motion.div>
 
 							{/* technologies */}
-							<div className="relative overflow-hidden rounded-xl border border-secondary-400/30  dark:border-primary-800 dark:bg-primary-900/60 p-4">
+							<motion.div
+								initial={{ y: 24, opacity: 0 }}
+								animate={{ y: 0, opacity: 1 }}
+								transition={{
+									duration: 0.45,
+									delay: 0.2,
+									ease: [0.22, 1, 0.36, 1],
+								}}
+								className="relative overflow-hidden rounded-xl border border-secondary-400/30  dark:border-primary-800 dark:bg-primary-900/60 p-4">
 								<h4 className="mb-3 text-xl font-semibold">Technologies</h4>
 								<div className="flex flex-wrap gap-2 mt-3">
 									{project.tags.map((tag) => (
@@ -131,10 +156,18 @@ export default function ProjectDetailModal({
 								</div>
 								<CornerAccent position="top-left" />
 								<CornerAccent position="bottom-right" />
-							</div>
+							</motion.div>
 
 							{/* key features */}
-							<div className="relative overflow-hidden mb-5 rounded-xl border border-secondary-400/30 dark:border-primary-800 dark:bg-primary-900/60 p-4">
+							<motion.div
+								initial={{ y: 24, opacity: 0 }}
+								animate={{ y: 0, opacity: 1 }}
+								transition={{
+									duration: 0.45,
+									delay: 0.28,
+									ease: [0.22, 1, 0.36, 1],
+								}}
+								className="relative overflow-hidden mb-5 rounded-xl border border-secondary-400/30 dark:border-primary-800 dark:bg-primary-900/60 p-4">
 								<h4 className="mb-3 text-xl font-semibold">Key Features</h4>
 								<ul className="space-y-2 text-sm dark:text-primary-300">
 									{project.features.map((feature) => (
@@ -148,10 +181,18 @@ export default function ProjectDetailModal({
 								</ul>
 								<CornerAccent position="top-left" />
 								<CornerAccent position="bottom-right" />
-							</div>
+							</motion.div>
 
 							{/* live demo and source code */}
-							<div className="flex flex-wrap items-center gap-3">
+							<motion.div
+								initial={{ y: 24, opacity: 0 }}
+								animate={{ y: 0, opacity: 1 }}
+								transition={{
+									duration: 0.45,
+									delay: 0.36,
+									ease: [0.22, 1, 0.36, 1],
+								}}
+								className="flex flex-wrap items-center gap-3">
 								{project.link !== "#" && (
 									<Link
 										href={project.link ?? "#"}
@@ -170,7 +211,7 @@ export default function ProjectDetailModal({
 										Source Code <Github size={16} />
 									</Link>
 								)}
-							</div>
+							</motion.div>
 						</div>
 					</div>
 				</div>

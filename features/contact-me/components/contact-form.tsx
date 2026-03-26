@@ -4,10 +4,16 @@ import CornerAccent from "@/components/corner-accent";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { motion } from "motion/react";
 
-export default function ContactForm() {
+export default function ContactForm({ delay = 0 }: { delay?: number }) {
 	return (
-		<div className="border overflow-hidden relative border-secondary-400/30 p-5 md:p-8 rounded-xl dark:bg-primary-950 dark:text-white">
+		<motion.div
+			initial={{ y: 30, opacity: 0 }}
+			whileInView={{ y: 0, opacity: 1 }}
+			transition={{ duration: 0.55, delay, ease: [0.22, 1, 0.36, 1] }}
+			viewport={{ once: false, amount: 0.2 }}
+			className="border overflow-hidden relative border-secondary-400/30 p-5 md:p-8 rounded-xl dark:bg-primary-950 dark:text-white transform-gpu">
 			<CornerAccent position="top-right" />
 			<CornerAccent position="bottom-left" />
 
@@ -64,6 +70,6 @@ export default function ContactForm() {
 					Send Message
 				</Button>
 			</form>
-		</div>
+		</motion.div>
 	);
 }

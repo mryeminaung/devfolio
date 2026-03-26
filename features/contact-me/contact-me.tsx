@@ -23,6 +23,7 @@ export default function ContactMePage() {
 					<ContactInfoCard
 						key={index}
 						info={info}
+						index={index}
 					/>
 				))}
 			</div>
@@ -30,7 +31,7 @@ export default function ContactMePage() {
 			<div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-5 lg:mt-10">
 				<div className="col-span-1 space-y-8">
 					{/* collaboration alert */}
-					<CollaborateCard />
+					<CollaborateCard delay={0.05} />
 
 					{/* Social Links */}
 					<div>
@@ -38,10 +39,11 @@ export default function ContactMePage() {
 							Connect With Me
 						</h3>
 						<div className="grid grid-cols-2 gap-4">
-							{socialLinks.map((social) => (
+							{socialLinks.map((social, index) => (
 								<SocialCard
 									key={social.url}
 									social={social}
+									index={index}
 								/>
 							))}
 						</div>
@@ -50,7 +52,7 @@ export default function ContactMePage() {
 
 				{/* send email  */}
 				<div className="col-span-1">
-					<ContactForm />
+					<ContactForm delay={0.15} />
 				</div>
 			</div>
 		</section>

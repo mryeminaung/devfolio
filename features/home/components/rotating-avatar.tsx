@@ -55,7 +55,7 @@ export default function RotatingAvatar() {
 			</svg>
 
 			{/* Image Container */}
-			<div className="absolute h-60 w-60 overflow-hidden rounded-full border-2 border-cyan-400/30">
+			<div className="absolute h-50 w-50 md:h-55 md:w-55 overflow-hidden rounded-full border-2 border-cyan-400/30">
 				<img
 					src="/profile.png"
 					alt="User"

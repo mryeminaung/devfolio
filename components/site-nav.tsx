@@ -33,14 +33,18 @@ export default function SiteNav() {
 	];
 
 	return (
-		<nav
-			className={`fixed top-4 left-1/2 transform -translate-x-1/2 z-50 transition-all duration-300 w-full max-w-7xl px-3 lg:px-0 ${
+		<motion.nav
+			initial={{ y: -28, opacity: 0 }}
+			animate={{ y: 0, opacity: 1 }}
+			transition={{ type: "spring", stiffness: 140, damping: 20, mass: 0.9 }}
+			viewport={{ once: true, amount: 0.9 }}
+			className={`fixed top-4 left-1/2 transform -translate-x-1/2 z-50 transition-[top] duration-300 ease-out w-full max-w-7xl px-3 lg:px-0 ${
 				isScrolled ? "top-2" : "top-4"
 			}`}>
 			<div
 				className={`rounded-4xl relative overflow-hidden transition-all duration-300 ${
 					isScrolled
-						? "bg-white/90 dark:bg-primary-900/70 backdrop-blur-md shadow-md shadow-secondary-400/10 border border-secondary-500/20"
+						? "bg-white/50 dark:bg-primary-900/70 backdrop-blur-md shadow-md shadow-secondary-400/10 border border-secondary-500/20"
 						: "bg-white dark:bg-primary-950/50 backdrop-blur-sm border border-secondary-500/10"
 				}`}>
 				<CornerAccent
@@ -134,6 +138,6 @@ export default function SiteNav() {
 					)}
 				</AnimatePresence>
 			</div>
-		</nav>
+		</motion.nav>
 	);
 }
