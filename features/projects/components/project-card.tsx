@@ -2,21 +2,35 @@
 
 import CornerAccent from "@/components/corner-accent";
 import { ExternalLink, Info } from "lucide-react";
+import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 import { Project } from "../projects.type";
 
 type ProjectProps = {
 	project: Project;
+	index?: number;
 	onClick: () => void;
 };
 
-export const ProjectCard = ({ project, onClick }: ProjectProps) => {
+export const ProjectCard = ({ project, index = 0, onClick }: ProjectProps) => {
 	return (
-		<div
+		<motion.div
+			initial={{ y: 30, opacity: 0 }}
+			whileInView={{ y: 0, opacity: 1 }}
+			whileHover={{ y: -5, transition: { duration: 0.2, ease: "easeOut" } }}
+			transition={{
+				duration: 0.55,
+				delay: index * 0.1,
+				ease: [0.22, 1, 0.36, 1],
+			}}
+			viewport={{ once: false, amount: 0.2 }}
 			onClick={onClick}
-			className="group relative w-full overflow-hidden rounded-3xl hover:shadow-lg hover:shadow-secondary-400/20 border border-cyan-400/30 dark:bg-primary-950 shadow-xs transition-all hover:border-secondary-500/50">
-			<CornerAccent position="top-right" />
+			className="group hover:cursor-pointer relative w-full overflow-hidden rounded-3xl hover:shadow-lg hover:shadow-secondary-400/20 border border-cyan-400/30 dark:bg-primary-950 shadow-xs transition-[border-color,box-shadow,background-color] duration-300 transform-gpu hover:border-secondary-500/50">
+			<CornerAccent
+				position="top-right"
+				className="z-10"
+			/>
 			<CornerAccent position="bottom-left" />
 
 			<div className="relative h-56 w-full overflow-hidden rounded-xl">
@@ -68,6 +82,6 @@ export const ProjectCard = ({ project, onClick }: ProjectProps) => {
 					</button>
 				</div>
 			</div>
-		</div>
+		</motion.div>
 	);
 };

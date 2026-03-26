@@ -49,11 +49,12 @@ export default function SkillsListByCategory() {
 					</div>
 					{/* skills list */}
 					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">
-						{group.skills.map((skill) => (
+						{group.skills.map((skill, skillIdx) => (
 							<SkillCard
 								key={skill.name}
 								skill={skill}
 								type="list"
+								index={skillIdx}
 							/>
 						))}
 					</div>

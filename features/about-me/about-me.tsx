@@ -68,7 +68,7 @@ export default function AboutMePage() {
 			</div>
 
 			{/* techinical skills section */}
-			<div className="mb-5">
+			<div className="mb-20">
 				<div className="flex my-8 flex-col gap-y-3">
 					<h3 className="text-2xl md:text-3xl lg:text-4xl font-semibold dark:text-white text-center ">
 						Technical Skills
@@ -80,8 +80,8 @@ export default function AboutMePage() {
 			</div>
 
 			{/* key achievements section */}
-			<div className="mb-10">
-				<div className="flex my-8 flex-col gap-y-3">
+			<div className="mb-20">
+				<div className="flex mb-16 flex-col gap-y-3">
 					<h3 className="text-2xl md:text-3xl lg:text-4xl font-semibold dark:text-white text-center ">
 						Key Achievements
 					</h3>
@@ -91,8 +91,8 @@ export default function AboutMePage() {
 			</div>
 
 			{/* experience timeline section */}
-			<div className="mb-5">
-				<div className="flex my-8 flex-col gap-y-3">
+			<div className="mb-10">
+				<div className="flex mb-16 flex-col gap-y-3">
 					<h3 className="text-2xl md:text-3xl lg:text-4xl font-semibold dark:text-white text-center ">
 						Experience Timeline
 					</h3>

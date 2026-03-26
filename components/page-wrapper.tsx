@@ -1,7 +1,11 @@
+"use client";
+
 import { cn } from "@/lib/utils";
 import CornerAccent from "./corner-accent";
+import ScrollbarIndicator from "./scrollbar-indicator";
 import SiteFooter from "./site-footer";
 import SiteNav from "./site-nav";
+import PageTransition from "./page-transition";
 
 type PageWrapperProps = {
 	children: React.ReactNode;
@@ -11,9 +15,12 @@ type PageWrapperProps = {
 export default function PageWrapper({ children, className }: PageWrapperProps) {
 	return (
 		<div className={cn("min-h-screen flex flex-col", className)}>
+			<ScrollbarIndicator />
+
 			<SiteNav />
 			{/* <WorkCard /> */}
 
+			<PageTransition>
 			<div className="px-3">
 				{/*  Main Content Area */}
 				<main
@@ -27,6 +34,7 @@ export default function PageWrapper({ children, className }: PageWrapperProps) {
 					{children}
 				</main>
 			</div>
+			</PageTransition>
 
 			<SiteFooter />
 		</div>

@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "motion/react";
+
 import { Github, Heart, Linkedin, Mail, Twitter } from "lucide-react";
 import Link from "next/link";
 import CornerAccent from "./corner-accent";
@@ -19,7 +23,17 @@ export default function SiteFooter() {
 	];
 
 	return (
-		<footer className="max-w-7xl mx-auto w-full py-5 px-3 mt-auto">
+		<motion.footer
+			initial={{ y: 40, opacity: 0 }}
+			whileInView={{ y: 0, opacity: 1 }}
+			whileHover={{ y: -5, transition: { duration: 0.2, ease: "easeOut" } }}
+			transition={{
+				duration: 0.55,
+				delay: 0.12,
+				ease: [0.22, 1, 0.36, 1],
+			}}
+			viewport={{ once: false, amount: 0.2 }}
+			className="max-w-7xl mx-auto w-full py-5 px-3 mt-auto">
 			<div className="bg-white dark:bg-primary-950 backdrop-blur-md border dark:border-secondary-500/30 relative overflow-hidden border-secondary-300 rounded-xl px-4 sm:px-6 lg:px-8 py-4">
 				<CornerAccent position="top-left" />
 				<CornerAccent position="bottom-right" />
@@ -57,6 +71,6 @@ export default function SiteFooter() {
 					</div>
 				</div>
 			</div>
-		</footer>
+		</motion.footer>
 	);
 }

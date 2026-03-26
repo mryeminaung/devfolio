@@ -1,6 +1,9 @@
+"use client";
+
 import CornerAccent from "@/components/corner-accent";
 import Underline from "@/components/underline";
 import { ExternalLink, Github } from "lucide-react";
+import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -48,7 +51,17 @@ export default function FeaturedProject() {
 			</div>
 
 			{/* featured project card */}
-			<div className="group relative w-full overflow-hidden rounded-3xl border border-cyan-400/30 bg-white/60 shadow-xs transition-all hover:border-secondary-500/50 hover:shadow-md hover:shadow-secondary-400/20 dark:bg-primary-950/90 mb-10 hover:-translate-y-1.25">
+			<motion.div
+				initial={{ y: 40, opacity: 0 }}
+				whileInView={{ y: 0, opacity: 1 }}
+				whileHover={{ y: -5, transition: { duration: 0.2, ease: "easeOut" } }}
+				transition={{
+					duration: 0.65,
+					delay: 0.12,
+					ease: [0.22, 1, 0.36, 1],
+				}}
+				viewport={{ once: false, amount: 0.3 }}
+				className="group relative w-full overflow-hidden rounded-3xl border border-cyan-400/30 bg-white/60 shadow-xs transition-[border-color,box-shadow,background-color] duration-300 hover:border-secondary-500/50 hover:shadow-md hover:shadow-secondary-400/20 dark:bg-primary-950/90 mb-10 transform-gpu">
 				<CornerAccent
 					position="top-left"
 					className="z-10"
@@ -120,7 +133,7 @@ export default function FeaturedProject() {
 						</div>
 					</div>
 				</div>
-			</div>
+			</motion.div>
 		</div>
 	);
 }

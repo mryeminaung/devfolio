@@ -1,3 +1,5 @@
+"use client";
+
 import Underline from "@/components/underline";
 import { Code2, Server } from "lucide-react";
 import CoreSkillCard from "./core-skill-card";
@@ -32,10 +34,11 @@ export default function SkillExpertise() {
 				<Underline />
 			</div>
 			<div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-				{skills.map((skill) => (
+				{skills.map((skill, index) => (
 					<CoreSkillCard
 						key={skill.title}
 						skill={skill}
+						index={index}
 					/>
 				))}
 			</div>

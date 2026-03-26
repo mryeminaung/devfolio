@@ -1,9 +1,16 @@
 import CornerAccent from "@/components/corner-accent";
 import { Mail } from "lucide-react";
+import { motion } from "motion/react";
 
-export const CollaborateCard = () => {
+export const CollaborateCard = ({ delay = 0 }: { delay?: number }) => {
 	return (
-		<section className="flex justify-center hover:-translate-y-1.25 transition-all">
+		<motion.section
+			initial={{ y: 30, opacity: 0 }}
+			whileInView={{ y: 0, opacity: 1 }}
+			whileHover={{ y: -5, transition: { duration: 0.2, ease: "easeOut" } }}
+			transition={{ duration: 0.55, delay, ease: [0.22, 1, 0.36, 1] }}
+			viewport={{ once: false, amount: 0.2 }}
+			className="flex justify-center transform-gpu">
 			<div className="relative w-full py-5 overflow-hidden rounded-3xl dark:bg-primary-950 p-px  border border-cyan-400/30">
 				<CornerAccent position="top-left" />
 				<CornerAccent position="bottom-right" />
@@ -24,6 +31,6 @@ export const CollaborateCard = () => {
 					</p>
 				</div>
 			</div>
-		</section>
+		</motion.section>
 	);
 };

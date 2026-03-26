@@ -4,13 +4,13 @@ import { Achievement } from "../about.types";
 export const achievements: Achievement[] = [
 	{
 		icon: Code2,
-		title: "8+ Projects",
+		title: "6+ Projects",
 		description: "Completed with passion",
 		color: "cyan",
 	},
 	{
 		icon: Rocket,
-		title: "1+ Years",
+		title: "2+ Years",
 		description: "Learning & building",
 		color: "magenta",
 	},

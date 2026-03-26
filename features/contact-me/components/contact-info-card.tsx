@@ -2,6 +2,7 @@
 
 import CornerAccent from "@/components/corner-accent";
 import { Mail, MapPin, Phone } from "lucide-react";
+import { motion } from "motion/react";
 import type {
 	ContactInfo,
 	ContactInfoIconName,
@@ -13,12 +14,27 @@ const iconMap: Record<ContactInfoIconName, typeof Mail> = {
 	location: MapPin,
 };
 
-export const ContactInfoCard = ({ info }: { info: ContactInfo }) => {
+export const ContactInfoCard = ({
+	info,
+	index = 0,
+}: {
+	info: ContactInfo;
+	index?: number;
+}) => {
 	const Icon = iconMap[info.iconName];
 
 	return (
-		<div
-			className={`group relative overflow-hidden flex items-center gap-4 rounded-2xl border dark:bg-primary-950 p-4 transition-all border-secondary-400/30 shadow-xs hover:shadow-secondary-500/20 hover:-translate-y-1.25`}>
+		<motion.div
+			initial={{ y: 28, opacity: 0 }}
+			whileInView={{ y: 0, opacity: 1 }}
+			whileHover={{ y: -5, transition: { duration: 0.2, ease: "easeOut" } }}
+			transition={{
+				duration: 0.5,
+				delay: index * 0.1,
+				ease: [0.22, 1, 0.36, 1],
+			}}
+			viewport={{ once: false, amount: 0.2 }}
+			className={`group relative overflow-hidden flex items-center gap-4 rounded-2xl border dark:bg-primary-950 p-4 border-secondary-400/30 shadow-xs hover:shadow-secondary-500/20 transition-[border-color,box-shadow,background-color] duration-300 transform-gpu`}>
 			<CornerAccent position="top-right" />
 			<CornerAccent position="bottom-left" />
 			<div
@@ -37,6 +53,6 @@ export const ContactInfoCard = ({ info }: { info: ContactInfo }) => {
 					{info.value}
 				</span>
 			</div>
-		</div>
+		</motion.div>
 	);
 };
