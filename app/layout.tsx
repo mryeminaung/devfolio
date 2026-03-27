@@ -32,14 +32,14 @@ export const metadata: Metadata = {
 	openGraph: {
 		title: "Devfolio | Ye Min Aung",
 		description:
-			"A Web Developer specializing in React, Next.js and Laravel. Building high-performance web experiences.",
+			"A Junior Web Developer specializing in React, Next.js and Laravel. Building high-performance web experiences.",
 		url: "https://yeminaung-dev.vercel.app",
 		siteName: "Ye Min Aung's Devfolio",
 		locale: "en_US",
 		type: "website",
 		images: [
 			{
-				url: "/devfolio.png",
+				url: "https://yeminaung-dev.vercel.app/devfolio.png",
 				width: 1200,
 				height: 630,
 				alt: "Ye Min Aung Devfolio Preview",
@@ -50,9 +50,13 @@ export const metadata: Metadata = {
 		card: "summary_large_image",
 		title: "Devfolio | Ye Min Aung",
 		description:
-			"Web Developer specializing in React, Next.js and Laravel. Building high-performance web experiences.",
+			"A Junior Web Developer specializing in React, Next.js and Laravel. Building high-performance web experiences.",
 		creator: "@mryeminaung",
-		images: ["/devfolio.png"],
+		images: ["https://yeminaung-dev.vercel.app/devfolio.png"],
+	},
+	appleWebApp: {
+		title: "Devfolio | Ye Min Aung",
+		statusBarStyle: "default",
 	},
 	robots: {
 		index: true,

@@ -1,4 +1,5 @@
 import Underline from "@/components/underline";
+import Image from "next/image";
 import ExperienceTimeline from "./components/experience-timeline";
 import KeyAchievements from "./components/key-achievements";
 import SkillsListByCategory from "./components/skills-list-by-category";
@@ -13,13 +14,15 @@ export default function AboutMePage() {
 				<Underline />
 			</div>
 
-			<div className="grid grid-cols-1 items-center lg:grid-cols-2 gap-x-14 gap-y-10 mb-10">
+			<div className="grid grid-cols-1 items-center lg:grid-cols-2 gap-x-14 gap-y-10 mb-20">
 				{/* Image Container - Simplified Modern Style */}
 				<div className="relative group">
 					<div className="relative rounded-2xl overflow-hidden shadow-2xl">
-						<img
+						<Image
 							src="/profile.png"
 							alt="Ye Min Aung - Developer"
+							width={400}
+							height={400}
 							className="w-full h-auto object-cover"
 						/>
 						{/* Gradient Overlay on Hover */}
@@ -91,7 +94,7 @@ export default function AboutMePage() {
 			</div>
 
 			{/* experience timeline section */}
-			<div className="mb-10">
+			<div className="mb-5">
 				<div className="flex mb-16 flex-col gap-y-3">
 					<h3 className="text-2xl md:text-3xl lg:text-4xl font-semibold dark:text-white text-center ">
 						Experience Timeline

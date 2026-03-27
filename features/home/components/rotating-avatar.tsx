@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import Image from "next/image";
 
 export default function RotatingAvatar() {
 	return (
@@ -56,9 +57,13 @@ export default function RotatingAvatar() {
 
 			{/* Image Container */}
 			<div className="absolute h-50 w-50 md:h-55 md:w-55 overflow-hidden rounded-full border-2 border-cyan-400/30">
-				<img
+				<Image
 					src="/profile.png"
 					alt="User"
+					loading="eager"
+					fetchPriority="high"
+					width={220}
+					height={220}
 					className="object-cover object-center w-full h-full"
 				/>
 			</div>

@@ -21,7 +21,7 @@ export default function SkillExpertise() {
 		{
 			title: "FullStack Development",
 			description:
-				"Creating immersive 3D experiences using Three.js and cutting-edge web graphics",
+				"Building end-to-end web applications with both frontend and backend technologies",
 			icon: Code2,
 		},
 	];

@@ -10,7 +10,7 @@ export const achievements: Achievement[] = [
 	},
 	{
 		icon: Rocket,
-		title: "2+ Years",
+		title: "1.5+ Years",
 		description: "Learning & building",
 		color: "magenta",
 	},

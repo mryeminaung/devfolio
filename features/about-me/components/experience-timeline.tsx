@@ -58,7 +58,7 @@ export default function ExperienceTimeline() {
 						<p className="text-[15px] md:text-base hidden text-gray-500 dark:text-gray-400">
 							{exp.description}
 						</p>
-						<ul className="space-y-2 dark:text-primary-300 mt-4">
+						<ul className="space-y-2 text-sm md:text-base dark:text-primary-300 mt-4">
 							{exp.knowledge.map((fact) => (
 								<li
 									key={fact}

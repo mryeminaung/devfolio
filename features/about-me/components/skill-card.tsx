@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import Image from "next/image";
 
 type Skill = {
 	name: string;
@@ -32,9 +33,11 @@ export default function SkillCard({ skill, type, index = 0 }: SkillCardProps) {
 				className="flex flex-col justify-between gap-3 px-4 py-3 md:py-4 bg-linear-to-br dark:from-primary-900 dark:to-primary-950 border-2 border-secondary-400/30 rounded-xl whitespace-nowrap font-medium text-base hover:border-secondary-400/50 hover:shadow-md hover:shadow-secondary-500/20 transition-[border-color,box-shadow,background-color] duration-300 transform-gpu">
 				<div className="flex items-center justify-between">
 					<div className="flex items-center	gap-3">
-						<img
+						<Image
 							src={skill.logo}
 							alt={skill.name}
+							width={32}
+							height={32}
 							className="w-6 md:w-8 h-6 md:h-8"
 						/>
 						<span className="dark:text-white">{skill.name}</span>
@@ -87,7 +90,7 @@ export default function SkillCard({ skill, type, index = 0 }: SkillCardProps) {
 	if (type === "slider") {
 		return (
 			<div className="flex items-center gap-3 px-5 md:px-8 py-3 md:py-4 bg-linear-to-br dark:from-primary-900 dark:to-primary-950 border-2 border-secondary-400/30 rounded-xl whitespace-nowrap font-semibold text-base hover:border-secondary-400/50 hover:shadow-md hover:shadow-secondary-500/20 transition-all">
-				<img
+				<Image
 					src={skill.logo}
 					alt={skill.name}
 					className="w-6 md:w-8 h-6 md:h-8"

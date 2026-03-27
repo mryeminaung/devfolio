@@ -46,7 +46,7 @@ export default function Typewriter({ words: WORDS }: { words: string[] }) {
 	return (
 		<div className="flex items-center">
 			<div className="relative">
-				<motion.span className="line-clamp-1">{displayText}</motion.span>
+				<motion.span className="line-clamp-1 h-8">{displayText}</motion.span>
 
 				{/* The Animated Cursor */}
 				<motion.div
