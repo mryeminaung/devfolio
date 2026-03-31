@@ -1,10 +1,44 @@
-### `About Devfolio`
+## `About Devfolio`
 
-**Devfolio** is a developer portfolio built with Next.js. It is `Under Development` and will be updated with new features and improvements in the future. The portfolio showcases my projects, skills, and experience as a developer.
+**Devfolio** is a developer portfolio built with Next.js. This portfolio showcases my projects, skills, and experience as a developer.
+
+> **Status:** Under Active Development. New features and UI refinements are pushed regularly.
+
+### `Features`
+Below are the main features currently implemented in the portfolio. Contact form integration is planned for future updates to make it easy to get in touch via email.
+- **Responsive Design:** Fully responsive layouts for all devices.
+- **Light/Dark Mode:** Seamless theme switching with light and dark mode support.
+- **Smooth Animations:** Enhanced user experience with motion-based animations.
+- **Feature Modules:** Isolated business logic and feature-specific components.
+- **Project Detail Modal:** Click on any project to view its details in a dedicated modal popup.
 
 ### `Live Demo`
 
-Check out the live demo: [yeminaung-dev.vercel.app](https://yeminaung-dev.vercel.app)
+I deployed the portfolio on Vercel for easy access and sharing.
+
+Check out the live demo: 👉 [yeminaung-dev.vercel.app](https://yeminaung-dev.vercel.app)
+
+### `Project Structure`
+
+I use a feature-based folder structure to make it easy to add and integrate new features in isolation, so changes in one area have minimal impact on others. 
+
+The main folders and files in this project are:
+
+```
+.
+├── app/                # Next.js App Router (pages, API, and layouts)
+├── components/         # Reusable global UI components
+├── features/           # Feature-based modules (logic, specific components)
+├── layouts/            # Page-level layout templates
+├── lib/                # Shared utility functions and configurations
+├── public/             # Static assets (images, icons, etc.)
+├── components.json     # shadcn/ui configuration
+├── next.config.ts      # Next.js configuration
+├── package.json        # Project dependencies and scripts
+├── pnpm-lock.yaml      # pnpm lockfile
+├── pnpm-workspace.yaml # pnpm workspace configuration
+└── tsconfig.json       # TypeScript configuration
+```
 
 ### `Usage`
 
