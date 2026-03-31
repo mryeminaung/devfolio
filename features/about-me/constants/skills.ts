@@ -73,8 +73,20 @@ export const skills = [
 		categoryId: 2,
 	},
 	{
+		name: "Docker",
+		logo: "/skills/docker.svg",
+		progress: 40,
+		categoryId: 2,
+	},
+	{
 		name: "React Native",
 		logo: "/skills/react.svg",
+		progress: 55,
+		categoryId: 3,
+	},
+	{
+		name: "Kotlin",
+		logo: "/skills/kotlin.svg",
 		progress: 50,
 		categoryId: 3,
 	},
@@ -102,6 +114,18 @@ export const skills = [
 		progress: 85,
 		categoryId: 4,
 	},
+	{
+		name: "Linux",
+		logo: "/skills/linux.svg",
+		progress: 75,
+		categoryId: 4,
+	},
+	// {
+	// 	name: "And-Studio",
+	// 	logo: "/skills/android-studio.svg",
+	// 	progress: 60,
+	// 	categoryId: 4,
+	// },
 	{
 		name: "VS Code",
 		logo: "/skills/vscode.svg",

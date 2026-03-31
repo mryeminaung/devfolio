@@ -58,7 +58,7 @@ export default function RotatingAvatar() {
 			{/* Image Container */}
 			<div className="absolute h-50 w-50 md:h-55 md:w-55 overflow-hidden rounded-full border-2 border-cyan-400/30">
 				<Image
-					src="/profile.png"
+					src="/resume_profile.png"
 					alt="User"
 					loading="eager"
 					fetchPriority="high"

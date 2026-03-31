@@ -37,7 +37,7 @@ export default function HeroInfo() {
 
 			<div className="flex items-center flex-col md:flex-row gap-5">
 				<Link
-					href="/my_resume.pdf"
+					href="/yeminaung_resume.pdf"
 					download
 					className="w-full justify-center md:w-fit py-2.5 px-7 hover:cursor-pointer rounded-xl border border-secondary-400/80 gap-x-3 relative overflow-hidden hover:bg-gray-100 dark:bg-primary-950 inline-flex dark:hover:bg-primary-900 bg-white font-medium text-black dark:text-white">
 					<CornerAccent position="top-left" />

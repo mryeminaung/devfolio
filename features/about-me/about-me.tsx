@@ -19,7 +19,7 @@ export default function AboutMePage() {
 				<div className="relative group">
 					<div className="relative rounded-2xl overflow-hidden shadow-2xl">
 						<Image
-							src="/profile.png"
+							src="/about-me-pic.jpg"
 							alt="Ye Min Aung - Developer"
 							width={400}
 							height={400}
