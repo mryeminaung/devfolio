@@ -138,12 +138,12 @@ export const skills = [
 		progress: 50,
 		categoryId: 4,
 	},
-	// {
-	// 	name: "Prisma",
-	// 	logo: "/skills/prisma.svg",
-	// 	progress: 75,
-	// 	categoryId: 2,
-	// },
+	{
+		name: "Prisma",
+		logo: "/skills/prisma.svg",
+		progress: 40,
+		categoryId: 2,
+	},
 	{
 		name: "Postman",
 		logo: "/skills/postman.svg",

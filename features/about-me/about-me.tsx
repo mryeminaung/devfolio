@@ -97,7 +97,7 @@ export default function AboutMePage() {
 			<div className="mb-5">
 				<div className="flex mb-16 flex-col gap-y-3">
 					<h3 className="text-2xl md:text-3xl lg:text-4xl font-semibold dark:text-white text-center ">
-						Experience Timeline
+						Project Experiences
 					</h3>
 					<span className="border w-37.5 rounded-full mx-auto bg-secondary-400 h-0.5 border-secondary-400"></span>
 				</div>
