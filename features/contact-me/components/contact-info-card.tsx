@@ -33,7 +33,7 @@ export const ContactInfoCard = ({
 				delay: index * 0.1,
 				ease: [0.22, 1, 0.36, 1],
 			}}
-			viewport={{ once: false, amount: 0.2 }}
+			viewport={{ once: true, amount: 0.2 }}
 			className={`group relative overflow-hidden flex items-center gap-4 rounded-2xl border dark:bg-primary-950 p-4 border-secondary-400/30 shadow-xs hover:shadow-secondary-500/20 transition-[border-color,box-shadow,background-color] duration-300 transform-gpu`}>
 			<CornerAccent position="top-right" />
 			<CornerAccent position="bottom-left" />

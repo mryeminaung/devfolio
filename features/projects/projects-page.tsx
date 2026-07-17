@@ -17,18 +17,18 @@ export default function ProjectsPage() {
 	}));
 
 	const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-	const [isModelOpen, setIsModelOpen] = useState(false);
+	const [isModalOpen, setIsModalOpen] = useState(false);
 
-	const handleModelClose = () => {
-		setIsModelOpen(false);
+	const handleModalClose = () => {
+		setIsModalOpen(false);
 		setSelectedProject(null);
 	};
 
 	useEffect(() => {
 		if (selectedProject === null) {
-			setIsModelOpen(false);
+			setIsModalOpen(false);
 		} else {
-			setIsModelOpen(true);
+			setIsModalOpen(true);
 		}
 	}, [selectedProject]);
 
@@ -50,11 +50,11 @@ export default function ProjectsPage() {
 					/>
 				))}
 			</div>
-			{isModelOpen && selectedProject !== null && (
+			{isModalOpen && selectedProject !== null && (
 				<ProjectDetailModal
 					project={selectedProject}
-					isOpen={isModelOpen}
-					onClose={handleModelClose}
+					isOpen={isModalOpen}
+					onClose={handleModalClose}
 				/>
 			)}
 		</section>

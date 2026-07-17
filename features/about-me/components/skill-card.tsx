@@ -29,7 +29,7 @@ export default function SkillCard({ skill, type, index = 0 }: SkillCardProps) {
 					delay: staggerDelay,
 					ease: [0.22, 1, 0.36, 1],
 				}}
-				viewport={{ once: false, amount: 0.2 }}
+				viewport={{ once: true, amount: 0.2 }}
 				className="flex flex-col justify-between gap-3 px-4 py-3 md:py-4 bg-linear-to-br dark:from-primary-900 dark:to-primary-950 border-2 border-secondary-400/30 rounded-xl whitespace-nowrap font-medium text-base hover:border-secondary-400/50 hover:shadow-md hover:shadow-secondary-500/20 transition-[border-color,box-shadow,background-color] duration-300 transform-gpu">
 				<div className="flex items-center justify-between">
 					<div className="flex items-center	gap-3">
@@ -47,7 +47,7 @@ export default function SkillCard({ skill, type, index = 0 }: SkillCardProps) {
 						className="text-secondary-400"
 						initial={{ opacity: 0, y: 10 }}
 						whileInView={{ opacity: 1, y: 0 }}
-						viewport={{ once: false, amount: 0.2 }}
+						viewport={{ once: true, amount: 0.2 }}
 						transition={{
 							duration: 0.45,
 							delay: staggerDelay + 0.12,
@@ -62,7 +62,7 @@ export default function SkillCard({ skill, type, index = 0 }: SkillCardProps) {
 					<motion.div
 						initial={{ width: 0 }}
 						whileInView={{ width: `${skill.progress}%` }}
-						viewport={{ once: false, amount: 0.2 }}
+						viewport={{ once: true, amount: 0.2 }}
 						transition={{
 							duration: 0.9,
 							delay: staggerDelay + 0.18,
@@ -74,7 +74,7 @@ export default function SkillCard({ skill, type, index = 0 }: SkillCardProps) {
 							className="absolute inset-0 bg-linear-to-r from-transparent via-white/30 to-transparent"
 							initial={{ x: "-100%" }}
 							whileInView={{ x: "200%" }}
-							viewport={{ once: false, amount: 0.2 }}
+							viewport={{ once: true, amount: 0.2 }}
 							transition={{
 								duration: 1.6,
 								delay: staggerDelay + 0.4,

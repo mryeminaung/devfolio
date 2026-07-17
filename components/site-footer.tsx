@@ -19,7 +19,7 @@ export default function SiteFooter() {
 			href: "https://twitter.com/mryeminaung",
 			label: "Twitter",
 		},
-		{ icon: Mail, href: "mailto:yeminaung.dev@gamil.com", label: "Email" },
+		{ icon: Mail, href: "mailto:yeminaung.dev@gmail.com", label: "Email" },
 	];
 
 	return (
@@ -32,7 +32,7 @@ export default function SiteFooter() {
 				delay: 0.12,
 				ease: [0.22, 1, 0.36, 1],
 			}}
-			viewport={{ once: false, amount: 0.2 }}
+			viewport={{ once: true, amount: 0.2 }}
 			className="max-w-7xl mx-auto w-full py-5 px-3 mt-auto">
 			<div className="bg-white dark:bg-primary-950 backdrop-blur-md border dark:border-secondary-500/30 relative overflow-hidden border-secondary-300 rounded-xl px-4 sm:px-6 lg:px-8 py-4">
 				<CornerAccent position="top-left" />

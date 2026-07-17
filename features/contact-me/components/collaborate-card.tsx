@@ -9,7 +9,7 @@ export const CollaborateCard = ({ delay = 0 }: { delay?: number }) => {
 			whileInView={{ y: 0, opacity: 1 }}
 			whileHover={{ y: -5, transition: { duration: 0.2, ease: "easeOut" } }}
 			transition={{ duration: 0.55, delay, ease: [0.22, 1, 0.36, 1] }}
-			viewport={{ once: false, amount: 0.2 }}
+			viewport={{ once: true, amount: 0.2 }}
 			className="flex justify-center transform-gpu">
 			<div className="relative w-full py-5 overflow-hidden rounded-3xl dark:bg-primary-950 p-px  border border-cyan-400/30">
 				<CornerAccent position="top-left" />

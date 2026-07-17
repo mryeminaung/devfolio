@@ -27,7 +27,7 @@ export default function ExperienceTimeline() {
 							delay: 0.12,
 							ease: [0.22, 1, 0.36, 1],
 						}}
-						viewport={{ once: false, amount: 0.2 }}
+						viewport={{ once: true, amount: 0.2 }}
 						className="inline-block px-3 py-1 bg-secondary-400/10 dark:text-secondary-400 border border-secondary-400/30 rounded-full text-sm font-medium mb-5">
 						{exp.year}
 					</motion.span>
@@ -44,7 +44,7 @@ export default function ExperienceTimeline() {
 							delay: index * 0.12,
 							ease: [0.22, 1, 0.36, 1],
 						}}
-						viewport={{ once: false, amount: 0.2 }}
+						viewport={{ once: true, amount: 0.2 }}
 						className="relative overflow-hidden dark:bg-primary-950/50 border border-secondary-400/30 rounded-xl shadow-md p-6 hover:border-secondary-400/50 hover:shadow-secondary-500/20 transition-[border-color,box-shadow,background-color] duration-300 backdrop-blur-sm transform-gpu">
 						<CornerAccent position="top-right" />
 						<CornerAccent position="bottom-left" />
@@ -69,13 +69,13 @@ export default function ExperienceTimeline() {
 							))}
 						</ul>
 
-						<ul className="space-x-2 space-y-2 dark:text-primary-300 mt-4">
+						<ul className="flex flex-wrap gap-2 dark:text-primary-300 mt-4">
 							{exp.skills.map((skill) => (
-								<span
+								<li
 									key={skill}
-									className="inline-block text-[12px] px-3 py-1 bg-secondary-400/10 dark:text-secondary-400 border border-secondary-400/30 rounded-full font-medium">
+									className="inline-block text-[12px] px-3 py-1 bg-secondary-400/10 dark:text-secondary-400 border border-secondary-400/30 rounded-full font-medium list-none">
 									{skill}
-								</span>
+								</li>
 							))}
 						</ul>
 					</motion.div>

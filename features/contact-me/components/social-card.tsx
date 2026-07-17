@@ -32,7 +32,7 @@ export default function SocialCard({
 				delay: index * 0.1,
 				ease: [0.22, 1, 0.36, 1],
 			}}
-			viewport={{ once: false, amount: 0.2 }}>
+			viewport={{ once: true, amount: 0.2 }}>
 			<Link
 				href={social.url}
 				target="_blank"

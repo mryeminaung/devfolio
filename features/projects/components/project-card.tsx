@@ -24,7 +24,7 @@ export const ProjectCard = ({ project, index = 0, onClick }: ProjectProps) => {
 				delay: index * 0.1,
 				ease: [0.22, 1, 0.36, 1],
 			}}
-			viewport={{ once: false, amount: 0.2 }}
+			viewport={{ once: true, amount: 0.2 }}
 			onClick={onClick}
 			className="group hover:cursor-pointer relative w-full overflow-hidden rounded-3xl hover:shadow-lg hover:shadow-secondary-400/20 border border-cyan-400/30 dark:bg-primary-950 shadow-xs transition-[border-color,box-shadow,background-color] duration-300 transform-gpu hover:border-secondary-500/50">
 			<CornerAccent
