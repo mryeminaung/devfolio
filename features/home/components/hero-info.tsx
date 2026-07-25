@@ -15,14 +15,14 @@ export default function HeroInfo() {
 			</Badge>
 
 			<div className="space-y-3">
+				<p className="text-md md:text-xl lg:text-2xl font-semibold tracking-tight">
+					Hi there! My name is Ye Min Aung,
+				</p>
 				<h1 className="text-xl md:text-2xl lg:text-3xl font-bold gap-x-2 tracking-tight flex">
 					<Typewriter
 						words={["a Junior Web Developer", "an ECE Student @ MIIT"]}
 					/>
 				</h1>
-				<p className="text-md md:text-xl lg:text-2xl font-semibold tracking-tight">
-					Hi there! My name is Ye Min Aung,
-				</p>
 
 				<p className="text-sm lg:text-base">
 					Skilled in React, Next.js, and Laravel. I enjoy building fast,

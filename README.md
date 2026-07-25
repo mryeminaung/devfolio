@@ -5,10 +5,12 @@
 > **Status:** Under Active Development. New features and UI refinements are pushed regularly.
 
 ### `Features`
-Below are the main features currently implemented in the portfolio. Contact form integration is planned for future updates to make it easy to get in touch via email.
 - **Responsive Design:** Fully responsive layouts for all devices.
 - **Light/Dark Mode:** Seamless theme switching with light and dark mode support.
 - **Smooth Animations:** Enhanced user experience with motion-based animations.
+- **Accessibility:** Skip-to-content link, keyboard-navigable project cards, prefers-reduced-motion support, semantic heading hierarchy.
+- **SEO:** Per-page metadata, auto-generated sitemap.xml and robots.txt.
+- **Performance:** Lazy-loaded below-fold components, `display: swap` font loading, lazy image loading, CLS-free Typewriter.
 - **Feature Modules:** Isolated business logic and feature-specific components.
 - **Project Detail Modal:** Click on any project to view its details in a dedicated modal popup.
 
@@ -26,7 +28,7 @@ The main folders and files in this project are:
 
 ```
 .
-├── app/                # Next.js App Router (pages, API, and layouts)
+├── app/                # Next.js App Router (pages, API, layouts, sitemap, robots)
 ├── components/         # Reusable global UI components
 ├── features/           # Feature-based modules (logic, specific components)
 ├── layouts/            # Page-level layout templates
