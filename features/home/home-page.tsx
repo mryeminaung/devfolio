@@ -1,7 +1,14 @@
-import FeaturedProject from "./components/featured-project";
+import dynamic from "next/dynamic";
 import HeroInfo from "./components/hero-info";
 import HeroIntroCard from "./components/hero-intro-card";
-import SkillExpertise from "./components/skill-expertise";
+
+const FeaturedProject = dynamic(() => import("./components/featured-project"), {
+	ssr: true,
+});
+
+const SkillExpertise = dynamic(() => import("./components/skill-expertise"), {
+	ssr: true,
+});
 
 export default function HomePage() {
 	return (

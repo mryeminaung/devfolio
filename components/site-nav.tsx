@@ -86,7 +86,6 @@ export default function SiteNav() {
 									{location === link.path && (
 										<>
 											<div className="absolute -bottom-2 left-0 right-0 h-0.5 bg-linear-to-r from-secondary-400 to-magenta-500" />
-											{/* <div className="absolute -top-2 left-0 right-0 h-0.5 bg-linear-to-r from-secondary-400 to-magenta-500" /> */}
 										</>
 									)}
 								</Link>

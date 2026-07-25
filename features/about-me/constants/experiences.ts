@@ -1,46 +1,4 @@
 export const experiences = [
-	// {
-	// 	year: "2026 - Present",
-	// 	title: "Junior Web Developer",
-	// 	company: "Creative Ninja",
-	// 	description:
-	// 		"Developing modern web applications for local clients and startups.",
-	// 	knowledge: [
-	// 		"Developed responsive and user-friendly web applications using modern frontend frameworks.",
-	// 		"Built reusable UI components to improve development efficiency and maintainability.",
-	// 		"Collaborated with designers and backend developers to deliver seamless user experiences.",
-	// 		"Implemented new features and optimized application performance.",
-	// 		"Maintained clean and scalable code through refactoring and best practices.",
-	// 	],
-	// 	skills: ["Next.js", "Laravel", "UI/UX Design"],
-	// },
-	// {
-	// 	year: "2025 - 2026",
-	// 	title: "Web Development Intern",
-	// 	company: "Local Tech Company",
-	// 	description:
-	// 		"Gained hands-on experience in modern web development workflows.",
-	// 	knowledge: [
-	// 		"Assisted in developing and maintaining web applications using modern frameworks.",
-	// 		"Worked with REST APIs to fetch and display dynamic data.",
-	// 		"Learned version control workflows using Git and GitHub.",
-	// 		"Participated in debugging and improving application functionality.",
-	// 		"Followed clean coding practices and development standards.",
-	// 	],
-	// 	skills: [
-	// 		"React",
-	// 		"TypeScript",
-	// 		"Tailwind CSS",
-	// 		"Bootstrap",
-	// 		"PHP",
-	// 		"Zustand",
-	// 		"Tanstack Query",
-	// 		"MySQL",
-	// 		"PostgreSQL",
-	// 		"Git and GitHub",
-	// 		"REST API",
-	// 	],
-	// },
 	{
 		year: "2025 - Present",
 		title: "Full Stack Web Developer (Special Project 3002)",

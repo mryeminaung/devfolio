@@ -9,19 +9,15 @@ import Typewriter from "./type-writer";
 export default function HeroInfo() {
 	return (
 		<div className="space-y-5">
-			<Badge
-				// initial={{ scale: 0 }}
-				// animate={{ scale: 1 }}
-				// transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
-				className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-400/30 mb-5 backdrop-blur-sm p-3 bg-slate-900 dark:text-white">
+			<Badge className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-400/30 mb-5 backdrop-blur-sm p-3 bg-slate-900 dark:text-white">
 				<Terminal className="w-3.5 h-3.5" />
 				<span className="text-[12px] tracking-wider">Available For work</span>
 			</Badge>
 
 			<div className="space-y-3">
-				<h2 className="text-md md:text-xl lg:text-2xl font-semibold tracking-tight">
+				<p className="text-md md:text-xl lg:text-2xl font-semibold tracking-tight">
 					Hi there! My name is Ye Min Aung,
-				</h2>
+				</p>
 				<h1 className="text-xl md:text-2xl lg:text-3xl font-bold gap-x-2 tracking-tight flex">
 					<Typewriter
 						words={["a Junior Web Developer", "an ECE Student @ MIIT"]}

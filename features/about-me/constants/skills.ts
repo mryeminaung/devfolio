@@ -54,12 +54,6 @@ export const skills = [
 		progress: 65,
 		categoryId: 2,
 	},
-	// {
-	// 	name: "Supabase",
-	// 	logo: "/skills/supabase.svg",
-	// 	progress: 75,
-	// 	categoryId: 2,
-	// },
 	{
 		name: "MySQL",
 		logo: "/skills/mysql.svg",
@@ -80,7 +74,7 @@ export const skills = [
 	},
 	{
 		name: "React Native",
-		logo: "/skills/react.svg",
+		logo: "/skills/react-native.svg",
 		progress: 55,
 		categoryId: 3,
 	},
@@ -120,12 +114,6 @@ export const skills = [
 		progress: 75,
 		categoryId: 4,
 	},
-	// {
-	// 	name: "And-Studio",
-	// 	logo: "/skills/android-studio.svg",
-	// 	progress: 60,
-	// 	categoryId: 4,
-	// },
 	{
 		name: "VS Code",
 		logo: "/skills/vscode.svg",
