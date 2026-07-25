@@ -20,7 +20,7 @@ export default function RotatingAvatar() {
 					strokeDasharray="15 25"
 					strokeLinecap="round"
 					initial={{ strokeDashoffset: 0 }}
-					animate={{ strokeDashoffset: -40 }} // Matches 15 + 25
+					animate={{ strokeDashoffset: -40 }}
 					transition={{ repeat: Infinity, duration: 3, ease: "linear" }}
 				/>
 
@@ -35,7 +35,7 @@ export default function RotatingAvatar() {
 					strokeDasharray="10 30"
 					strokeLinecap="round"
 					initial={{ strokeDashoffset: 0 }}
-					animate={{ strokeDashoffset: 40 }} // Matches 10 + 30
+					animate={{ strokeDashoffset: 40 }}
 					transition={{ repeat: Infinity, duration: 5, ease: "linear" }}
 				/>
 
@@ -50,7 +50,7 @@ export default function RotatingAvatar() {
 					strokeDasharray="8 32"
 					strokeLinecap="round"
 					initial={{ strokeDashoffset: 0 }}
-					animate={{ strokeDashoffset: -40 }} // Matches 8 + 32
+					animate={{ strokeDashoffset: -40 }}
 					transition={{ repeat: Infinity, duration: 4, ease: "linear" }}
 				/>
 			</svg>

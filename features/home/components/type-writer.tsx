@@ -44,17 +44,15 @@ export default function Typewriter({ words: WORDS }: { words: string[] }) {
 	}, [index, isDeleting, count]);
 
 	return (
-		<div className="flex items-center">
-			<div className="relative">
-				<motion.span className="line-clamp-1 h-8">{displayText}</motion.span>
+		<div className="inline-flex items-center">
+			<motion.span className="line-clamp-1 h-8">{displayText}</motion.span>
 
-				{/* The Animated Cursor */}
-				<motion.div
-					animate={{ opacity: [0, 1, 0] }}
-					transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
-					className="absolute -right-3 top-0.5 h-[1.1em] w-0.75 bg-secondary-400 shadow-[0_0_10px_#22d3ee]"
-				/>
-			</div>
+			{/* The Animated Cursor — flows inline after the text */}
+			<motion.div
+				animate={{ opacity: [0, 1, 0] }}
+				transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
+				className="ml-0.5 h-[1.1em] w-0.75 bg-secondary-400 shadow-[0_0_10px_#22d3ee] shrink-0"
+			/>
 		</div>
 	);
 }

@@ -8,6 +8,7 @@ import localFont from "next/font/local";
 
 const awsDiatype = localFont({
 	src: "./_fonts/AWSDiatypeRoundedMono.ttf",
+	display: "swap",
 });
 
 export const metadata: Metadata = {
