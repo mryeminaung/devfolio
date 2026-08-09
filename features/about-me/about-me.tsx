@@ -8,7 +8,7 @@ export default function AboutMePage() {
 	return (
 		<section>
 			<div className="flex flex-col mb-10 gap-y-3">
-				<h2 className="text-3xl md:text-5xl font-semibold text-center dark:text-white">
+				<h2 className="text-2xl md:text-3xl font-semibold text-center dark:text-white">
 					About Me
 				</h2>
 				<Underline />
@@ -57,7 +57,7 @@ export default function AboutMePage() {
 			{/* techinical skills section */}
 			<div className="mb-20">
 				<div className="flex my-8 flex-col gap-y-3">
-					<h3 className="text-2xl md:text-3xl lg:text-4xl font-semibold dark:text-white text-center ">
+					<h3 className="text-xl md:text-2xl font-semibold dark:text-white text-center">
 						Technical Skills
 					</h3>
 					<span className="border w-37.5 rounded-full mx-auto bg-secondary-400 h-0.5 border-secondary-400"></span>
@@ -68,7 +68,7 @@ export default function AboutMePage() {
 			{/* key achievements section */}
 			<div className="mb-20">
 				<div className="flex mb-16 flex-col gap-y-3">
-					<h3 className="text-2xl md:text-3xl lg:text-4xl font-semibold dark:text-white text-center ">
+					<h3 className="text-xl md:text-2xl font-semibold dark:text-white text-center">
 						Key Achievements
 					</h3>
 					<span className="border w-37.5 rounded-full mx-auto bg-secondary-400 h-0.5 border-secondary-400"></span>
@@ -79,7 +79,7 @@ export default function AboutMePage() {
 			{/* experience timeline section */}
 			<div className="mb-5">
 				<div className="flex mb-16 flex-col gap-y-3">
-					<h3 className="text-2xl md:text-3xl lg:text-4xl font-semibold dark:text-white text-center ">
+					<h3 className="text-xl md:text-2xl font-semibold dark:text-white text-center">
 						Project Experiences
 					</h3>
 					<span className="border w-37.5 rounded-full mx-auto bg-secondary-400 h-0.5 border-secondary-400"></span>

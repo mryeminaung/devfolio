@@ -49,7 +49,7 @@ export const ProjectCard = ({ project, index = 0, onClick }: ProjectProps) => {
 				</div>
 
 				<div className="px-6 py-4">
-					<h3 className="mb-2 text-xl md:text-2xl font-semibold dark:text-white">
+					<h3 className="mb-2 text-lg md:text-xl font-semibold dark:text-white">
 						{project.title}
 					</h3>
 					<p className="mb-6 line-clamp-2 text-sm dark:text-primary-400">
@@ -119,7 +119,7 @@ export const ProjectCard = ({ project, index = 0, onClick }: ProjectProps) => {
 			</div>
 
 			<div className="px-6 py-4">
-				<h3 className="mb-2 text-xl md:text-2xl font-semibold dark:text-white">
+				<h3 className="mb-2 text-lg md:text-xl font-semibold dark:text-white">
 					{project.title}
 				</h3>
 				<p className="mb-6 line-clamp-2 text-sm dark:text-primary-400">

@@ -28,7 +28,7 @@ export default function SkillExpertise() {
 	return (
 		<div>
 			<div className="flex flex-col mb-10 gap-y-3">
-				<h2 className="text-3xl md:text-4xl font-semibold text-center dark:text-white">
+				<h2 className="text-2xl md:text-3xl font-semibold text-center dark:text-white">
 					Core Expertise
 				</h2>
 				<Underline />

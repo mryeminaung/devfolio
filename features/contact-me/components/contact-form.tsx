@@ -4,47 +4,89 @@ import CornerAccent from "@/components/corner-accent";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import {
+	EMAILJS_PUBLIC_KEY,
+	EMAILJS_SERVICE_ID,
+	EMAILJS_TEMPLATE_ID,
+} from "@/features/contact-me/constants/emailjs";
+import emailjs from "@emailjs/browser";
 import { motion, useReducedMotion } from "motion/react";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export default function ContactForm({ delay = 0 }: { delay?: number }) {
 	const prefersReducedMotion = useReducedMotion();
+	const formRef = useRef<HTMLFormElement>(null);
 	const [isSubmitted, setIsSubmitted] = useState(false);
+	const [isLoading, setIsLoading] = useState(false);
+	const [error, setError] = useState<string | null>(null);
 
-	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+	useEffect(() => {
+		if (!isSubmitted) return;
+		const timer = setTimeout(() => setIsSubmitted(false), 5000);
+		return () => clearTimeout(timer);
+	}, [isSubmitted]);
+
+	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		const form = e.currentTarget;
+		if (!formRef.current) return;
+
+		setIsLoading(true);
+		setError(null);
+
+		const form = formRef.current;
 		const formData = new FormData(form);
-		const data = Object.fromEntries(formData.entries());
-		console.log("Contact form submission:", data);
-		setIsSubmitted(true);
-		form.reset();
+
+		try {
+			const result = await emailjs.send(
+				EMAILJS_SERVICE_ID,
+				EMAILJS_TEMPLATE_ID,
+				{
+					title: formData.get("title"),
+					from_name: formData.get("name"),
+					from_email: formData.get("email"),
+					message: formData.get("message"),
+				},
+				EMAILJS_PUBLIC_KEY,
+			);
+			setIsSubmitted(true);
+			form.reset();
+		} catch {
+			setError(
+				"Couldn't send your message. Try reaching me directly at yeminaung.dev@gmail.com",
+			);
+		} finally {
+			setIsLoading(false);
+		}
 	};
 
-	if (prefersReducedMotion) {
-		return (
-			<div className="border overflow-hidden relative border-secondary-400/30 p-5 md:p-8 rounded-xl dark:bg-primary-950 dark:text-white transform-gpu">
-				<CornerAccent position="top-right" />
-				<CornerAccent position="bottom-left" />
+	const formContent = (
+		<>
+			<h3 className="text-center text-xl md:text-2xl mb-2 font-semibold">
+				Let's Build Something Together
+			</h3>
+			{isSubmitted && (
+				<div className="mb-4 p-3 rounded-lg bg-green-500/10 border border-green-500/30 text-green-700 dark:text-green-300 text-sm text-center">
+					🎉 Awesome — your message is on its way! I'll get back to you soon.
+				</div>
+			)}
 
-				<h3 className="text-center text-2xl md:text-3xl mb-5 font-semibold">
-					Send Me a Message
-				</h3>
-				{isSubmitted && (
-					<div className="mb-4 p-3 rounded-lg bg-green-500/10 border border-green-500/30 text-green-700 dark:text-green-300 text-sm text-center">
-						Thank you! Your message has been sent successfully.
-					</div>
-				)}
-				<form
-					autoComplete="off"
-					method="post"
-					onSubmit={handleSubmit}
-					className="flex flex-col gap-5">
-					<div className="flex flex-col gap-1 space-y-1">
+			{error && (
+				<div className="mb-4 p-3 rounded-lg bg-red-500/10 border border-red-500/30 text-red-700 dark:text-red-300 text-sm text-center">
+					{error}
+				</div>
+			)}
+
+			<form
+				ref={formRef}
+				autoComplete="off"
+				onSubmit={handleSubmit}
+				className="flex flex-col gap-5">
+				<div className="flex flex-col sm:flex-row gap-5">
+					<div className="flex flex-col gap-1 flex-1">
 						<label
 							htmlFor="name"
 							className="font-medium text-sm md:text-base">
-							Your Name
+							What's your name?
 						</label>
 						<Input
 							className="rounded-md focus:ring-secondary-400! border border-secondary-400/30"
@@ -52,14 +94,14 @@ export default function ContactForm({ delay = 0 }: { delay?: number }) {
 							id="name"
 							name="name"
 							required
-							placeholder="eg. John Doe"
+							placeholder="e.g. Ada Lovelace"
 						/>
 					</div>
-					<div className="flex flex-col gap-1 space-y-1">
+					<div className="flex flex-col gap-1 flex-1">
 						<label
 							htmlFor="email"
 							className="font-medium text-sm md:text-base">
-							Your Email
+							Your email
 						</label>
 						<Input
 							className="rounded-md focus:ring-secondary-400! border border-secondary-400/30"
@@ -67,31 +109,57 @@ export default function ContactForm({ delay = 0 }: { delay?: number }) {
 							id="email"
 							name="email"
 							required
-							placeholder="eg. example@gmail.com"
+							placeholder="ada@example.com"
 						/>
 					</div>
-					<div className="flex flex-col gap-1 space-y-1">
-						<label
-							htmlFor="message"
-							className="font-medium text-sm md:text-base">
-							Your Message
-						</label>
-						<Textarea
-							id="message"
-							name="message"
-							required
-							className="border border-secondary-400/30 min-h-38 focus:ring-secondary-400! rounded-md p-2 resize-none"
-							placeholder="Tell me about your project..."
-						/>
-					</div>
-					<Button
-						type="submit"
-						className="py-6 hover:cursor-pointer rounded-xl border border-secondary-400/30 relative overflow-hidden hover:bg-gray-100 dark:bg-primary-900 dark:hover:bg-primary-950 bg-white font-medium text-black dark:text-white">
-						<CornerAccent position="top-left" />
-						<CornerAccent position="bottom-right" />
-						Send Message
-					</Button>
-				</form>
+				</div>
+				<div className="flex flex-col gap-1 space-y-1">
+					<label
+						htmlFor="title"
+						className="font-medium text-sm md:text-base">
+						Subject
+					</label>
+					<Input
+						className="rounded-md focus:ring-secondary-400! border border-secondary-400/30"
+						type="text"
+						id="title"
+						name="title"
+						required
+						placeholder="What's this about?"
+					/>
+				</div>
+				<div className="flex flex-col gap-1 space-y-1">
+					<label
+						htmlFor="message"
+						className="font-medium text-sm md:text-base">
+						What's on your mind?
+					</label>
+					<Textarea
+						id="message"
+						name="message"
+						required
+						className="border border-secondary-400/30 min-h-38 focus:ring-secondary-400! rounded-md p-2 resize-none"
+						placeholder="I've got a project idea, a freelance gig, or just want to chat about code..."
+					/>
+				</div>
+				<Button
+					type="submit"
+					disabled={isLoading}
+					className="py-6 hover:cursor-pointer rounded-xl border border-secondary-400/30 relative overflow-hidden hover:bg-gray-100 dark:bg-primary-900 dark:hover:bg-primary-950 bg-white font-medium text-black dark:text-white disabled:opacity-50 disabled:cursor-not-allowed">
+					<CornerAccent position="top-left" />
+					<CornerAccent position="bottom-right" />
+					{isLoading ? "Sending..." : "Send It →"}
+				</Button>
+			</form>
+		</>
+	);
+
+	if (prefersReducedMotion) {
+		return (
+			<div className="border overflow-hidden relative border-secondary-400/30 p-5 md:p-8 rounded-xl dark:bg-primary-950 dark:text-white transform-gpu">
+				<CornerAccent position="top-right" />
+				<CornerAccent position="bottom-left" />
+				{formContent}
 			</div>
 		);
 	}
@@ -105,72 +173,7 @@ export default function ContactForm({ delay = 0 }: { delay?: number }) {
 			className="border overflow-hidden relative border-secondary-400/30 p-5 md:p-8 rounded-xl dark:bg-primary-950 dark:text-white transform-gpu">
 			<CornerAccent position="top-right" />
 			<CornerAccent position="bottom-left" />
-
-			<h3 className="text-center text-2xl md:text-3xl mb-5 font-semibold">
-				Send Me a Message
-			</h3>
-			{isSubmitted && (
-				<div className="mb-4 p-3 rounded-lg bg-green-500/10 border border-green-500/30 text-green-700 dark:text-green-300 text-sm text-center">
-					Thank you! Your message has been sent successfully.
-				</div>
-			)}
-			<form
-				autoComplete="off"
-				method="post"
-				onSubmit={handleSubmit}
-				className="flex flex-col gap-5">
-				<div className="flex flex-col gap-1 space-y-1">
-					<label
-						htmlFor="name"
-						className="font-medium text-sm md:text-base">
-						Your Name
-					</label>
-					<Input
-						className="rounded-md focus:ring-secondary-400! border border-secondary-400/30"
-						type="text"
-						id="name"
-						name="name"
-						required
-						placeholder="eg. John Doe"
-					/>
-				</div>
-				<div className="flex flex-col gap-1 space-y-1">
-					<label
-						htmlFor="email"
-						className="font-medium text-sm md:text-base">
-						Your Email
-					</label>
-					<Input
-						className="rounded-md focus:ring-secondary-400! border border-secondary-400/30"
-						type="email"
-						id="email"
-						name="email"
-						required
-						placeholder="eg. example@gmail.com"
-					/>
-				</div>
-				<div className="flex flex-col gap-1 space-y-1">
-					<label
-						htmlFor="message"
-						className="font-medium text-sm md:text-base">
-						Your Message
-					</label>
-					<Textarea
-						id="message"
-						name="message"
-						required
-						className="border border-secondary-400/30 min-h-38 focus:ring-secondary-400! rounded-md p-2 resize-none"
-						placeholder="Tell me about your project..."
-					/>
-				</div>
-				<Button
-					type="submit"
-					className="py-6 hover:cursor-pointer rounded-xl border border-secondary-400/30 relative overflow-hidden hover:bg-gray-100 dark:bg-primary-900 dark:hover:bg-primary-950 bg-white font-medium text-black dark:text-white">
-					<CornerAccent position="top-left" />
-					<CornerAccent position="bottom-right" />
-					Send Message
-				</Button>
-			</form>
+			{formContent}
 		</motion.div>
 	);
 }

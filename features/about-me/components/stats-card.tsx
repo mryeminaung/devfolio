@@ -35,7 +35,7 @@ export const StatsCard = ({ achievement, index = 0 }: StatsCardProps) => {
 			<CornerAccent position="top-left" />
 			<CornerAccent position="bottom-right" />
 
-			<h3 className="mb-2 text-xl md:text-2xl font-semibold tracking-tight dark:text-white">
+			<h3 className="mb-2 text-lg md:text-xl font-semibold tracking-tight dark:text-white">
 				{achievement.title}
 			</h3>
 
