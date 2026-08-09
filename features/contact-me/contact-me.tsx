@@ -12,7 +12,7 @@ export default function ContactMePage() {
 	return (
 		<section>
 			<div className="flex flex-col mb-10 gap-y-3">
-				<h2 className="text-3xl md:text-5xl font-semibold text-center dark:text-white">
+				<h2 className="text-2xl md:text-3xl font-semibold text-center dark:text-white">
 					Get In Touch
 				</h2>
 				<Underline />

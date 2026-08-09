@@ -23,7 +23,7 @@ export const CollaborateCard = ({ delay = 0 }: { delay?: number }) => {
 						/>
 					</div>
 
-					<h2 className="mb-4 text-2xl font-bold tracking-tight dark:text-white">
+					<h2 className="mb-4 text-xl font-bold tracking-tight dark:text-white">
 						Let's Collaborate
 					</h2>
 					<p className="text-base text-primary-400">
