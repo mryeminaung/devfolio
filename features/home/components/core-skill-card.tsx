@@ -35,9 +35,9 @@ export default function CoreSkillCard({ skill, index }: CoreSkillCardProps) {
 				/>
 			</div>
 
-			<h3 className="text-lg md:text-xl font-semibold mb-3">{skill.title}</h3>
+			<h3 className="text-lg font-semibold mb-3">{skill.title}</h3>
 
-			<p className="text-gray-600 text-[14px] md:text-base dark:text-gray-400 leading-relaxed">
+			<p className="text-gray-600 text-[14px] dark:text-gray-400 leading-relaxed">
 				{skill.description}
 			</p>
 		</motion.div>

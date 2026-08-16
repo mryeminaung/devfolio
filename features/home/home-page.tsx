@@ -1,10 +1,8 @@
 import dynamic from "next/dynamic";
+import CtaSection from "./components/cta-section";
 import HeroInfo from "./components/hero-info";
 import HeroIntroCard from "./components/hero-intro-card";
-
-const FeaturedProject = dynamic(() => import("./components/featured-project"), {
-	ssr: true,
-});
+import StatsStrip from "./components/stats-strip";
 
 const SkillExpertise = dynamic(() => import("./components/skill-expertise"), {
 	ssr: true,
@@ -12,22 +10,25 @@ const SkillExpertise = dynamic(() => import("./components/skill-expertise"), {
 
 export default function HomePage() {
 	return (
-		<section className="">
-			{/* hero section */}
-			<div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-5 md:mt-20 mb-10 md:mb-30 items-center order">
-				<div className="col-span-1 order-last md:order-first">
+		<section>
+			{/* Hero */}
+			<div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 mt-5 md:mt-16 mb-10 md:mb-16 items-center px-10">
+				<div className="col-span-1 order-last md:order-first text-center md:text-left">
 					<HeroInfo />
 				</div>
-				<div className="col-span-1">
+				<div className="col-span-1 flex justify-center">
 					<HeroIntroCard />
 				</div>
 			</div>
 
-			{/* best project I've ever built :) */}
-			<FeaturedProject />
+			{/* Stats strip */}
+			<StatsStrip />
 
-			{/* core expertise */}
+			{/* Core expertise */}
 			<SkillExpertise />
+
+			{/* CTA */}
+			<CtaSection />
 		</section>
 	);
 }

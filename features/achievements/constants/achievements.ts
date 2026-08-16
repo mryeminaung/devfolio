@@ -1,5 +1,5 @@
 import { Award, Code2, Rocket, TrendingUp } from "lucide-react";
-import { Achievement } from "../about.types";
+import { Achievement } from "../achievements.types";
 
 export const achievements: Achievement[] = [
 	{
