@@ -1,6 +1,6 @@
 "use client";
 
-import { Briefcase, Home, Mail, Menu, User, X } from "lucide-react";
+import { Award, Briefcase, Home, Mail, Menu, User, X } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -29,6 +29,7 @@ export default function SiteNav() {
 		{ name: "Home", path: "/", icon: Home },
 		{ name: "About", path: "/about-me", icon: User },
 		{ name: "Projects", path: "/projects", icon: Briefcase },
+		{ name: "Achievements", path: "/achievements", icon: Award },
 		{ name: "Contact", path: "/contact-me", icon: Mail },
 	];
 
@@ -97,7 +98,8 @@ export default function SiteNav() {
 						<button
 							onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
 							className="md:hidden p-2 rounded-lg hover:bg-gray-800/50 transition-colors text-secondary-400"
-							aria-label="Site Nav Button">
+							aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+							aria-expanded={isMobileMenuOpen}>
 							{isMobileMenuOpen ? (
 								<X className="w-6 h-6" />
 							) : (

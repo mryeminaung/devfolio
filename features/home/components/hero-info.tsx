@@ -9,10 +9,12 @@ import Typewriter from "./type-writer";
 export default function HeroInfo() {
 	return (
 		<div className="space-y-5">
+			<div className="flex justify-center md:justify-start">
 			<Badge className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-400/30 mb-5 backdrop-blur-sm p-3 bg-slate-900 dark:text-white">
 				<Terminal className="w-3.5 h-3.5" />
 				<span className="text-[12px] tracking-wider">Available For work</span>
 			</Badge>
+			</div>
 
 			<div className="space-y-3">
 				<p className="text-md md:text-xl lg:text-2xl font-semibold tracking-tight">
@@ -31,7 +33,7 @@ export default function HeroInfo() {
 				</p>
 			</div>
 
-			<div className="flex items-center flex-col md:flex-row gap-5">
+			<div className="flex items-center justify-center md:justify-start flex-col md:flex-row gap-5">
 				<Link
 					href="/YeMinAung-CV.pdf"
 					download

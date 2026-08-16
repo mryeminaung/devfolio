@@ -65,13 +65,13 @@ export default function ContactForm({ delay = 0 }: { delay?: number }) {
 				Let's Build Something Together
 			</h3>
 			{isSubmitted && (
-				<div className="mb-4 p-3 rounded-lg bg-green-500/10 border border-green-500/30 text-green-700 dark:text-green-300 text-sm text-center">
+				<div aria-live="polite" role="status" className="mb-4 p-3 rounded-lg bg-green-500/10 border border-green-500/30 text-green-700 dark:text-green-300 text-sm text-center">
 					🎉 Awesome — your message is on its way! I'll get back to you soon.
 				</div>
 			)}
 
 			{error && (
-				<div className="mb-4 p-3 rounded-lg bg-red-500/10 border border-red-500/30 text-red-700 dark:text-red-300 text-sm text-center">
+				<div aria-live="polite" role="alert" className="mb-4 p-3 rounded-lg bg-red-500/10 border border-red-500/30 text-red-700 dark:text-red-300 text-sm text-center">
 					{error}
 				</div>
 			)}

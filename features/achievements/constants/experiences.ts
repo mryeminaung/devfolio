@@ -41,30 +41,4 @@ export const experiences = [
 			"API Integration",
 		],
 	},
-	{
-		year: "2019 - 2026",
-		title: "B.E (Hons) in Electronics and Communication Engineering",
-		company: "MIIT (Myanmar Institute of Information Technology)",
-		description:
-			"Completed engineering degree while building strong programming and web development foundations.",
-		knowledge: [
-			"Studied core engineering subjects including electronics and communication systems.",
-			"Developed programming and analytical thinking skills through coursework.",
-			"Built personal web development projects alongside academic studies.",
-			"Learned fundamentals of algorithms, networking, and software engineering.",
-		],
-		skills: [
-			"HTML",
-			"CSS",
-			"JavaScript",
-			"C",
-			"Python",
-			"Java",
-			"Networking Basics",
-			"Database Fundamentals",
-			"SDLC Fundamentals",
-			"Problem Solving",
-			"Data Structures and Algorithms",
-		],
-	},
 ];

@@ -1,5 +1,6 @@
 "use client";
 
+import CornerAccent from "@/components/corner-accent";
 import { motion } from "motion/react";
 import Image from "next/image";
 
@@ -15,87 +16,91 @@ type SkillCardProps = {
 	index?: number;
 };
 
-export default function SkillCard({ skill, type, index = 0 }: SkillCardProps) {
-	if (type === "list") {
-		const staggerDelay = index * 0.1;
+function getProficiency(progress: number): { label: string; color: string } {
+	if (progress >= 85)
+		return {
+			label: "Expert",
+			color:
+				"text-secondary-500 dark:text-secondary-400 border-secondary-400/40 bg-secondary-400/8",
+		};
+	if (progress >= 65)
+		return {
+			label: "Advanced",
+			color:
+				"text-emerald-600 dark:text-emerald-400 border-emerald-400/40 bg-emerald-400/8",
+		};
+	if (progress >= 45)
+		return {
+			label: "Intermediate",
+			color:
+				"text-amber-600 dark:text-amber-400 border-amber-400/40 bg-amber-400/8",
+		};
+	return {
+		label: "Beginner",
+		color:
+			"text-gray-500 dark:text-primary-400 border-primary-600/40 bg-primary-700/10",
+	};
+}
 
+export default function SkillCard({ skill, type, index = 0 }: SkillCardProps) {
+	const { label, color } = getProficiency(skill.progress);
+	const cornerPos1 = index % 2 === 0 ? "top-right" : "top-left";
+	const cornerPos2 = index % 2 === 0 ? "bottom-left" : "bottom-right";
+
+	if (type === "list") {
 		return (
 			<motion.div
-				initial={{ y: 28, opacity: 0 }}
+				initial={{ y: 24, opacity: 0 }}
 				whileInView={{ y: 0, opacity: 1 }}
-				whileHover={{ y: -5, transition: { duration: 0.2, ease: "easeOut" } }}
+				whileHover={{ y: -4, transition: { duration: 0.2, ease: "easeOut" } }}
 				transition={{
-					duration: 0.55,
-					delay: staggerDelay,
+					duration: 0.5,
+					delay: index * 0.07,
 					ease: [0.22, 1, 0.36, 1],
 				}}
 				viewport={{ once: true, amount: 0.2 }}
-				className="flex flex-col justify-between gap-3 px-4 py-3 md:py-4 bg-linear-to-br dark:from-primary-900 dark:to-primary-950 border-2 border-secondary-400/30 rounded-xl whitespace-nowrap font-medium text-base hover:border-secondary-400/50 hover:shadow-md hover:shadow-secondary-500/20 transition-[border-color,box-shadow,background-color] duration-300 transform-gpu">
-				<div className="flex items-center justify-between">
-					<div className="flex items-center	gap-3">
-						<Image
-							src={skill.logo}
-							alt={skill.name}
-							width={32}
-							height={32}
-							className="w-6 md:w-8 h-6 md:h-8"
-						/>
-						<span className="dark:text-white">{skill.name}</span>
-					</div>
-					{/* animate progress percentage */}
-					<motion.span
-						className="text-secondary-400"
-						initial={{ opacity: 0, y: 10 }}
-						whileInView={{ opacity: 1, y: 0 }}
-						viewport={{ once: true, amount: 0.2 }}
-						transition={{
-							duration: 0.45,
-							delay: staggerDelay + 0.12,
-							ease: "easeOut",
-						}}>
-						{skill.progress}%
-					</motion.span>
+				className="relative overflow-hidden flex flex-col gap-3 p-4 dark:bg-primary-950/50 border border-secondary-400/20 rounded-xl hover:border-secondary-400/50 hover:shadow-md hover:shadow-secondary-400/10 transition-all duration-300 transform-gpu group">
+				<CornerAccent
+					position={cornerPos1}
+					size={30}
+				/>
+				<CornerAccent
+					position={cornerPos2}
+					size={30}
+				/>
+
+				<div className="flex items-center gap-3">
+					<Image
+						src={skill.logo}
+						alt={skill.name}
+						width={28}
+						height={28}
+						className="w-6 h-6 md:w-7 md:h-7 shrink-0"
+					/>
+					<span className="dark:text-white text-sm md:text-base font-medium leading-tight">
+						{skill.name}
+					</span>
 				</div>
 
-				{/* animate progress bar */}
-				<div className="relative w-full h-2.5 bg-gray-200 dark:bg-gray-800 rounded-full overflow-hidden">
-					<motion.div
-						initial={{ width: 0 }}
-						whileInView={{ width: `${skill.progress}%` }}
-						viewport={{ once: true, amount: 0.2 }}
-						transition={{
-							duration: 0.9,
-							delay: staggerDelay + 0.18,
-							ease: "easeOut",
-						}}
-						className="h-full bg-blue-500 dark:bg-blue-500 rounded-full relative overflow-hidden">
-						{/* Animated shine effect */}
-						<motion.div
-							className="absolute inset-0 bg-linear-to-r from-transparent via-white/30 to-transparent"
-							initial={{ x: "-100%" }}
-							whileInView={{ x: "200%" }}
-							viewport={{ once: true, amount: 0.2 }}
-							transition={{
-								duration: 1.6,
-								delay: staggerDelay + 0.4,
-								ease: "easeInOut",
-							}}
-						/>
-					</motion.div>
-				</div>
+				<span
+					className={`self-start text-[11px] font-semibold px-2.5 py-0.5 rounded-full border ${color}`}>
+					{label}
+				</span>
 			</motion.div>
 		);
 	}
 
 	if (type === "slider") {
 		return (
-			<div className="flex items-center gap-3 px-5 md:px-8 py-3 md:py-4 bg-linear-to-br dark:from-primary-900 dark:to-primary-950 border-2 border-secondary-400/30 rounded-xl whitespace-nowrap font-semibold text-base hover:border-secondary-400/50 hover:shadow-md hover:shadow-secondary-500/20 transition-all">
+			<div className="flex items-center gap-3 px-5 md:px-8 py-3 md:py-4 dark:bg-primary-950/50 border border-secondary-400/20 rounded-xl whitespace-nowrap font-medium text-base hover:border-secondary-400/50 transition-all">
 				<Image
 					src={skill.logo}
 					alt={skill.name}
-					className="w-6 md:w-8 h-6 md:h-8"
+					width={28}
+					height={28}
+					className="w-6 md:w-7 h-6 md:h-7"
 				/>
-				<span className="dark:text-white">{skill.name}</span>
+				<span className="dark:text-white text-sm">{skill.name}</span>
 			</div>
 		);
 	}

@@ -1,14 +1,17 @@
 import ScrollTopBtn from "@/components/scroll-top-btn";
+import SplashScreen from "@/components/splash-screen";
 import { ThemeProvider } from "@/components/theme-provider";
 import AppLayout from "@/layouts/app-layout";
 import type { Metadata } from "next";
 import "./globals.css";
 
+import "@fontsource-variable/space-grotesk";
 import localFont from "next/font/local";
 
 const awsDiatype = localFont({
 	src: "./_fonts/AWSDiatypeRoundedMono.ttf",
 	display: "swap",
+	variable: "--font-mono",
 });
 
 export const metadata: Metadata = {
@@ -74,6 +77,23 @@ export const metadata: Metadata = {
 	},
 };
 
+const jsonLd = {
+	"@context": "https://schema.org",
+	"@type": "Person",
+	name: "Ye Min Aung",
+	url: "https://yeminaung-dev.vercel.app",
+	image: "https://yeminaung-dev.vercel.app/devfolio.png",
+	jobTitle: "Junior Web Developer",
+	description:
+		"A Junior Web Developer specializing in React, Next.js and Laravel. Building high-performance web experiences.",
+	sameAs: [
+		"https://github.com/mryeminaung",
+		"https://linkedin.com/in/mryeminaung",
+		"https://twitter.com/mryeminaung",
+	],
+	knowsAbout: ["React", "Next.js", "Laravel", "PHP", "TypeScript", "Tailwind CSS"],
+};
+
 export default function RootLayout({
 	children,
 }: Readonly<{
@@ -83,12 +103,19 @@ export default function RootLayout({
 		<html
 			lang="en"
 			suppressHydrationWarning>
-			<body className={`${awsDiatype.className} antialiased`}>
+			<head>
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+				/>
+			</head>
+			<body className={`${awsDiatype.variable} antialiased`}>
 				<ThemeProvider
 					attribute="class"
 					defaultTheme="system"
 					enableSystem
 					disableTransitionOnChange>
+					<SplashScreen />
 					<AppLayout>{children}</AppLayout>
 					<ScrollTopBtn />
 				</ThemeProvider>
