@@ -75,13 +75,13 @@ export const skills = [
 	{
 		name: "React Native",
 		logo: "/skills/react-native.svg",
-		progress: 55,
+		progress: 40,
 		categoryId: 3,
 	},
 	{
 		name: "Kotlin",
 		logo: "/skills/kotlin.svg",
-		progress: 50,
+		progress: 40,
 		categoryId: 3,
 	},
 	{

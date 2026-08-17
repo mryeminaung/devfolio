@@ -1,9 +1,9 @@
 "use client";
 
 import CornerAccent from "@/components/corner-accent";
+import { Download, Mail } from "lucide-react";
 import { motion } from "motion/react";
 import Link from "next/link";
-import { Mail } from "lucide-react";
 
 export default function CtaSection() {
 	return (
@@ -19,7 +19,7 @@ export default function CtaSection() {
 			<CornerAccent position="bottom-right" />
 
 			{/* Subtle glow */}
-			<div className="absolute inset-0 bg-gradient-to-br from-secondary-400/5 via-transparent to-transparent pointer-events-none" />
+			<div className="absolute inset-0 bg-linear-to-br from-secondary-400/5 via-transparent to-transparent pointer-events-none" />
 
 			<h2 className="text-2xl md:text-4xl font-bold dark:text-white mb-4 relative">
 				Let's build something together
@@ -28,14 +28,21 @@ export default function CtaSection() {
 				I'm open to freelance work, internships, and full-time roles. If you
 				have a project in mind or just want to say hi — my inbox is always open.
 			</p>
-			<Link
-				href="/contact-me"
-				className="inline-flex items-center gap-2.5 px-8 py-3 rounded-xl border border-secondary-400/60 dark:bg-primary-950 bg-white hover:bg-gray-50 dark:hover:bg-primary-900 font-semibold text-sm transition-all duration-200 dark:text-white hover:border-secondary-400 hover:shadow-md hover:shadow-secondary-400/20 relative">
-				<CornerAccent position="top-left" size={12} />
-				<CornerAccent position="bottom-right" size={12} />
-				<Mail size={16} />
-				Get in touch
-			</Link>
+			<div className="flex flex-col sm:flex-row items-center justify-center gap-4 relative">
+				<Link
+					href="/contact-me"
+					className="inline-flex items-center gap-2.5 px-8 py-3 rounded-xl border border-secondary-400/60 dark:bg-primary-950 bg-white hover:bg-gray-50 dark:hover:bg-primary-900 font-semibold text-sm transition-all duration-200 dark:text-white hover:border-secondary-400 hover:shadow-md hover:shadow-secondary-400/20 relative">
+					<Mail size={16} />
+					Get in touch
+				</Link>
+				<a
+					href="/YeMinAung-CV.pdf"
+					download
+					className="inline-flex items-center gap-2.5 px-8 py-3 rounded-xl bg-secondary-500 hover:bg-secondary-600 font-semibold text-sm transition-all duration-200 text-white hover:shadow-md hover:shadow-secondary-400/20 relative">
+					<Download size={16} />
+					Download CV
+				</a>
+			</div>
 		</motion.div>
 	);
 }

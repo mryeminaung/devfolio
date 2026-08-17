@@ -7,17 +7,17 @@ import { motion } from "motion/react";
 const items = [
 	{
 		icon: Layers,
-		title: "Advanced TypeScript",
+		title: "Data Analytics",
 		description:
-			"Generic constraints, conditional types, and utility type patterns for safer code.",
+			"Exploring data processing, visualization, and analytical techniques to turn data into meaningful insights.",
 		corner1: "top-left" as const,
 		corner2: "bottom-right" as const,
 	},
 	{
 		icon: Cloud,
-		title: "Docker & DevOps",
+		title: "ExpressJS",
 		description:
-			"Containerising apps, writing Compose files, and understanding CI/CD pipelines.",
+			"Building scalable REST APIs with ExpressJS, including authentication, validation, middleware, and service-layer architecture.",
 		corner1: "top-right" as const,
 		corner2: "bottom-left" as const,
 	},
@@ -25,15 +25,15 @@ const items = [
 		icon: Smartphone,
 		title: "React Native",
 		description:
-			"Extending mobile skills beyond Android to cross-platform development with Expo.",
+			"Building cross-platform mobile applications with React Native, TypeScript, and Expo for modern mobile experiences.",
 		corner1: "bottom-left" as const,
 		corner2: "top-right" as const,
 	},
 	{
 		icon: BookOpen,
-		title: "System Design",
+		title: "Deployment",
 		description:
-			"Scalability patterns, load balancing, caching, and designing production systems.",
+			"Deploying applications to production with environment configuration, hosting, CI/CD, monitoring, and scalability practices.",
 		corner1: "bottom-right" as const,
 		corner2: "top-left" as const,
 	},

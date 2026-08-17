@@ -33,9 +33,9 @@ export default function CertificateDetailPage({ cert }: { cert: Certificate }) {
 						<CornerAccent position="top-left" />
 						<CornerAccent position="bottom-right" />
 
-						<div className="relative w-full h-64 sm:h-80">
+						<div className="relative w-full h-96 sm:h-[28rem]">
 							{cert.image ? (
-								<Image src={cert.image} alt={cert.title} fill className="object-cover" />
+								<Image src={cert.image} alt={cert.title} fill className="object-contain" />
 							) : (
 								<div className="absolute inset-0 flex items-center justify-center dark:bg-primary-900/30">
 									<Award size={56} className="text-secondary-400/40" />
