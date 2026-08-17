@@ -35,7 +35,7 @@ export default function RotatingAvatar() {
 			</svg>
 
 			{/* Avatar with skeleton */}
-			<div className="relative w-44 h-44 md:w-52 md:h-52 rounded-full border-2 border-cyan-400/30 overflow-hidden">
+			<div className="relative w-48 h-48 md:w-52 md:h-52 rounded-full border-2 border-cyan-400/30 overflow-hidden">
 				{/* Skeleton shimmer */}
 				{!loaded && (
 					<div className="absolute inset-0 avatar-skeleton rounded-full z-10">
@@ -49,9 +49,10 @@ export default function RotatingAvatar() {
 				)}
 
 				<Image
-					src="/me/profile.jpg"
+					src="/me/home-pic.png"
 					alt="Ye Min Aung"
 					fill
+					sizes="(max-width: 768px) 100vw, 50vw"
 					loading="eager"
 					fetchPriority="high"
 					className={`object-cover object-center transition-opacity duration-700 ${loaded ? "opacity-100" : "opacity-0"}`}

@@ -16,7 +16,7 @@ export const achievements: Achievement[] = [
 	},
 	{
 		icon: Award,
-		title: "5+ Certificates",
+		title: "8+ Certificates",
 		description: "Verified achievements",
 		color: "purple",
 	},

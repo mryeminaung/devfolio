@@ -41,9 +41,10 @@ export default function AboutMePage() {
 							src="/me/about-me-pic.png"
 							alt="Ye Min Aung - Developer"
 							fill
+							loading="eager"
 							className="object-cover object-top"
 						/>
-						<div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-primary-950/60" />
+						<div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent lg:bg-linear-to-r lg:from-transparent lg:to-primary-950/60" />
 					</div>
 
 					{/* Bio */}
@@ -80,11 +81,11 @@ export default function AboutMePage() {
 							className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-xl border border-secondary-400/60 dark:bg-primary-950 bg-white hover:bg-gray-50 dark:hover:bg-primary-900 font-medium text-sm transition-all duration-200 dark:text-white hover:border-secondary-400 hover:shadow-md hover:shadow-secondary-400/15 relative overflow-hidden">
 							<CornerAccent
 								position="top-right"
-								size={12}
+								size={30}
 							/>
 							<CornerAccent
 								position="bottom-left"
-								size={12}
+								size={30}
 							/>
 							<Download size={15} />
 							Download CV

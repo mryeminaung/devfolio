@@ -2,11 +2,11 @@
 
 import { Award, Briefcase, Home, Mail, Menu, User, X } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import CornerAccent from "./corner-accent";
-import { ThemeToggle } from "./theme-toggle";
 
 export default function SiteNav() {
 	const [isScrolled, setIsScrolled] = useState(false);
@@ -62,36 +62,42 @@ export default function SiteNav() {
 						<Link
 							href="/"
 							className="flex items-center">
-							<span className="text-xl sm:text-2xl font-bold">
-								<span className="text-secondary-400">&lt;</span>
-								<span className=" dark:text-white text-primary-950">
-									Devfolio
-								</span>
-								<span className="text-secondary-400">/&gt;</span>
-							</span>
+							<Image
+								src="/nav-logo.png"
+								alt="Devfolio Logo"
+								loading="eager"
+								width={120}
+								height={71}
+								className="rounded-lg bg-transparent w-auto h-auto"
+							/>
 						</Link>
 
 						{/* Desktop Navigation - Right Side */}
 						<div className="hidden md:flex items-center space-x-6 lg:space-x-8">
-							{navLinks.map((link) => (
-								<Link
-									key={link.path}
-									href={link.path}
-									className={`relative flex items-center gap-2 text-sm font-medium transition-colors ${
-										location === link.path
-											? "text-secondary-400 font-semibold"
-											: "text-black dark:text-white hover:text-secondary-400"
-									}`}>
-									<link.icon className="w-4 h-4 sm:w-5 sm:h-5" />
-									<span className="hidden sm:inline">{link.name}</span>
-									{location === link.path && (
-										<>
-											<div className="absolute -bottom-2 left-0 right-0 h-0.5 bg-linear-to-r from-secondary-400 to-magenta-500" />
-										</>
-									)}
-								</Link>
-							))}
-							{mounted && <ThemeToggle />}
+							{navLinks.map((link) => {
+								const isActive =
+									link.path === "/"
+										? location === link.path
+										: location.startsWith(link.path);
+								return (
+									<Link
+										key={link.path}
+										href={link.path}
+										className={`relative flex items-center gap-2 text-sm font-medium transition-colors ${
+											isActive
+												? "text-secondary-400 font-semibold"
+												: "text-black dark:text-white hover:text-secondary-400"
+										}`}>
+										<link.icon className="w-4 h-4 sm:w-5 sm:h-5" />
+										<span className="hidden sm:inline">{link.name}</span>
+										{isActive && (
+											<>
+												<div className="absolute -bottom-2 left-0 right-0 h-0.5 bg-linear-to-r from-secondary-400 to-magenta-500" />
+											</>
+										)}
+									</Link>
+								);
+							})}
 						</div>
 
 						{/* Mobile Menu Button */}
@@ -119,21 +125,26 @@ export default function SiteNav() {
 							transition={{ duration: 0.25, ease: "easeInOut" }}
 							className="md:hidden border-t border-secondary-500/20 overflow-hidden">
 							<div className="px-4 py-6 space-y-4 border">
-								{navLinks.map((link) => (
-									<Link
-										key={link.path}
-										href={link.path}
-										onClick={() => setIsMobileMenuOpen(false)}
-										className={`flex items-center gap-2 px-4 py-2 rounded-lg text-base font-medium transition-colors dark:text-white ${
-											location === link.path
-												? "bg-secondary-500/10 text-secondary-400 border border-secondary-500/30"
-												: "text-gray-500 hover:bg-secondary-500/10 hover:text-secondary-400"
-										}`}>
-										<link.icon className="w-5 h-5" />
-										{link.name}
-									</Link>
-								))}
-								{mounted && <ThemeToggle />}
+								{navLinks.map((link) => {
+									const isActive =
+										link.path === "/"
+											? location === link.path
+											: location.startsWith(link.path);
+									return (
+										<Link
+											key={link.path}
+											href={link.path}
+											onClick={() => setIsMobileMenuOpen(false)}
+											className={`flex items-center gap-2 px-4 py-2 rounded-lg text-base font-medium transition-colors dark:text-white ${
+												isActive
+													? "bg-secondary-500/10 text-secondary-400 border border-secondary-500/30"
+													: "text-gray-500 hover:bg-secondary-500/10 hover:text-secondary-400"
+											}`}>
+											<link.icon className="w-5 h-5" />
+											{link.name}
+										</Link>
+									);
+								})}
 							</div>
 						</motion.div>
 					)}

@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion } from "motion/react";
 import { useTheme } from "next-themes";
+import Image from "next/image";
 import { useEffect, useLayoutEffect, useState } from "react";
 
 const useIsomorphicLayoutEffect =
@@ -191,18 +192,20 @@ export default function SplashScreen() {
 					{/* Logo */}
 					<div
 						style={{
-							fontSize: 36,
-							fontWeight: 700,
-							letterSpacing: "-0.5px",
 							marginBottom: 10,
 							opacity: showLogo ? 1 : 0,
 							transform: showLogo ? "translateY(0)" : "translateY(12px)",
 							transition:
 								"opacity 0.55s ease, transform 0.55s cubic-bezier(0.22,1,0.36,1)",
 						}}>
-						<span style={{ color: c.cyan }}>&lt;</span>
-						<span style={{ color: c.logoText }}>Devfolio</span>
-						<span style={{ color: c.cyan }}>/&gt;</span>
+						<Image
+							src="/nav-logo.png"
+							alt="Devfolio Logo"
+							loading="eager"
+							width={180}
+							height={107}
+							className="rounded-lg h-auto w-auto"
+						/>
 					</div>
 
 					{/* Handle with typewriter */}

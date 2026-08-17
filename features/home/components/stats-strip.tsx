@@ -7,7 +7,7 @@ const stats = [
 	{ value: "1.5+", label: "Years Experience" },
 	{ value: "6+", label: "Projects Built" },
 	{ value: "10+", label: "Technologies" },
-	{ value: "5+", label: "Certificates" },
+	{ value: "8+", label: "Certificates" },
 ];
 
 const DIAGONALS = [

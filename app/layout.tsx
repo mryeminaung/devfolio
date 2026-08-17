@@ -1,3 +1,4 @@
+import FloatingThemeToggle from "@/components/floating-theme-toggle";
 import ScrollTopBtn from "@/components/scroll-top-btn";
 import SplashScreen from "@/components/splash-screen";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -33,6 +34,11 @@ export const metadata: Metadata = {
 	],
 	authors: [{ name: "Ye Min Aung", url: "https://github.com/mryeminaung" }],
 	creator: "Ye Min Aung",
+	icons: {
+		icon: "/favicon.ico",
+		apple: "/apple-touch-icon.png",
+		shortcut: "/favicon-96x96.png",
+	},
 	openGraph: {
 		title: "Devfolio | Ye Min Aung",
 		description:
@@ -43,7 +49,7 @@ export const metadata: Metadata = {
 		type: "website",
 		images: [
 			{
-				url: "https://yeminaung-dev.vercel.app/devfolio.png",
+				url: "https://yeminaung-dev.vercel.app/site-logo.png",
 				width: 1200,
 				height: 630,
 				alt: "Ye Min Aung Devfolio Preview",
@@ -56,7 +62,7 @@ export const metadata: Metadata = {
 		description:
 			"A Junior Web Developer specializing in React, Next.js and Laravel. Building high-performance web experiences.",
 		creator: "@mryeminaung",
-		images: ["https://yeminaung-dev.vercel.app/devfolio.png"],
+		images: ["https://yeminaung-dev.vercel.app/site-logo.png"],
 	},
 	appleWebApp: {
 		title: "Devfolio | Ye Min Aung",
@@ -82,7 +88,7 @@ const jsonLd = {
 	"@type": "Person",
 	name: "Ye Min Aung",
 	url: "https://yeminaung-dev.vercel.app",
-	image: "https://yeminaung-dev.vercel.app/devfolio.png",
+	image: "https://yeminaung-dev.vercel.app/site-logo.png",
 	jobTitle: "Junior Web Developer",
 	description:
 		"A Junior Web Developer specializing in React, Next.js and Laravel. Building high-performance web experiences.",
@@ -117,6 +123,7 @@ export default function RootLayout({
 					disableTransitionOnChange>
 					<SplashScreen />
 					<AppLayout>{children}</AppLayout>
+					<FloatingThemeToggle />
 					<ScrollTopBtn />
 				</ThemeProvider>
 			</body>

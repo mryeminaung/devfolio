@@ -37,7 +37,7 @@ export default function ScrollTopBtn() {
 				y: isVisible ? 0 : 16,
 			}}
 			transition={{ duration: 0.22, ease: "easeOut" }}
-			className={`fixed right-6 bottom-6 z-50 inline-flex h-11 w-11 items-center justify-center rounded-full border border-cyan-400/40 bg-slate-950/90 text-cyan-300 shadow-lg shadow-cyan-900/30 backdrop-blur hover:-translate-y-0.5 hover:border-cyan-300 hover:text-cyan-200 ${
+			className={`fixed right-6 bottom-6 z-50 inline-flex h-11 w-11 items-center justify-center rounded-full border border-secondary-400/30 bg-white/80 dark:bg-primary-900/80 text-secondary-400 shadow-lg shadow-secondary-400/10 backdrop-blur-md hover:-translate-y-0.5 hover:shadow-secondary-400/20 hover:scale-110 transition-all duration-300 ${
 				isVisible ? "pointer-events-auto" : "pointer-events-none"
 			}`}>
 			<ArrowUp

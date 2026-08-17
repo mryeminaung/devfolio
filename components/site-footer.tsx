@@ -33,7 +33,7 @@ export default function SiteFooter() {
 				ease: [0.22, 1, 0.36, 1],
 			}}
 			viewport={{ once: true, amount: 0.2 }}
-			className="max-w-7xl mx-auto w-full py-5 mt-auto">
+			className="max-w-7xl mx-auto w-full py-5 mt-auto px-3 lg:px-8">
 			<div className="bg-white dark:bg-primary-950 backdrop-blur-md border dark:border-secondary-500/30 relative overflow-hidden border-secondary-300 rounded-xl px-4 sm:px-6 lg:px-8 py-4">
 				<CornerAccent position="top-left" />
 				<CornerAccent position="bottom-right" />

@@ -4,7 +4,6 @@ import CornerAccent from "@/components/corner-accent";
 import { Award } from "lucide-react";
 import { motion } from "motion/react";
 import Image from "next/image";
-import Link from "next/link";
 import { Certificate } from "../achievements.types";
 
 const DIAGONALS = [
@@ -15,9 +14,11 @@ const DIAGONALS = [
 export default function CertificateCard({
 	cert,
 	index = 0,
+	onClick,
 }: {
 	cert: Certificate;
 	index?: number;
+	onClick: () => void;
 }) {
 	const [c1, c2] = DIAGONALS[index % 2];
 
@@ -32,9 +33,9 @@ export default function CertificateCard({
 				ease: [0.22, 1, 0.36, 1],
 			}}
 			viewport={{ once: true, amount: 0.15 }}>
-			<Link
-				href={`/achievements/certificates/${cert.slug}`}
-				className="group relative overflow-hidden rounded-2xl border border-secondary-400/20 dark:bg-primary-950/50 hover:border-secondary-400/50 hover:shadow-lg hover:shadow-secondary-400/10 transition-all duration-300 flex flex-col h-full">
+			<div
+				onClick={onClick}
+				className="group relative overflow-hidden rounded-2xl border border-secondary-400/20 dark:bg-primary-950/50 hover:border-secondary-400/50 hover:shadow-lg hover:shadow-secondary-400/10 transition-all duration-300 flex flex-col h-full cursor-pointer">
 				<CornerAccent position={c1} />
 				<CornerAccent position={c2} />
 
@@ -92,7 +93,7 @@ export default function CertificateCard({
 						)}
 					</div>
 				</div>
-			</Link>
+			</div>
 		</motion.div>
 	);
 }
