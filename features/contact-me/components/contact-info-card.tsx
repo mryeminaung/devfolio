@@ -24,7 +24,10 @@ export const ContactInfoCard = ({
 	const Icon = iconMap[info.iconName];
 
 	return (
-		<motion.div
+		<motion.a
+			href={info.href}
+			target={info.iconName === "location" ? "_blank" : undefined}
+			rel={info.iconName === "location" ? "noopener noreferrer" : undefined}
 			initial={{ y: 28, opacity: 0 }}
 			whileInView={{ y: 0, opacity: 1 }}
 			whileHover={{ y: -5, transition: { duration: 0.2, ease: "easeOut" } }}
@@ -53,6 +56,6 @@ export const ContactInfoCard = ({
 					{info.value}
 				</span>
 			</div>
-		</motion.div>
+		</motion.a>
 	);
 };

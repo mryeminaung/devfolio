@@ -1,6 +1,6 @@
 import CornerAccent from "@/components/corner-accent";
 import Underline from "@/components/underline";
-import { Download } from "lucide-react";
+import { Download, Github, Linkedin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import CurrentlyLearning from "./components/currently-learning";
@@ -31,10 +31,13 @@ export default function AboutMePage() {
 
 			{/* Bio + photo */}
 			<div className="relative overflow-hidden rounded-3xl border border-secondary-400/20 dark:bg-primary-950/40 mb-20">
-				<CornerAccent position="top-left" />
+				<CornerAccent
+					position="top-left"
+					className="z-10"
+				/>
 				<CornerAccent position="bottom-right" />
 
-				<div className="grid grid-cols-1 lg:grid-cols-[600px_1fr]">
+				<div className="grid grid-cols-1 lg:grid-cols-[40%_1fr]">
 					{/* Photo — full bleed left column */}
 					<div className="relative min-h-72 lg:min-h-full overflow-hidden lg:rounded-l-3xl">
 						<Image
@@ -52,6 +55,9 @@ export default function AboutMePage() {
 						<h3 className="text-2xl md:text-3xl font-bold">
 							Hello! I&apos;m Ye Min Aung
 						</h3>
+						<p className="text-sm font-medium text-secondary-500 dark:text-secondary-400 -mt-2">
+							Junior FullStack Developer
+						</p>
 						<div className="space-y-3 text-sm md:text-base text-gray-600 dark:text-primary-300 leading-relaxed">
 							<p>
 								I&apos;m a passionate Junior Web Developer and final year ECE
@@ -75,21 +81,50 @@ export default function AboutMePage() {
 							</p>
 						</div>
 
-						<Link
-							href="/YeMinAung-CV.pdf"
-							download
-							className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-xl border border-secondary-400/60 dark:bg-primary-950 bg-white hover:bg-gray-50 dark:hover:bg-primary-900 font-medium text-sm transition-all duration-200 dark:text-white hover:border-secondary-400 hover:shadow-md hover:shadow-secondary-400/15 relative overflow-hidden">
-							<CornerAccent
-								position="top-right"
-								size={30}
-							/>
-							<CornerAccent
-								position="bottom-left"
-								size={30}
-							/>
-							<Download size={15} />
-							Download CV
-						</Link>
+						{/* Tech stack */}
+						<div className="flex flex-wrap gap-2 pt-2">
+							{["React", "Next.js", "TypeScript", "Tailwind CSS", "Laravel", "PHP", "MySQL", "Git"].map((tech) => (
+								<span
+									key={tech}
+									className="rounded-full border border-secondary-500/30 bg-secondary-500/5 px-3 py-1 text-xs font-medium dark:text-secondary-400">
+									{tech}
+								</span>
+							))}
+						</div>
+
+						<div className="flex items-center gap-3 pt-2">
+							<Link
+								href="/YeMinAung-CV.pdf"
+								download
+								className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-xl border border-secondary-400/60 dark:bg-primary-950 bg-white hover:bg-gray-50 dark:hover:bg-primary-900 font-medium text-sm transition-all duration-200 dark:text-white hover:border-secondary-400 hover:shadow-md hover:shadow-secondary-400/15 relative overflow-hidden">
+								<CornerAccent
+									position="top-right"
+									size={30}
+								/>
+								<CornerAccent
+									position="bottom-left"
+									size={30}
+								/>
+								<Download size={15} />
+								Download CV
+							</Link>
+							<a
+								href="https://github.com/mryeminaung"
+								target="_blank"
+								rel="noopener noreferrer"
+								aria-label="GitHub"
+								className="p-2.5 rounded-xl border border-secondary-400/60 dark:bg-primary-950 bg-white hover:bg-gray-50 dark:hover:bg-primary-900 transition-all duration-200 dark:text-white hover:border-secondary-400 hover:shadow-md hover:shadow-secondary-400/15">
+								<Github size={18} />
+							</a>
+							<a
+								href="https://linkedin.com/in/mryeminaung"
+								target="_blank"
+								rel="noopener noreferrer"
+								aria-label="LinkedIn"
+								className="p-2.5 rounded-xl border border-secondary-400/60 dark:bg-primary-950 bg-white hover:bg-gray-50 dark:hover:bg-primary-900 transition-all duration-200 dark:text-white hover:border-secondary-400 hover:shadow-md hover:shadow-secondary-400/15">
+								<Linkedin size={18} />
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>
