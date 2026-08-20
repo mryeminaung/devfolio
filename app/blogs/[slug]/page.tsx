@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { BlogDetailPage } from "@/features/blogs";
-import { getAllBlogs, getBlogBySlug, generateBlogStaticParams } from "@/lib/blogs";
+import { getAllBlogs, getBlogBySlug, generateBlogStaticParams, getRelatedPosts, getAdjacentPosts } from "@/lib/blogs";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -39,5 +39,15 @@ export default async function Page({ params }: Props) {
   const post = getBlogBySlug(slug);
   if (!post) notFound();
 
-  return <BlogDetailPage post={post} />;
+  const relatedPosts = getRelatedPosts(slug);
+  const adjacentPosts = getAdjacentPosts(slug);
+
+  return (
+    <BlogDetailPage
+      post={post}
+      relatedPosts={relatedPosts}
+      prevPost={adjacentPosts.prev}
+      nextPost={adjacentPosts.next}
+    />
+  );
 }
