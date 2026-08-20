@@ -42,29 +42,31 @@ export default function BlogsPage({ blogs }: BlogsPageProps) {
 						<button
 							onClick={() => setActiveTag(null)}
 							className={`px-4 py-1.5 rounded-full text-sm font-medium border transition-all duration-200 ${
-							activeTag === null
-								? "border-secondary-400 bg-secondary-400/10 text-secondary-500 dark:text-secondary-400"
-								: "border-primary-700 text-gray-500 dark:text-primary-400 hover:border-secondary-400/40"
-						}`}>
-						All
-					</button>
-					{allTags.map((tag) => (
-						<button
-							key={tag}
-							onClick={() => setActiveTag(tag)}
-							className={`px-4 py-1.5 rounded-full text-sm font-medium capitalize border transition-all duration-200 ${
-								activeTag === tag
+								activeTag === null
 									? "border-secondary-400 bg-secondary-400/10 text-secondary-500 dark:text-secondary-400"
 									: "border-primary-700 text-gray-500 dark:text-primary-400 hover:border-secondary-400/40"
 							}`}>
-							{tag}
+							All
 						</button>
-					))}
+						{allTags.map((tag) => (
+							<button
+								key={tag}
+								onClick={() => setActiveTag(tag)}
+								className={`px-4 py-1.5 rounded-full text-sm font-medium capitalize border transition-all duration-200 ${
+									activeTag === tag
+										? "border-secondary-400 bg-secondary-400/10 text-secondary-500 dark:text-secondary-400"
+										: "border-primary-700 text-gray-500 dark:text-primary-400 hover:border-secondary-400/40"
+								}`}>
+								{tag}
+							</button>
+						))}
 					</div>
 
 					{/* Sort by date */}
 					<div className="flex items-center gap-2 ml-auto">
-						<span className="text-xs text-gray-500 dark:text-primary-400">Sort:</span>
+						<span className="text-xs text-gray-500 dark:text-primary-400">
+							Sort:
+						</span>
 						<button
 							onClick={() => setSortOrder("newest")}
 							className={`flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-medium border transition-all duration-200 ${

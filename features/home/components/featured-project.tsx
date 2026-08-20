@@ -71,6 +71,11 @@ export default function FeaturedProject() {
 							</div>
 
 							<div className="mt-8 flex flex-wrap gap-3">
+								<Link
+									href={`/projects/${project.slug}`}
+									className="inline-flex items-center gap-2 rounded-lg border border-secondary-500/40 bg-secondary-500/10 px-4 py-2 text-sm font-medium transition-colors hover:bg-secondary-500/20 dark:text-secondary-300">
+									View Details
+								</Link>
 								{project.link && project.link !== "#" && (
 									<Link
 										href={project.link}
