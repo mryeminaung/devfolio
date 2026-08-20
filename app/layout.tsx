@@ -15,6 +15,12 @@ const awsDiatype = localFont({
 	variable: "--font-mono",
 });
 
+const googleSansMono = localFont({
+	src: "./_fonts/Google-Sans-Mono.ttf",
+	display: "swap",
+	variable: "--font-code",
+});
+
 export const metadata: Metadata = {
 	metadataBase: new URL("https://yeminaung-dev.vercel.app"),
 
@@ -115,7 +121,7 @@ export default function RootLayout({
 					dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
 				/>
 			</head>
-			<body className={`${awsDiatype.variable} antialiased`}>
+			<body className={`${awsDiatype.variable} ${googleSansMono.variable} antialiased`}>
 				<ThemeProvider
 					attribute="class"
 					defaultTheme="system"

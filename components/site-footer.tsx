@@ -2,7 +2,7 @@
 
 import { motion } from "motion/react";
 
-import { Github, Heart, Linkedin, Mail, Twitter } from "lucide-react";
+import { Github, Linkedin, Mail, Twitter } from "lucide-react";
 import Link from "next/link";
 import CornerAccent from "./corner-accent";
 
@@ -33,23 +33,20 @@ export default function SiteFooter() {
 				ease: [0.22, 1, 0.36, 1],
 			}}
 			viewport={{ once: true, amount: 0.2 }}
-			className="max-w-7xl mx-auto w-full py-5 mt-auto px-3 lg:px-8">
+			className="max-w-7xl mx-auto w-full py-5 mt-auto px-3 lg:px-0">
 			<div className="bg-white dark:bg-primary-950 backdrop-blur-md border dark:border-secondary-500/30 relative overflow-hidden border-secondary-300 rounded-xl px-4 sm:px-6 lg:px-8 py-4">
 				<CornerAccent position="top-left" />
 				<CornerAccent position="bottom-right" />
 				<div className="flex flex-col sm:flex-row items-center justify-between gap-4">
 					<p className="text-sm text-black dark:text-gray-400 flex items-center gap-1.5 order-2 sm:order-1">
-						Made with{" "}
-						<Heart className="w-4 h-4 text-secondary-500 fill-secondary-500 animate-pulse" />{" "}
-						by{" "}
-						<b>
-							<Link
-								className="hover:underline underline-offset-4"
-								href={"https://github.com/mryeminaung"}
-								target="_blank">
-								Ye Min Aung
-							</Link>
-						</b>
+						© 2026,{" "}
+						<Link
+							href="https://github.com/mryeminaung"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="hover:underline underline-offset-4 hover:text-secondary-400 transition-colors">
+							Ye Min Aung
+						</Link>
 					</p>
 
 					{/* Social Links */}

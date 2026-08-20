@@ -1,6 +1,15 @@
 "use client";
 
-import { Award, Briefcase, Home, Mail, Menu, User, X } from "lucide-react";
+import {
+	Award,
+	BookOpen,
+	Briefcase,
+	Home,
+	Mail,
+	Menu,
+	User,
+	X,
+} from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -30,6 +39,7 @@ export default function SiteNav() {
 		{ name: "About", path: "/about-me", icon: User },
 		{ name: "Projects", path: "/projects", icon: Briefcase },
 		{ name: "Achievements", path: "/achievements", icon: Award },
+		{ name: "Blogs", path: "/blogs", icon: BookOpen },
 		{ name: "Contact", path: "/contact-me", icon: Mail },
 	];
 

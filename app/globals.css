@@ -254,3 +254,116 @@
   background-size: 200% 100%;
   animation: avatar-shimmer 1.6s ease-in-out infinite;
 }
+
+/* Blog code blocks */
+pre,
+pre code {
+  font-family: var(--font-code) !important;
+}
+
+pre {
+  border-radius: 0.75rem;
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  font-size: 0.875rem;
+  line-height: 1.7;
+  border: 1px solid oklch(var(--border));
+}
+
+:not(pre) > code {
+  font-family: var(--font-code);
+  background: oklch(var(--secondary-100));
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.dark :not(pre) > code {
+  background: oklch(var(--secondary-900));
+}
+
+/* Blog prose styles */
+.prose-blog h1 {
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  margin-top: 2.5rem;
+  color: var(--foreground);
+}
+
+.prose-blog h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  margin-top: 2rem;
+  color: var(--foreground);
+}
+
+.prose-blog h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  margin-top: 1.5rem;
+  color: var(--foreground);
+}
+
+.prose-blog p {
+  margin-bottom: 1rem;
+  line-height: 1.75;
+  color: oklch(var(--muted-foreground));
+}
+
+.prose-blog ul,
+.prose-blog ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  color: oklch(var(--muted-foreground));
+}
+
+.prose-blog ul {
+  list-style-type: disc;
+}
+
+.prose-blog ol {
+  list-style-type: decimal;
+}
+
+.prose-blog li {
+  margin-bottom: 0.25rem;
+  line-height: 1.7;
+}
+
+.prose-blog a {
+  color: oklch(var(--secondary-500));
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.prose-blog h1 a,
+.prose-blog h2 a,
+.prose-blog h3 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.prose-blog a:hover {
+  color: oklch(var(--secondary-400));
+}
+
+.prose-blog strong {
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+.prose-blog blockquote {
+  border-left: 3px solid oklch(var(--secondary-400));
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+  font-style: italic;
+  color: oklch(var(--muted-foreground));
+}
+
+.prose-blog hr {
+  border-color: oklch(var(--border));
+  margin: 2rem 0;
+}
