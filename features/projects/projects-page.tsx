@@ -44,7 +44,7 @@ export default function ProjectsPage() {
 						transition={{ duration: 0.5, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
 						viewport={{ once: true, amount: 0.15 }}>
 						<Link
-							href={`/projects/${project.id}`}
+							href={`/projects/${project.slug}`}
 							className="group relative overflow-hidden rounded-3xl border border-secondary-400/30 dark:bg-primary-950/80 hover:border-secondary-400/60 hover:shadow-lg hover:shadow-secondary-400/15 transition-all duration-300 flex flex-col h-full">
 							<CornerAccent position="top-left" className="z-10" />
 							<CornerAccent position="bottom-right" />

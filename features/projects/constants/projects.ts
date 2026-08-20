@@ -3,6 +3,7 @@ import { Project } from "../projects.type";
 export const projects: Project[] = [
 	{
 		id: 1,
+		slug: "automated-exam-scheduling-system",
 		title: "Automated Exam Scheduling System",
 		description:
 			"An intelligent scheduling platform designed to automate and optimize academic examination timetables.",
@@ -29,6 +30,7 @@ export const projects: Project[] = [
 	},
 	{
 		id: 2,
+		slug: "academic-projects-management-system",
 		title: "Academic Projects Management System",
 		description:
 			"A centralized workflow platform for managing Special, Capstone, and Master's projects.",
@@ -55,6 +57,7 @@ export const projects: Project[] = [
 	},
 	{
 		id: 3,
+		slug: "blogging-platform-json-server",
 		title: "Blogging Platform Using JSON Server",
 		description:
 			"A full-featured blog management system demonstrating RESTful API integration and CRUD operations.",
@@ -81,6 +84,7 @@ export const projects: Project[] = [
 	},
 	{
 		id: 4,
+		slug: "note-taking-app",
 		title: "Note-Taking App",
 		description:
 			"A productivity-focused Android application for seamless note management and real-time synchronization.",
@@ -107,6 +111,7 @@ export const projects: Project[] = [
 	},
 	{
 		id: 5,
+		slug: "food-recipe-browser",
 		title: "Food Recipe Browser",
 		description:
 			"A comprehensive culinary guide for discovering global cuisines and detailed cooking instructions.",
@@ -133,6 +138,7 @@ export const projects: Project[] = [
 	},
 	{
 		id: 6,
+		slug: "cocktail-explorer",
 		title: "Cocktail Explorer",
 		description:
 			"A sleek, high-performance mixology encyclopedia powered by TheCocktailDB API.",

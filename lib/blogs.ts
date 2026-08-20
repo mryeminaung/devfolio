@@ -11,6 +11,7 @@ export interface BlogFrontmatter {
   date: string;
   tags: string[];
   thumbnail?: string;
+  status?: "draft" | "publish";
 }
 
 export interface BlogPost extends BlogFrontmatter {
@@ -49,9 +50,9 @@ export function getAllBlogs(): BlogPost[] {
     };
   });
 
-  return posts.sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-  );
+  return posts
+    .filter((post) => post.status !== "draft")
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 }
 
 /**
@@ -66,11 +67,17 @@ export function getBlogBySlug(slug: string): BlogPost | null {
 
   const fileContent = fs.readFileSync(filePath, "utf-8");
   const { content, data } = matter(fileContent);
+  const frontmatter = data as BlogFrontmatter;
+
+  if (frontmatter.status === "draft") {
+    return null;
+  }
+
   const stats = readingTime(content);
 
   return {
     slug,
-    ...(data as BlogFrontmatter),
+    ...frontmatter,
     readingTime: stats.text,
     content,
   };
@@ -80,8 +87,8 @@ export function getBlogBySlug(slug: string): BlogPost | null {
  * Get all blog slugs for generateStaticParams
  */
 export function generateBlogStaticParams() {
-  const slugs = getAllSlugs();
-  return slugs.map((slug) => ({ slug }));
+  const posts = getAllBlogs();
+  return posts.map((post) => ({ slug: post.slug }));
 }
 
 /**

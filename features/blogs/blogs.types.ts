@@ -7,4 +7,5 @@ export interface BlogPost {
   thumbnail?: string;
   readingTime: string;
   content: string;
+  status?: "draft" | "publish";
 }

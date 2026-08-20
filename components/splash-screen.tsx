@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import { useEffect, useLayoutEffect, useState } from "react";
+import CornerAccent from "./corner-accent";
 
 const useIsomorphicLayoutEffect =
 	typeof window !== "undefined" ? useLayoutEffect : useEffect;
@@ -197,7 +198,16 @@ export default function SplashScreen() {
 							transform: showLogo ? "translateY(0)" : "translateY(12px)",
 							transition:
 								"opacity 0.55s ease, transform 0.55s cubic-bezier(0.22,1,0.36,1)",
-						}}>
+						}}
+						className="relative p-4">
+						<CornerAccent
+							position="top-left"
+							className="border-cyan-400!"
+						/>
+						<CornerAccent
+							position="bottom-right"
+							className="border-cyan-400!"
+						/>
 						<Image
 							src="/nav-logo.png"
 							alt="Devfolio Logo"
