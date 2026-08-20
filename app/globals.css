@@ -265,6 +265,8 @@ pre {
   border-radius: 0.75rem;
   padding: 1rem 1.25rem;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  white-space: pre;
   font-size: 0.875rem;
   line-height: 1.7;
   border: 1px solid oklch(var(--border));
@@ -366,4 +368,45 @@ pre {
 .prose-blog hr {
   border-color: oklch(var(--border));
   margin: 2rem 0;
+}
+
+.prose-blog table {
+  width: 100%;
+  min-width: 600px;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 1.5rem 0;
+  font-size: 0.875rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.prose-blog th,
+.prose-blog td {
+  border: 1px solid var(--border);
+  padding: 0.625rem 0.875rem;
+  text-align: left;
+}
+
+.prose-blog th {
+  font-weight: 600;
+  background-color: var(--muted);
+  color: var(--foreground);
+}
+
+.prose-blog td {
+  color: var(--muted-foreground);
+}
+
+.prose-blog tr:hover td {
+  background-color: var(--muted);
+}
+
+.dark .prose-blog th {
+  background-color: var(--secondary-950);
+}
+
+.dark .prose-blog tr:hover td {
+  background-color: var(--secondary-950);
 }

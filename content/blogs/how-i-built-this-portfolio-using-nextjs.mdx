@@ -1,0 +1,67 @@
+---
+title: "How I Built This Portfolio Using Next.js"
+description: "A walkthrough of the decisions and tech stack behind my minimalist developer portfolio."
+date: "2026-08-20"
+tags: ["portfolio", "nextjs"]
+thumbnail: "/blogs/how-i-built-this-portfolio/thumbnail.png"
+---
+
+## The Story Behind It
+
+I've always wanted to build a portfolio that truly reflects who I am as a developer. But between time constraints and shifting priorities, it never happened — until now. I decided to create a minimalist developer portfolio that stands apart from the typical templates out there.
+
+This portfolio is a space where you can:
+
+- Follow my progress throughout my developer journey
+- Pick up insights drawn from my real-world experiences
+
+## Why I Chose Next.js
+
+I initially wanted to use plain **React**, but since I'd be building more than just a static portfolio — including a blog — **Next.js** made more sense.
+
+I also like the way **Next.js** handles routing with **App Router** and **Page Router**. It's way easier than **React.js** on its own. On top of that, it supports multiple rendering strategies like <span title="Server-Side Rendering: pages rendered on the server before being sent to the browser">SSR</span>, <span title="Client-Side Rendering: pages rendered in the browser after JavaScript loads">CSR</span>, and <span title="Static Site Generation: pages pre-built at build time for fast loading">SSG</span>, which gives me flexibility down the road.
+
+**Next.js** also shines when it comes to **SEO**, with built-in metadata generation and static params that make setting up blog pages painless.
+
+## Tech Stack
+
+Here's a breakdown of the tools and libraries powering this devfolio:
+
+| Category | Technology | Purpose |
+| --- | --- | --- |
+| Framework | **Next.js** 16 | App Router, *server components*, and built-in routing |
+| UI Library | **React** 19 | Core component model |
+| Styling | **Tailwind CSS** v4 | Utility-first CSS with *CSS variables* for theming |
+| Components | **shadcn/ui** | Accessible, composable UI primitives |
+| Animation | **Framer Motion** | Scroll-triggered animations and page transitions |
+| Blog | <span title="A format that lets you write markdown with embedded React components">**MDX**</span> | Markdown with **JSX** for rich, interactive posts |
+| Dark Mode | **next-themes** | Seamless light/dark theme switching |
+| Icons | **Lucide React** | Lightweight, consistent icon set |
+| Email | **EmailJS** | Client-side email sending without a backend |
+| Deployment | **Vercel** | Zero-config hosting with <span title="Functions that run on servers close to the user for faster responses">*edge functions*</span> |
+
+The whole stack is wrapped up with **TypeScript** for type safety and **pnpm** as the package manager.
+
+## Devfolio Theme
+
+I wanted the theme to feel clean and modern without being boring. Here's how it came together:
+
+**Color palette:** I went with a two-tone setup — **Slate** as the primary color for text and backgrounds, and **Cyan** as the secondary accent for highlights, borders, and interactive elements. Both are defined as *CSS custom properties* so they work seamlessly across light and dark mode.
+
+**Dark mode:** Powered by <span title="A Next.js library that handles theme switching with system preference detection">next-themes</span> with a class-based strategy. The `.dark` class on `<html>` swaps all the CSS variables at once — no flash of unstyled content, no complex logic.
+
+**Layout details:** Every section card has subtle corner accents and a soft border using `secondary-400/30` at 30% opacity. The result is a glassy, layered feel that stands out without being loud.
+
+**Animations:** Most sections use <span title="A React animation library for smooth transitions and scroll effects">**Framer Motion**</span> with `whileInView` — elements fade in as you scroll. The easing curve is `[0.22, 1, 0.36, 1]` (*ease-out-expo*) for a smooth, natural feel.
+
+## Fonts
+
+I picked three fonts to keep the site feeling clean and readable:
+
+- **AWS DiaType** — headings and accents
+- **Space Grotesk** — body text
+- **Google Sans Mono** — code blocks and inline code
+
+That wraps up this blog. The portfolio you're looking at right now is the polished version — built from scratch using the tech stack, theme, and fonts I covered above.
+
+Stay tuned. Thanks for reading!

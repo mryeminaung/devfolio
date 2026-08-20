@@ -1,6 +1,7 @@
 "use client";
 
 import Underline from "@/components/underline";
+import { BLOG_TAGS } from "@/features/blogs/constants/tags";
 import { ArrowDown, ArrowUp } from "lucide-react";
 import { useState } from "react";
 import type { BlogPost } from "./blogs.types";
@@ -57,7 +58,7 @@ export default function BlogsPage({ blogs }: BlogsPageProps) {
 										? "border-secondary-400 bg-secondary-400/10 text-secondary-500 dark:text-secondary-400"
 										: "border-primary-700 text-gray-500 dark:text-primary-400 hover:border-secondary-400/40"
 								}`}>
-								{tag}
+								{BLOG_TAGS[tag as keyof typeof BLOG_TAGS] ?? tag}
 							</button>
 						))}
 					</div>

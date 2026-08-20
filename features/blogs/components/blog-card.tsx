@@ -1,6 +1,7 @@
 "use client";
 
 import CornerAccent from "@/components/corner-accent";
+import { BLOG_TAGS } from "@/features/blogs/constants/tags";
 import { motion, useReducedMotion } from "motion/react";
 import { Clock, Calendar } from "lucide-react";
 import Image from "next/image";
@@ -42,13 +43,13 @@ function Card({ post, index = 0 }: { post: BlogPost; index?: number }) {
             <span
               key={tag}
               className="rounded-full border border-secondary-500/30 bg-secondary-500/5 px-3 py-1 text-xs font-medium uppercase tracking-wide dark:text-secondary-400">
-              {tag}
+              {BLOG_TAGS[tag as keyof typeof BLOG_TAGS] ?? tag}
             </span>
           ))}
         </div>
 
         {/* Title */}
-        <h3 className="mb-2 text-lg font-semibold tracking-tight dark:text-white group-hover:text-secondary-400 transition-colors">
+        <h3 className="mb-2 text-lg font-semibold tracking-tight dark:text-white group-hover:text-secondary-400 transition-colors line-clamp-1">
           {post.title}
         </h3>
 

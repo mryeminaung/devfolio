@@ -1,5 +1,6 @@
 import CornerAccent from "@/components/corner-accent";
 import Underline from "@/components/underline";
+import { BLOG_TAGS } from "@/features/blogs/constants/tags";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Image from "next/image";
@@ -53,7 +54,7 @@ export default function BlogDetailPage({ post }: BlogDetailPageProps) {
 							<span
 								key={tag}
 								className="rounded-full border border-secondary-500/30 bg-secondary-500/5 px-3 py-1 text-xs font-medium uppercase tracking-wide dark:text-secondary-400">
-								{tag}
+								{BLOG_TAGS[tag as keyof typeof BLOG_TAGS] ?? tag}
 							</span>
 						))}
 					</div>
@@ -102,6 +103,13 @@ export default function BlogDetailPage({ post }: BlogDetailPageProps) {
 				<div className="prose-blog">
 					<MDXRemote
 						source={post.content}
+						components={{
+							table: (props) => (
+								<div className="overflow-x-auto">
+									<table {...props} />
+								</div>
+							),
+						}}
 						options={{
 							mdxOptions: {
 								remarkPlugins: [remarkGfm],

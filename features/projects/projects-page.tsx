@@ -58,7 +58,7 @@ export default function ProjectsPage() {
 									sizes="(max-width: 768px) 100vw, 50vw"
 									className="object-cover transition-transform duration-500 group-hover:scale-105"
 								/>
-								<div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+								<div className="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent" />
 								<span className="absolute bottom-3 left-4 text-xs font-medium text-white/80 bg-secondary-500/30 border border-secondary-400/30 rounded-full px-3 py-1">
 									Featured
 								</span>
