@@ -10,7 +10,7 @@ export default function CornerAccent({
 	offset?: number;
 }) {
 	const sizeStyle = size ? { width: size, height: size } : undefined;
-	const offsetStyle: React.CSSProperties = offset
+	const offsetStyle: React.CSSProperties | undefined = offset
 		? {
 				...(position.includes("top") ? { top: offset } : { bottom: offset }),
 				...(position.includes("left") ? { left: offset } : { right: offset }),
