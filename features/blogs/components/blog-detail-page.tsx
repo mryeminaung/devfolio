@@ -13,8 +13,6 @@ import type { BlogPost } from "../blogs.types";
 import ShareBar from "./share-bar";
 import TableOfContents from "./table-of-contents";
 
-import { BlogCard } from "./blog-card";
-
 interface BlogDetailPageProps {
 	post: BlogPost;
 	relatedPosts: BlogPost[];
@@ -39,8 +37,8 @@ export default function BlogDetailPage({ post, relatedPosts, prevPost, nextPost 
 			</div>
 
 			<div className="lg:ml-65 relative rounded-3xl border border-secondary-400/30 dark:bg-primary-950/60 p-5 md:p-8 overflow-hidden">
-				{/* Subtle glow */}
-				<div className="absolute inset-0 bg-linear-to-br from-secondary-400/5 via-transparent to-transparent pointer-events-none" />
+					{/* Subtle glow */}
+					<div className="absolute inset-0 bg-linear-to-br from-secondary-400/5 via-transparent to-transparent pointer-events-none" />
 				<CornerAccent
 					position="top-left"
 					className="z-10"
@@ -97,7 +95,7 @@ export default function BlogDetailPage({ post, relatedPosts, prevPost, nextPost 
 							alt={post.title}
 							fill
 							sizes="(max-width: 768px) 100vw, 50vw"
-							className="object-cover"
+							className="object-fill"
 						/>
 					</div>
 				)}
@@ -164,18 +162,6 @@ export default function BlogDetailPage({ post, relatedPosts, prevPost, nextPost 
 					) : (
 						<div />
 					)}
-				</div>
-			)}
-
-			{/* Related Posts */}
-			{relatedPosts.length > 0 && (
-				<div className="mt-12">
-					<h3 className="text-xl font-semibold dark:text-white mb-6">Related Posts</h3>
-					<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-						{relatedPosts.map((rp, i) => (
-							<BlogCard key={rp.slug} post={rp} index={i} />
-						))}
-					</div>
 				</div>
 			)}
 		</article>
