@@ -2,7 +2,7 @@
 
 import Underline from "@/components/underline";
 import { BLOG_TAGS } from "@/features/blogs/constants/tags";
-import { ArrowDown, ArrowUp } from "lucide-react";
+import { ArrowDown, ArrowUp, Search, X } from "lucide-react";
 import { useState } from "react";
 import type { BlogPost } from "./blogs.types";
 import { BlogCard } from "./components/blog-card";
@@ -15,10 +15,18 @@ export default function BlogsPage({ blogs }: BlogsPageProps) {
 	const allTags = Array.from(new Set(blogs.flatMap((b) => b.tags)));
 	const [activeTag, setActiveTag] = useState<string | null>(null);
 	const [sortOrder, setSortOrder] = useState<"newest" | "oldest">("newest");
+	const [searchQuery, setSearchQuery] = useState("");
 
-	const filtered = activeTag
-		? blogs.filter((b) => b.tags.includes(activeTag))
+	const searched = searchQuery.trim()
+		? blogs.filter(
+				(b) =>
+					b.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+					b.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+					b.tags.some((t) => t.toLowerCase().includes(searchQuery.toLowerCase()))
+			)
 		: blogs;
+
+	const filtered = activeTag ? searched.filter((b) => b.tags.includes(activeTag)) : searched;
 
 	const sorted = [...filtered].sort((a, b) => {
 		const dateA = new Date(a.date).getTime();
@@ -34,6 +42,28 @@ export default function BlogsPage({ blogs }: BlogsPageProps) {
 					Blogs
 				</h2>
 				<Underline />
+			</div>
+
+			{/* Search */}
+			<div className="relative mb-6">
+				<Search
+					size={16}
+					className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 dark:text-primary-500"
+				/>
+				<input
+					type="text"
+					placeholder="Search posts..."
+					value={searchQuery}
+					onChange={(e) => setSearchQuery(e.target.value)}
+					className="w-full rounded-full border border-primary-700 bg-transparent py-2.5 pl-11 pr-10 text-sm text-gray-700 dark:text-primary-300 placeholder:text-gray-400 dark:placeholder:text-primary-500 outline-none transition-colors focus:border-secondary-400"
+				/>
+				{searchQuery && (
+					<button
+						onClick={() => setSearchQuery("")}
+						className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 dark:text-primary-500 dark:hover:text-primary-300 transition-colors">
+						<X size={14} />
+					</button>
+				)}
 			</div>
 
 			{/* Tag filter */}
@@ -101,7 +131,7 @@ export default function BlogsPage({ blogs }: BlogsPageProps) {
 				))}
 				{sorted.length === 0 && (
 					<p className="col-span-3 text-center text-gray-400 py-16">
-						No posts found for this tag.
+						{searchQuery ? "No posts found matching your search." : "No posts found for this tag."}
 					</p>
 				)}
 			</div>

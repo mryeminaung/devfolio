@@ -1,7 +1,7 @@
 import CornerAccent from "@/components/corner-accent";
 import Underline from "@/components/underline";
 import { BLOG_TAGS } from "@/features/blogs/constants/tags";
-import { ArrowLeft, Calendar, Clock } from "lucide-react";
+import { ArrowLeft, ArrowRight, Calendar, Clock } from "lucide-react";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Image from "next/image";
 import Link from "next/link";
@@ -15,9 +15,12 @@ import TableOfContents from "./table-of-contents";
 
 interface BlogDetailPageProps {
 	post: BlogPost;
+	relatedPosts: BlogPost[];
+	prevPost: BlogPost | null;
+	nextPost: BlogPost | null;
 }
 
-export default function BlogDetailPage({ post }: BlogDetailPageProps) {
+export default function BlogDetailPage({ post, relatedPosts, prevPost, nextPost }: BlogDetailPageProps) {
 	return (
 		<article className="max-w-7xl mx-auto">
 			{/* Back link */}
@@ -34,8 +37,8 @@ export default function BlogDetailPage({ post }: BlogDetailPageProps) {
 			</div>
 
 			<div className="lg:ml-65 relative rounded-3xl border border-secondary-400/30 dark:bg-primary-950/60 p-5 md:p-8 overflow-hidden">
-				{/* Subtle glow */}
-				<div className="absolute inset-0 bg-linear-to-br from-secondary-400/5 via-transparent to-transparent pointer-events-none" />
+					{/* Subtle glow */}
+					<div className="absolute inset-0 bg-linear-to-br from-secondary-400/5 via-transparent to-transparent pointer-events-none" />
 				<CornerAccent
 					position="top-left"
 					className="z-10"
@@ -92,7 +95,7 @@ export default function BlogDetailPage({ post }: BlogDetailPageProps) {
 							alt={post.title}
 							fill
 							sizes="(max-width: 768px) 100vw, 50vw"
-							className="object-cover"
+							className="object-fill"
 						/>
 					</div>
 				)}
@@ -127,6 +130,40 @@ export default function BlogDetailPage({ post }: BlogDetailPageProps) {
 
 				<ShareBar title={post.title} />
 			</div>
+
+			{/* Previous / Next navigation */}
+			{(prevPost || nextPost) && (
+				<div className="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
+					{prevPost ? (
+						<Link
+							href={`/blogs/${prevPost.slug}`}
+							className="group rounded-2xl border border-secondary-400/30 dark:bg-primary-950/60 p-5 transition-colors hover:border-secondary-500/50">
+							<span className="text-xs text-gray-400 dark:text-primary-500 flex items-center gap-1 mb-2">
+								<ArrowLeft size={12} /> Previous
+							</span>
+							<span className="text-sm font-semibold dark:text-white group-hover:text-secondary-400 transition-colors line-clamp-1">
+								{prevPost.title}
+							</span>
+						</Link>
+					) : (
+						<div />
+					)}
+					{nextPost ? (
+						<Link
+							href={`/blogs/${nextPost.slug}`}
+							className="group rounded-2xl border border-secondary-400/30 dark:bg-primary-950/60 p-5 text-right transition-colors hover:border-secondary-500/50">
+							<span className="text-xs text-gray-400 dark:text-primary-500 flex items-center gap-1 justify-end mb-2">
+								Next <ArrowRight size={12} />
+							</span>
+							<span className="text-sm font-semibold dark:text-white group-hover:text-secondary-400 transition-colors line-clamp-1">
+								{nextPost.title}
+							</span>
+						</Link>
+					) : (
+						<div />
+					)}
+				</div>
+			)}
 		</article>
 	);
 }

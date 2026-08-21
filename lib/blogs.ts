@@ -100,3 +100,37 @@ export function getAllBlogTags(): string[] {
   posts.forEach((post) => post.tags.forEach((tag) => tags.add(tag)));
   return Array.from(tags);
 }
+
+/**
+ * Get related posts based on shared tags (excluding the current post)
+ */
+export function getRelatedPosts(slug: string, limit = 3): BlogPost[] {
+  const posts = getAllBlogs();
+  const current = posts.find((p) => p.slug === slug);
+  if (!current) return [];
+
+  const scored = posts
+    .filter((p) => p.slug !== slug)
+    .map((p) => {
+      const shared = p.tags.filter((t) => current.tags.includes(t)).length;
+      return { post: p, shared };
+    })
+    .filter((item) => item.shared > 0)
+    .sort((a, b) => b.shared - a.shared || new Date(b.post.date).getTime() - new Date(a.post.date).getTime());
+
+  return scored.slice(0, limit).map((item) => item.post);
+}
+
+/**
+ * Get previous and next posts relative to current post (newest-first order)
+ */
+export function getAdjacentPosts(slug: string): { prev: BlogPost | null; next: BlogPost | null } {
+  const posts = getAllBlogs();
+  const index = posts.findIndex((p) => p.slug === slug);
+  if (index === -1) return { prev: null, next: null };
+
+  return {
+    prev: index < posts.length - 1 ? posts[index + 1] : null,
+    next: index > 0 ? posts[index - 1] : null,
+  };
+}
