@@ -11,4 +11,9 @@ export interface Project {
 	features: string[];
 	link?: string;
 	github?: string;
+	problem?: string;
+	solution?: string;
+	result?: string;
+	role?: string;
+	timeline?: string;
 }
