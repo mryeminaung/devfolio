@@ -3,12 +3,8 @@
 import CornerAccent from "@/components/corner-accent";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
-import {
-	ExternalLink,
-	Github,
-	MoveLeft,
-	X,
-} from "lucide-react";
+import Underline from "@/components/underline";
+import { ExternalLink, Github, MoveLeft, X } from "lucide-react";
 import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -42,7 +38,7 @@ export default function ProjectDetailPage({ project }: { project: Project }) {
 	}, [lightboxIndex, closeLightbox]);
 
 	return (
-		<div className="max-w-4xl mx-auto">
+		<div className="max-w-6xl mx-auto">
 			{/* Back link */}
 			<Link
 				href="/projects"
@@ -56,12 +52,13 @@ export default function ProjectDetailPage({ project }: { project: Project }) {
 				initial={{ y: 24, opacity: 0 }}
 				animate={{ y: 0, opacity: 1 }}
 				transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-				className="relative w-full h-72 md:h-[28rem] overflow-hidden rounded-2xl mb-8 border border-secondary-400/20">
+				className="relative w-full h-72 md:h-[35rem] overflow-hidden rounded-2xl mb-8 border border-secondary-400/20">
 				<Image
 					src={project.image}
 					alt={project.title}
 					fill
 					priority
+					loading="eager"
 					sizes="(max-width: 768px) 100vw, 80vw"
 					className="object-fill transition-all duration-500"
 				/>
@@ -93,7 +90,7 @@ export default function ProjectDetailPage({ project }: { project: Project }) {
 					initial={{ y: 16, opacity: 0 }}
 					animate={{ y: 0, opacity: 1 }}
 					transition={{ duration: 0.4, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
-					className="flex flex-wrap items-center gap-4 md:gap-8 mb-10 pb-6 border-b border-primary-800">
+					className="flex flex-wrap items-center gap-4 md:gap-8 mb-10">
 					{project.role && (
 						<div>
 							<p className="text-xs text-gray-500 dark:text-primary-500 uppercase tracking-wider mb-0.5">
@@ -124,6 +121,8 @@ export default function ProjectDetailPage({ project }: { project: Project }) {
 					</div>
 				</motion.div>
 			)}
+
+			<Underline className="w-full my-8 bg-linear-to-l" />
 
 			{/* Single-column narrative content */}
 			<div className="space-y-8">
@@ -242,21 +241,23 @@ export default function ProjectDetailPage({ project }: { project: Project }) {
 							delay: 0.5,
 							ease: [0.22, 1, 0.36, 1],
 						}}>
-						<h2 className="text-lg font-semibold dark:text-white mb-4">
-							Screenshots
+						<h2 className="text-lg font-semibold dark:text-white">
+							User Interface Screenshots
 						</h2>
+
+						<Underline className="w-full my-4" />
+
 						<div className="grid grid-cols-2 gap-3">
 							{allImages.map((shot, i) => (
 								<button
 									key={i}
 									onClick={() => openLightbox(i)}
-									className={`relative aspect-video overflow-hidden rounded-xl border transition-all duration-200 ${
-										"border-primary-800 hover:border-secondary-400/50"
-									}`}>
+									className={`relative aspect-video overflow-hidden rounded-xl border transition-all duration-200 ${"border-primary-800 hover:border-secondary-400/50"}`}>
 									<Image
 										src={shot}
 										alt={`Screenshot ${i + 1}`}
 										fill
+										loading="eager"
 										sizes="(max-width: 640px) 50vw, 40vw"
 										className="object-fill"
 									/>
@@ -294,6 +295,8 @@ export default function ProjectDetailPage({ project }: { project: Project }) {
 					)}
 				</motion.div>
 			</div>
+
+			<Underline className="w-full my-8" />
 
 			{/* Prev / Next navigation */}
 			<ProjectNav currentSlug={project.slug} />

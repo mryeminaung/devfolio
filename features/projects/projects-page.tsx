@@ -67,6 +67,7 @@ export default function ProjectsPage() {
 								src={featured.image}
 								alt={featured.title}
 								fill
+								loading="eager"
 								sizes="(max-width: 768px) 100vw, 50vw"
 								className="object-fill transition-transform duration-500 group-hover:scale-105"
 							/>
