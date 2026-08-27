@@ -94,7 +94,7 @@ export default function AboutMePage() {
 
 						<div className="flex items-center gap-3 pt-2">
 							<Link
-								href="/YeMinAung-CV.pdf"
+								href="/cv/YeMinAung-CV.pdf"
 								download
 								className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-xl border border-secondary-400/60 dark:bg-primary-950 bg-white hover:bg-gray-50 dark:hover:bg-primary-900 font-medium text-sm transition-all duration-200 dark:text-white hover:border-secondary-400 hover:shadow-md hover:shadow-secondary-400/15 relative overflow-hidden">
 								<CornerAccent

@@ -36,7 +36,7 @@ export default function CtaSection() {
 					Get in touch
 				</Link>
 				<a
-					href="/YeMinAung-CV.pdf"
+					href="/cv/YeMinAung-CV.pdf"
 					download
 					className="inline-flex items-center gap-2.5 px-8 py-3 rounded-xl bg-secondary-500 hover:bg-secondary-600 font-semibold text-sm transition-all duration-200 text-white hover:shadow-md hover:shadow-secondary-400/20 relative">
 					<Download size={16} />
