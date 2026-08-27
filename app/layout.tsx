@@ -12,7 +12,7 @@ import localFont from "next/font/local";
 const awsDiatype = localFont({
 	src: "./_fonts/AWSDiatypeRoundedMono.ttf",
 	display: "swap",
-	variable: "--font-mono",
+	variable: "--font-aws-mono",
 });
 
 const googleSansMono = localFont({

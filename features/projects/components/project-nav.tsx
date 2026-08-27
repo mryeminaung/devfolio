@@ -14,7 +14,7 @@ export default function ProjectNav({ currentSlug }: { currentSlug: string }) {
 	if (!prev && !next) return null;
 
 	const container = (
-		<div className="flex items-stretch gap-4 mt-12 pt-8 border-t border-primary-800">
+		<div className="flex items-stretch gap-4">
 			{prev ? (
 				<Link
 					href={`/projects/${prev.slug}`}
