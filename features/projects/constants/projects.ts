@@ -3,8 +3,8 @@ import { Project } from "../projects.type";
 export const projects: Project[] = [
 	{
 		id: 1,
-		slug: "smart-agriculture-iot-monitoring-system",
-		title: "Smart Agriculture IoT Monitoring System",
+		slug: "esp32-based-smart-agriculture-iot-monitoring-system",
+		title: "ESP32 Based Smart Agriculture IoT Monitoring System",
 		description:
 			"An ESP32-based smart agriculture platform for real-time sensor monitoring, device control, and automated irrigation over a local Wi-Fi network.",
 		fullDescription:
@@ -18,12 +18,9 @@ export const projects: Project[] = [
 		role: "IoT & Full-Stack Developer",
 		timeline: "Capstone Project",
 		image:
-			"https://images.unsplash.com/photo-1492496913980-501348b61469?q=80&w=1080&auto=format&fit=crop",
+			"/projects/01/thumbnail.png",
 		screenshots: [
-			"https://images.unsplash.com/photo-1586771107445-d3ca888129ff?q=80&w=1080&auto=format&fit=crop",
-			"https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=1080&auto=format&fit=crop",
-			"https://images.unsplash.com/photo-1592982537447-6f2a6a0a1b4b?q=80&w=1080&auto=format&fit=crop",
-			"https://images.unsplash.com/photo-1530267981375-f0de937f5f13?q=80&w=1080&auto=format&fit=crop",
+			"/projects/01/00-bg.png",
 		],
 		tags: [
 			"ESP32",
@@ -36,7 +33,7 @@ export const projects: Project[] = [
 			"Wi-Fi",
 			"IoT",
 		],
-		category: "IoT & Web Development",
+		category: "IoT & Web",
 		features: [
 			"Real-time sensor monitoring through ESP32 over a local Wi-Fi network",
 			"REST API communication for sensor data retrieval and device control",
@@ -69,14 +66,8 @@ export const projects: Project[] = [
 			"A scalable academic project management platform that centralizes student and faculty workflows, improves project visibility, reduces manual administration, and provides a structured digital foundation for managing special projects and future academic project types.",
 		role: "Full-Stack Developer",
 		timeline: "Academic Project",
-		image:
-			"https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=1080&auto=format&fit=crop",
-		screenshots: [
-			"https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1080&auto=format&fit=crop",
-			"https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1080&auto=format&fit=crop",
-			"https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1080&auto=format&fit=crop",
-			"https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1080&auto=format&fit=crop",
-		],
+		image: "/projects/02/thumbnail.png",
+		screenshots: ["/projects/02/00-vision.png"],
 		tags: [
 			"React",
 			"TypeScript",
@@ -132,7 +123,7 @@ export const projects: Project[] = [
 			"https://images.unsplash.com/photo-1506784983877-45594efa4cbe?q=80&w=1080&auto=format&fit=crop",
 		],
 		tags: ["ReactJs", "Laravel", "InertiaJS", "Zustand", "MySQL"],
-		category: "Full Stack",
+		category: "Full-Stack Development",
 		features: [
 			"Comprehensive management dashboard for administrators",
 			"Real-time schedule updates and notifications",
@@ -327,32 +318,41 @@ export const projects: Project[] = [
 		slug: "blogging-platform-json-server",
 		title: "Blogging Platform Using JSON Server",
 		description:
-			"A full-featured blog management system demonstrating RESTful API integration and CRUD operations.",
+			"A modern and responsive blogging platform for discovering, searching, filtering, and reading articles across multiple categories.",
 		fullDescription:
-			"This platform serves as a robust example of how to manage dynamic content in a React application. By leveraging JSON Server as a mock backend and Axios for HTTP requests, the app allows users to seamlessly create, view, edit, and delete blog posts with real-time UI updates.",
+			"Blog With JSON Server is a React-based blogging platform designed to provide a clean and engaging reading experience. Users can browse published articles, search by title or content, filter posts by category, and open individual articles to read their full content. JSON Server provides a lightweight mock REST API for managing blog and category data, while the frontend uses reusable components and client-side routing to create a smooth and responsive experience across desktop and mobile devices.",
 		problem:
-			"Learning RESTful API patterns requires a backend, but setting up a full server for practice projects creates unnecessary complexity and slows down iteration.",
+			"Managing and displaying dynamic blog content requires an API layer for storing and retrieving posts. Setting up a full production backend for a frontend project adds unnecessary complexity during development and makes it harder to focus on building and practicing modern React application patterns.",
 		solution:
-			"Used JSON Server as a lightweight mock backend with Axios for HTTP requests, creating a realistic API experience without backend overhead — focusing on clean CRUD operations and responsive UI.",
+			"Built a responsive blogging platform using React with JSON Server as a lightweight REST API backend. The application separates blog data from the UI while providing search, category filtering, article detail pages, responsive layouts, and reusable components for an organized and maintainable frontend architecture.",
 		result:
-			"A polished, fully functional blog platform that demonstrates production-ready patterns for data fetching, state management, and real-time content editing.",
+			"A polished blogging platform that demonstrates practical REST API integration, dynamic content rendering, client-side routing, search and filtering, responsive UI development, and reusable React component architecture.",
 		role: "Frontend Developer",
 		timeline: "2 weeks",
-		image:
-			"https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=1080&auto=format&fit=crop",
+		image: "/projects/08/thumbnail.png",
 		screenshots: [
-			"https://images.unsplash.com/photo-1516414447565-b14be0afa13e?q=80&w=1080&auto=format&fit=crop",
-			"https://images.unsplash.com/photo-1542435503-956c469947f6?q=80&w=1080&auto=format&fit=crop",
-			"https://images.unsplash.com/photo-1432821596592-e2c18b78144f?q=80&w=1080&auto=format&fit=crop",
-			"https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=1080&auto=format&fit=crop",
+			"/projects/08/05-register.png",
+			"/projects/08/06-login.png",
+			"/projects/08/00-home.png",
+			"/projects/08/01-filter-by-category.png",
+			"/projects/08/02-new-post.png",
+			"/projects/08/03-blog-detail.png",
+			"/projects/08/04-related-blogs.png",
 		],
 		tags: ["ReactJs", "JSON Server", "REST API", "Axios"],
-		category: "Web Development",
+		category: "Web Application",
 		features: [
-			"Responsive UI design for seamless reading and editing",
-			"Asynchronous data fetching and state handling with Axios",
-			"Mock REST API integration using JSON Server",
-			"Full CRUD functionality for blog post management",
+			"Search blog posts by title or content",
+			"Category-based filtering for organized content discovery",
+			"Dynamic blog listing with reusable article cards",
+			"Detailed article pages with full blog content",
+			"RESTful API integration using JSON Server",
+			"Asynchronous data fetching with Axios",
+			"Client-side navigation with React Router",
+			"Responsive design optimized for desktop, tablet, and mobile devices",
+			"Clean and intuitive reading-focused interface",
+			"Reusable React components for maintainable UI architecture",
+			"Dynamic user profile and blog author information",
 		],
 		link: "#",
 		github: "https://github.com/mryeminaung/blog-with-json-server",
