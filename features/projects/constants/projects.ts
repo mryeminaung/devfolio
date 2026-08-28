@@ -17,11 +17,8 @@ export const projects: Project[] = [
 			"A complete smart agriculture IoT platform that demonstrates reliable hardware-software integration, local-network communication, REST API design, real-time monitoring, device control, analytics, and role-based system management.",
 		role: "IoT & Full-Stack Developer",
 		timeline: "Capstone Project",
-		image:
-			"/projects/01/thumbnail.png",
-		screenshots: [
-			"/projects/01/00-bg.png",
-		],
+		image: "/projects/01/thumbnail.png",
+		screenshots: ["/projects/01/00-bg.png"],
 		tags: [
 			"ESP32",
 			"React",
@@ -356,5 +353,49 @@ export const projects: Project[] = [
 		],
 		link: "#",
 		github: "https://github.com/mryeminaung/blog-with-json-server",
+	},
+	{
+		id: 9,
+		slug: "movie-recommendation-system",
+		title: "Movie Recommendation System",
+		description:
+			"A movie recommendation system that analyzes user preferences and movie information to suggest relevant movies based on similarity and recommendation algorithms.",
+		fullDescription:
+			"This project demonstrates a movie recommendation platform that uses data processing and recommendation techniques to help users discover movies based on their interests. The system analyzes movie metadata and relationships between movies to generate personalized or similarity-based recommendations through an intuitive user interface.",
+		problem:
+			"With thousands of movies available across different platforms, users can find it difficult to discover movies that match their interests. Manually searching through large movie collections can be time-consuming and may not provide relevant recommendations.",
+		solution:
+			"Developed a movie recommendation system that processes movie data and applies recommendation techniques to identify movies with similar characteristics. The system provides users with relevant movie suggestions based on movie information and similarity between titles.",
+		result:
+			"A functional movie recommendation system that demonstrates data processing, recommendation logic, similarity analysis, and user-focused movie discovery.",
+		role: "Full-Stack Developer",
+		timeline: "Class Project",
+		image: "/projects/09/thumbnail.png",
+		screenshots: [
+			"/projects/09/02-dark-mode.png",
+			"/projects/09/00-similarity-score.png",
+			"/projects/09/01-score-breakdown.png",
+		],
+		tags: [
+			"Python",
+			"Machine Learning",
+			"Streamlit",
+			"Recommendation System",
+			"Data Analysis",
+			"Movie Dataset",
+		],
+		category: "Machine Learning",
+		features: [
+			"Movie recommendations based on similarity",
+			"Movie dataset processing and analysis",
+			"Content-based recommendation approach",
+			"Movie search and discovery",
+			"Similarity analysis between movies",
+			"Relevant movie suggestion generation",
+			"Interactive user interface",
+			"Efficient movie data handling",
+		],
+		link: "#",
+		github: "https://github.com/mryeminaung/movie-recommendation-system",
 	},
 ];
