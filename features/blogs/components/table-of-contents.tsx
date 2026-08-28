@@ -95,7 +95,7 @@ export default function TableOfContents() {
 						position="bottom-right"
 						offset={10}
 					/>
-					<div className=" rounded-3xl border border-secondary-400/30 dark:bg-primary-950/60 p-5 overflow-hidden max-h-[calc(100vh-200px)] overflow-y-auto">
+					<div className="rounded-3xl border border-secondary-400/30 dark:bg-primary-950/60 p-5 overflow-hidden max-h-[calc(100vh-200px)] overflow-y-auto">
 						<div className="absolute inset-0 bg-linear-to-br from-secondary-400/5 via-transparent to-transparent pointer-events-none" />
 						<h4 className="flex items-center gap-2 text-sm font-semibold dark:text-white mb-4">
 							<List
