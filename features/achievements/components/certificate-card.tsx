@@ -35,7 +35,7 @@ export default function CertificateCard({
 			viewport={{ once: true, amount: 0.15 }}>
 			<div
 				onClick={onClick}
-				className="group relative overflow-hidden rounded-2xl border border-secondary-400/20 dark:bg-primary-950/50 hover:border-secondary-400/50 hover:shadow-lg hover:shadow-secondary-400/10 transition-all duration-300 flex flex-col h-full cursor-pointer">
+				className="group relative overflow-hidden rounded-2xl border border-secondary-400/20 bg-white dark:bg-primary-950/50 hover:border-secondary-400/50 hover:shadow-lg hover:shadow-secondary-400/10 transition-all duration-300 flex flex-col h-full cursor-pointer">
 				<CornerAccent position={c1} />
 				<CornerAccent position={c2} />
 

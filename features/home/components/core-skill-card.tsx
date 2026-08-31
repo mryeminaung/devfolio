@@ -25,7 +25,7 @@ export default function CoreSkillCard({ skill, index }: CoreSkillCardProps) {
 				ease: [0.22, 1, 0.36, 1],
 			}}
 			viewport={{ once: true, amount: 0.3 }}
-			className="relative overflow-hidden h-full bg-white dark:border-gray-800 rounded-2xl p-8 group-hover:border-transparent border border-secondary-400/30 dark:bg-primary-950/50 hover:border-secondary-400/50 hover:shadow-md hover:shadow-secondary-500/20 backdrop-blur-sm transform-gpu transition-[border-color,box-shadow,background-color] duration-300">
+			className="relative overflow-hidden h-full bg-white dark:border-gray-800 rounded-2xl p-8 group-hover:border-transparent border border-secondary-400/30 dark:bg-primary-950/50 hover:border-secondary-400/50 hover:shadow-md hover:shadow-secondary-500/20 transform-gpu transition-[border-color,box-shadow,background-color] duration-300">
 			<CornerAccent position="top-right" />
 			<CornerAccent position="bottom-left" />
 			<div className="mb-6 flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-xl border border-secondary-500/30 bg-secondary-500/5 text-secondary-400">

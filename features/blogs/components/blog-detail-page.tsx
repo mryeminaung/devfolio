@@ -36,7 +36,7 @@ export default function BlogDetailPage({ post, relatedPosts, prevPost, nextPost 
 				<TableOfContents />
 			</div>
 
-			<div className="lg:ml-65 relative rounded-3xl border border-secondary-400/30 dark:bg-primary-950/60 p-5 md:p-8 overflow-hidden">
+			<div className="lg:ml-65 relative rounded-3xl border border-secondary-400/30 bg-white dark:bg-primary-950/60 p-5 md:p-8 overflow-hidden">
 					{/* Subtle glow */}
 					<div className="absolute inset-0 bg-linear-to-br from-secondary-400/5 via-transparent to-transparent pointer-events-none" />
 				<CornerAccent
@@ -137,7 +137,7 @@ export default function BlogDetailPage({ post, relatedPosts, prevPost, nextPost 
 					{prevPost ? (
 						<Link
 							href={`/blogs/${prevPost.slug}`}
-							className="group rounded-2xl border border-secondary-400/30 dark:bg-primary-950/60 p-5 transition-colors hover:border-secondary-500/50">
+							className="group rounded-2xl border border-secondary-400/30 bg-white dark:bg-primary-950/60 p-5 transition-colors hover:border-secondary-500/50">
 							<span className="text-xs text-gray-400 dark:text-primary-500 flex items-center gap-1 mb-2">
 								<ArrowLeft size={12} /> Previous
 							</span>
@@ -151,7 +151,7 @@ export default function BlogDetailPage({ post, relatedPosts, prevPost, nextPost 
 					{nextPost ? (
 						<Link
 							href={`/blogs/${nextPost.slug}`}
-							className="group rounded-2xl border border-secondary-400/30 dark:bg-primary-950/60 p-5 text-right transition-colors hover:border-secondary-500/50">
+							className="group rounded-2xl border border-secondary-400/30 bg-white dark:bg-primary-950/60 p-5 text-right transition-colors hover:border-secondary-500/50">
 							<span className="text-xs text-gray-400 dark:text-primary-500 flex items-center gap-1 justify-end mb-2">
 								Next <ArrowRight size={12} />
 							</span>

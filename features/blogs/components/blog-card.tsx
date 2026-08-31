@@ -19,7 +19,7 @@ function Card({ post, index = 0 }: { post: BlogPost; index?: number }) {
   return (
     <Link
       href={`/blogs/${post.slug}`}
-      className="group relative w-full overflow-hidden rounded-3xl hover:shadow-lg hover:shadow-secondary-400/20 border border-secondary-400/30 dark:bg-primary-950 shadow-xs transition-[border-color,box-shadow] duration-300 transform-gpu hover:border-secondary-500/50 flex flex-col">
+      className="group relative w-full overflow-hidden rounded-3xl hover:shadow-lg hover:shadow-secondary-400/20 border border-secondary-400/30 bg-white dark:bg-primary-950 shadow-xs transition-[border-color,box-shadow] duration-300 transform-gpu hover:border-secondary-500/50 flex flex-col">
       <CornerAccent position={c1} className="z-10" />
       <CornerAccent position={c2} />
 

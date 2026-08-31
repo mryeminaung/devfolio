@@ -23,7 +23,7 @@ function Card({ project, index = 0 }: { project: Project; index?: number }) {
 	return (
 		<Link
 			href={`/projects/${project.slug}`}
-			className="group relative w-full overflow-hidden rounded-3xl border border-secondary-400/30 dark:bg-primary-950/80 hover:border-secondary-500/50 hover:shadow-lg hover:shadow-secondary-400/15 transition-all duration-300 flex flex-col">
+			className="group relative w-full overflow-hidden rounded-3xl border border-secondary-400/30 bg-white dark:bg-primary-950/80 hover:border-secondary-500/50 hover:shadow-lg hover:shadow-secondary-400/15 transition-all duration-300 flex flex-col">
 			<CornerAccent position={c1} className="z-10" />
 			<CornerAccent position={c2} />
 

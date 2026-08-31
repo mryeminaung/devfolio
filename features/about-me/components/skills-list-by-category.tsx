@@ -1,9 +1,13 @@
+"use client";
+
 import { cn } from "@/lib/utils";
-import { Code2, Package, Server, Smartphone } from "lucide-react";
+import { Code2, List, Package, Server, Smartphone, SlidersHorizontal } from "lucide-react";
+import { useState } from "react";
 import { skillCategories, skills } from "../constants/skills";
 import SkillCard from "./skill-card";
 
 export default function SkillsListByCategory() {
+	const [viewMode, setViewMode] = useState<"labels" | "progress">("labels");
 	const categorizedSkills = {
 		frontend: skills.filter(
 			(skill) => skill.categoryId === skillCategories.FRONTEND,
@@ -26,6 +30,32 @@ export default function SkillsListByCategory() {
 
 	return (
 		<div className="">
+			{/* Toggle */}
+			<div className="flex items-center justify-end gap-2 mb-8">
+				<button
+					onClick={() => setViewMode("labels")}
+					className={cn(
+						"inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-medium border transition-all duration-200",
+						viewMode === "labels"
+							? "border-secondary-400 bg-secondary-400/10 text-secondary-500 dark:text-secondary-400"
+							: "border-gray-300 dark:border-neutral-700 text-gray-500 dark:text-primary-400 hover:border-secondary-400/50",
+					)}>
+					<List size={14} />
+					Labels
+				</button>
+				<button
+					onClick={() => setViewMode("progress")}
+					className={cn(
+						"inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-medium border transition-all duration-200",
+						viewMode === "progress"
+							? "border-secondary-400 bg-secondary-400/10 text-secondary-500 dark:text-secondary-400"
+							: "border-gray-300 dark:border-neutral-700 text-gray-500 dark:text-primary-400 hover:border-secondary-400/50",
+					)}>
+					<SlidersHorizontal size={14} />
+					Progress
+				</button>
+			</div>
+
 			{skillGroups.map((group, idx) => (
 				<div
 					key={group.title}
@@ -53,7 +83,7 @@ export default function SkillsListByCategory() {
 							<SkillCard
 								key={skill.name}
 								skill={skill}
-								type="list"
+								type={viewMode === "labels" ? "list" : "progress"}
 								index={skillIdx}
 							/>
 						))}

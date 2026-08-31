@@ -156,7 +156,7 @@ export default function ContactForm({ delay = 0 }: { delay?: number }) {
 
 	if (prefersReducedMotion) {
 		return (
-			<div className="border overflow-hidden relative border-secondary-400/30 p-5 md:p-8 rounded-xl dark:bg-primary-950 dark:text-white transform-gpu">
+			<div className="border overflow-hidden relative border-secondary-400/30 p-5 md:p-8 rounded-xl bg-white dark:bg-primary-950 dark:text-white transform-gpu">
 				<CornerAccent position="top-right" />
 				<CornerAccent position="bottom-left" />
 				{formContent}
@@ -170,7 +170,7 @@ export default function ContactForm({ delay = 0 }: { delay?: number }) {
 			whileInView={{ y: 0, opacity: 1 }}
 			transition={{ duration: 0.55, delay, ease: [0.22, 1, 0.36, 1] }}
 			viewport={{ once: true, amount: 0.2 }}
-			className="border overflow-hidden relative border-secondary-400/30 p-5 md:p-8 rounded-xl dark:bg-primary-950 dark:text-white transform-gpu">
+			className="border overflow-hidden relative border-secondary-400/30 p-5 md:p-8 rounded-xl bg-white dark:bg-primary-950 dark:text-white transform-gpu">
 			<CornerAccent position="top-right" />
 			<CornerAccent position="bottom-left" />
 			{formContent}
