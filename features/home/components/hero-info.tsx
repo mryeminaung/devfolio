@@ -22,7 +22,7 @@ export default function HeroInfo() {
 				</p>
 				<h1 className="text-xl md:text-2xl lg:text-3xl font-bold gap-x-2 tracking-tight flex">
 					<Typewriter
-						words={["a Junior FullStack Developer", "an ECE Student @ MIIT"]}
+						words={["a Junior Full-Stack Developer", "an ECE Student @ MIIT"]}
 					/>
 				</h1>
 

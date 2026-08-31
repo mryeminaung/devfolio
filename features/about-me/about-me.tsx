@@ -56,11 +56,11 @@ export default function AboutMePage() {
 							Hello! I&apos;m Ye Min Aung
 						</h3>
 						<p className="text-sm font-medium text-secondary-500 dark:text-secondary-400 -mt-2">
-							Junior FullStack Developer
+							Junior Full-Stack Developer
 						</p>
 						<div className="space-y-3 text-[15px] text-justify text-gray-600 dark:text-primary-300 leading-relaxed">
 							<p>
-								I&apos;m a passionate Junior FullStack Developer and final year ECE
+								I&apos;m a passionate Junior Full-Stack Developer and final year ECE
 								student at MIIT (Myanmar Institute of Information Technology).
 								My journey in web development started during my studies, and
 								I&apos;ve been continuously learning and building exciting

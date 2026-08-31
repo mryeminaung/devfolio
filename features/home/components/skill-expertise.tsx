@@ -19,7 +19,7 @@ export default function SkillExpertise() {
 			icon: Server,
 		},
 		{
-			title: "FullStack Development",
+			title: "Full-Stack Development",
 			description:
 				"Building end-to-end web applications with both frontend and backend technologies",
 			icon: Code2,
