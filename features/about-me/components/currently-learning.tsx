@@ -49,12 +49,12 @@ export default function CurrentlyLearning() {
 					whileInView={{ y: 0, opacity: 1 }}
 					whileHover={{ y: -5, transition: { duration: 0.2, ease: "easeOut" } }}
 					transition={{
-						duration: 0.5,
-						delay: i * 0.09,
+						duration: 0.55,
+						delay: i * 0.1,
 						ease: [0.22, 1, 0.36, 1],
 					}}
 					viewport={{ once: true, amount: 0.2 }}
-					className="relative overflow-hidden rounded-2xl border border-secondary-400/20 dark:bg-primary-950/50 p-6 hover:border-secondary-400/50 hover:shadow-md hover:shadow-secondary-400/10 transition-all duration-300 group">
+					className="relative overflow-hidden rounded-2xl border border-secondary-400/20 bg-white dark:bg-primary-950/50 p-6 hover:border-secondary-400/50 hover:shadow-md hover:shadow-secondary-400/10 transition-all duration-300 group">
 					<CornerAccent position={item.corner1} />
 					<CornerAccent position={item.corner2} />
 

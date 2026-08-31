@@ -22,7 +22,7 @@ export default function FeaturedProject() {
 					<Underline />
 				</div>
 
-				<div className="group relative w-full overflow-hidden rounded-3xl border border-cyan-400/30 bg-white/60 shadow-xs transition-[border-color,box-shadow,background-color] duration-300 hover:border-secondary-500/50 hover:shadow-md hover:shadow-secondary-400/20 dark:bg-primary-950/90 mb-10 transform-gpu">
+				<div className="group relative w-full overflow-hidden rounded-3xl border border-cyan-400/30 bg-white shadow-xs transition-[border-color,box-shadow,background-color] duration-300 hover:border-secondary-500/50 hover:shadow-md hover:shadow-secondary-400/20 dark:bg-primary-950/90 mb-10 transform-gpu">
 					<CornerAccent
 						position="top-left"
 						className="z-10"
@@ -121,7 +121,7 @@ export default function FeaturedProject() {
 					ease: [0.22, 1, 0.36, 1],
 				}}
 				viewport={{ once: true, amount: 0.3 }}
-				className="group relative w-full overflow-hidden rounded-3xl border border-cyan-400/30 bg-white/60 shadow-xs transition-[border-color,box-shadow,background-color] duration-300 hover:border-secondary-500/50 hover:shadow-md hover:shadow-secondary-400/20 dark:bg-primary-950/90 mb-10 transform-gpu">
+				className="group relative w-full overflow-hidden rounded-3xl border border-cyan-400/30 bg-white shadow-xs transition-[border-color,box-shadow,background-color] duration-300 hover:border-secondary-500/50 hover:shadow-md hover:shadow-secondary-400/20 dark:bg-primary-950/90 mb-10 transform-gpu">
 				<CornerAccent
 					position="top-left"
 					className="z-10"

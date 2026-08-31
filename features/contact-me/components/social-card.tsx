@@ -37,7 +37,7 @@ export default function SocialCard({
 				href={social.url}
 				target="_blank"
 				rel="noopener noreferrer"
-				className={`flex relative overflow-hidden items-center gap-3 p-4 dark:bg-primary-950 border border-cyan-400/30 rounded-xl hover:border-cyan-400/50 hover:shadow-cyan-500/20 shadow-xs transition-[border-color,box-shadow,background-color] duration-300 group transform-gpu`}>
+				className={`flex relative overflow-hidden items-center gap-3 p-4 bg-white dark:bg-primary-950 border border-cyan-400/30 rounded-xl hover:border-cyan-400/50 hover:shadow-cyan-500/20 shadow-xs transition-[border-color,box-shadow,background-color] duration-300 group transform-gpu`}>
 				<CornerAccent position="top-right" />
 				<CornerAccent position="bottom-left" />
 				<Icon className={`w-4 h-4 md:w-6 md:h-6 dark:text-white`} />

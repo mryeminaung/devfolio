@@ -30,7 +30,7 @@ export default function EducationSection() {
 					whileInView={{ y: 0, opacity: 1 }}
 					transition={{ duration: 0.55, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
 					viewport={{ once: true, amount: 0.2 }}
-					className="relative overflow-hidden rounded-2xl border border-secondary-400/30 dark:bg-primary-950/50 p-6 md:p-8 hover:border-secondary-400/50 hover:shadow-md hover:shadow-secondary-400/10 transition-all duration-300">
+					className="relative overflow-hidden rounded-2xl border border-secondary-400/30 bg-white dark:bg-primary-950/50 p-6 md:p-8 hover:border-secondary-400/50 hover:shadow-md hover:shadow-secondary-400/10 transition-all duration-300">
 
 					<CornerAccent position="top-right" />
 					<CornerAccent position="bottom-left" />

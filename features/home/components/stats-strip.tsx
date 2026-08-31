@@ -31,7 +31,7 @@ export default function StatsStrip() {
 							ease: [0.22, 1, 0.36, 1],
 						}}
 						viewport={{ once: true, amount: 0.5 }}
-						className="relative overflow-hidden flex flex-col items-center justify-center text-center py-6 rounded-2xl border border-secondary-400/20 dark:bg-primary-950/50 hover:border-secondary-400/40 hover:shadow-sm hover:shadow-secondary-400/10 transition-all duration-300">
+						className="relative overflow-hidden flex flex-col items-center justify-center text-center py-6 rounded-2xl border border-secondary-400/20 bg-white dark:bg-primary-950/50 hover:border-secondary-400/40 hover:shadow-sm hover:shadow-secondary-400/10 transition-all duration-300">
 						<CornerAccent position={c1} />
 						<CornerAccent position={c2} />
 						<span className="text-3xl md:text-4xl font-bold text-secondary-500 dark:text-secondary-400 leading-none mb-1">

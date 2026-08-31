@@ -29,7 +29,7 @@ export default function CertificateDetailPage({ cert }: { cert: Certificate }) {
 					className="lg:col-span-2 flex flex-col gap-6">
 
 					{/* Certificate image */}
-					<div className="relative overflow-hidden rounded-2xl border border-secondary-400/30 dark:bg-primary-950/60">
+					<div className="relative overflow-hidden rounded-2xl border border-secondary-400/30 bg-white dark:bg-primary-950/60">
 						<CornerAccent position="top-left" />
 						<CornerAccent position="bottom-right" />
 
@@ -78,7 +78,7 @@ export default function CertificateDetailPage({ cert }: { cert: Certificate }) {
 						initial={{ y: 20, opacity: 0 }}
 						animate={{ y: 0, opacity: 1 }}
 						transition={{ duration: 0.5, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-						className="relative overflow-hidden rounded-2xl border border-secondary-400/20 dark:bg-primary-950/50 p-6 md:p-8">
+						className="relative overflow-hidden rounded-2xl border border-secondary-400/20 bg-white dark:bg-primary-950/50 p-6 md:p-8">
 						<CornerAccent position="top-right" />
 						<CornerAccent position="bottom-left" />
 
@@ -104,7 +104,7 @@ export default function CertificateDetailPage({ cert }: { cert: Certificate }) {
 						initial={{ y: 20, opacity: 0 }}
 						animate={{ y: 0, opacity: 1 }}
 						transition={{ duration: 0.5, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-						className="relative overflow-hidden rounded-2xl border border-secondary-400/20 dark:bg-primary-950/50 p-6">
+						className="relative overflow-hidden rounded-2xl border border-secondary-400/20 bg-white dark:bg-primary-950/50 p-6">
 						<CornerAccent position="top-left" />
 
 						<h2 className="text-base font-semibold dark:text-white mb-4">Skills Validated</h2>
@@ -125,7 +125,7 @@ export default function CertificateDetailPage({ cert }: { cert: Certificate }) {
 							initial={{ y: 20, opacity: 0 }}
 							animate={{ y: 0, opacity: 1 }}
 							transition={{ duration: 0.5, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
-							className="relative overflow-hidden rounded-2xl border border-secondary-400/20 dark:bg-primary-950/50 p-6">
+							className="relative overflow-hidden rounded-2xl border border-secondary-400/20 bg-white dark:bg-primary-950/50 p-6">
 							<CornerAccent position="bottom-right" />
 
 							<h2 className="text-base font-semibold dark:text-white mb-4">Resources I Used</h2>

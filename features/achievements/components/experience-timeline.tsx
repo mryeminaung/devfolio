@@ -64,7 +64,7 @@ export default function ExperienceTimeline() {
 								/>
 							</motion.div>
 
-							<div className="relative overflow-hidden rounded-2xl border border-secondary-400/20 dark:bg-primary-950/50 hover:border-secondary-400/40 hover:shadow-lg hover:shadow-secondary-400/8 transition-[border-color,box-shadow] duration-300 transform-gpu">
+							<div className="relative overflow-hidden rounded-2xl border border-secondary-400/20 bg-white dark:bg-primary-950/50 hover:border-secondary-400/40 hover:shadow-lg hover:shadow-secondary-400/8 transition-[border-color,box-shadow] duration-300 transform-gpu">
 
 								<CornerAccent position={c1} />
 								<CornerAccent position={c2} />

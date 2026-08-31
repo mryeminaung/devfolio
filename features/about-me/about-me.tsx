@@ -30,7 +30,7 @@ export default function AboutMePage() {
 			</div>
 
 			{/* Bio + photo */}
-			<div className="relative overflow-hidden rounded-3xl border border-secondary-400/20 dark:bg-primary-950/40 mb-20">
+			<div className="relative overflow-hidden rounded-3xl border border-secondary-400/20 bg-white dark:bg-primary-950/40 mb-20">
 				<CornerAccent
 					position="top-left"
 					className="z-10"

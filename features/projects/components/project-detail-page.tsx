@@ -136,7 +136,7 @@ export default function ProjectDetailPage({ project }: { project: Project }) {
 							delay: 0.16,
 							ease: [0.22, 1, 0.36, 1],
 						}}
-						className="relative overflow-hidden rounded-xl border border-secondary-400/20 dark:bg-primary-950/50 p-6">
+						className="relative overflow-hidden rounded-xl border border-secondary-400/20 bg-white dark:bg-primary-950/50 p-6">
 						<CornerAccent position="top-left" />
 						<CornerAccent position="bottom-right" />
 						<h2 className="text-lg font-semibold dark:text-white mb-3">
@@ -158,7 +158,7 @@ export default function ProjectDetailPage({ project }: { project: Project }) {
 							delay: 0.22,
 							ease: [0.22, 1, 0.36, 1],
 						}}
-						className="relative overflow-hidden rounded-xl border border-secondary-400/20 dark:bg-primary-950/50 p-6">
+						className="relative overflow-hidden rounded-xl border border-secondary-400/20 bg-white dark:bg-primary-950/50 p-6">
 						<CornerAccent position="top-right" />
 						<CornerAccent position="bottom-left" />
 						<h2 className="text-lg font-semibold dark:text-white mb-3">
@@ -175,7 +175,7 @@ export default function ProjectDetailPage({ project }: { project: Project }) {
 					initial={{ y: 20, opacity: 0 }}
 					animate={{ y: 0, opacity: 1 }}
 					transition={{ duration: 0.45, delay: 0.28, ease: [0.22, 1, 0.36, 1] }}
-					className="relative overflow-hidden rounded-xl border border-secondary-400/20 dark:bg-primary-950/50 p-6">
+					className="relative overflow-hidden rounded-xl border border-secondary-400/20 bg-white dark:bg-primary-950/50 p-6">
 					<CornerAccent position="top-left" />
 					<CornerAccent position="bottom-right" />
 					<h2 className="text-lg font-semibold dark:text-white mb-3">
@@ -191,7 +191,7 @@ export default function ProjectDetailPage({ project }: { project: Project }) {
 					initial={{ y: 20, opacity: 0 }}
 					animate={{ y: 0, opacity: 1 }}
 					transition={{ duration: 0.45, delay: 0.34, ease: [0.22, 1, 0.36, 1] }}
-					className="relative overflow-hidden rounded-xl border border-secondary-400/20 dark:bg-primary-950/50 p-6">
+					className="relative overflow-hidden rounded-xl border border-secondary-400/20 bg-white dark:bg-primary-950/50 p-6">
 					<CornerAccent position="top-right" />
 					<CornerAccent position="bottom-left" />
 					<h2 className="text-lg font-semibold dark:text-white mb-4">
@@ -219,7 +219,7 @@ export default function ProjectDetailPage({ project }: { project: Project }) {
 							delay: 0.4,
 							ease: [0.22, 1, 0.36, 1],
 						}}
-						className="relative overflow-hidden rounded-xl border border-secondary-400/20 dark:bg-primary-950/50 p-6">
+						className="relative overflow-hidden rounded-xl border border-secondary-400/20 bg-white dark:bg-primary-950/50 p-6">
 						<CornerAccent position="top-left" />
 						<CornerAccent position="bottom-right" />
 						<h2 className="text-lg font-semibold dark:text-white mb-3">

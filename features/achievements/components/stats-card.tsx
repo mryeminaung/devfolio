@@ -29,7 +29,7 @@ export const StatsCard = ({ achievement, index = 0 }: StatsCardProps) => {
 				ease: [0.22, 1, 0.36, 1],
 			}}
 			viewport={{ once: true, amount: 0.2 }}
-			className="relative overflow-hidden flex w-full flex-col items-center justify-center rounded-3xl border border-secondary-400/30 dark:bg-primary-950/50 p-8 text-center hover:border-secondary-400/50 hover:shadow-md hover:shadow-secondary-500/20 backdrop-blur-sm transition-[border-color,box-shadow,background-color] duration-300 transform-gpu">
+			className="relative overflow-hidden flex w-full flex-col items-center justify-center rounded-3xl border border-secondary-400/30 bg-white dark:bg-primary-950/50 p-8 text-center hover:border-secondary-400/50 hover:shadow-md hover:shadow-secondary-500/20 transition-[border-color,box-shadow,background-color] duration-300 transform-gpu">
 
 			<CornerAccent position={c1} />
 			<CornerAccent position={c2} />
