@@ -2,6 +2,51 @@ import { skillCategories, skills } from "@/features/about-me/constants/skills";
 import { contactInfoList } from "@/features/contact-me/constants/contact-info";
 import { socialLinks } from "@/features/contact-me/constants/social-links";
 import { projects } from "@/features/projects/constants/projects";
+import { certificates } from "@/features/achievements/constants/certificates";
+import { achievements } from "@/features/achievements/constants/achievements";
+
+const blogs = [
+	{
+		title: "Hello World: Starting My Blog",
+		description:
+			"Why I decided to start blogging as a developer and what you can expect to find here.",
+		date: "2026-08-19",
+		tags: ["blogging", "beginner"],
+		slug: "hello-world",
+	},
+	{
+		title: "How I Built This Portfolio Using Next.js",
+		description:
+			"A walkthrough of the decisions and tech stack behind my minimalist developer portfolio.",
+		date: "2026-08-20",
+		tags: ["portfolio", "nextjs"],
+		slug: "how-i-built-this-portfolio-using-nextjs",
+	},
+	{
+		title: "The Beginning of My Developer Journey",
+		description:
+			"How I went from a kid who wanted to be a hacker to a software engineer — one step at a time.",
+		date: "2026-08-21",
+		tags: ["beginner", "blogging"],
+		slug: "the-beginning-of-my-developer-journey",
+	},
+	{
+		title: "Things You Need to Know Before Learning React.js",
+		description:
+			"Don't skip the foundation. Here are the JavaScript concepts you should master before jumping into React.",
+		date: "2026-08-27",
+		tags: ["javascript", "react", "beginner", "web-development"],
+		slug: "things-to-know-before-learning-reactjs",
+	},
+	{
+		title: "What is React.js?",
+		description:
+			"A beginner-friendly breakdown of what React.js is, why it exists, and the key concepts that make it the most popular frontend library.",
+		date: "2026-08-28",
+		tags: ["react", "beginner", "web-development", "javascript"],
+		slug: "what-is-reactjs",
+	},
+];
 
 export const profile = {
 	name: "Ye Min Aung",
@@ -11,7 +56,7 @@ export const profile = {
 		degree: "B.E (Hons) in Electronics and Communication Engineering",
 		institution: "Myanmar Institute of Information Technology (MIIT)",
 		status: "Final year student",
-		period: "2019 – 2026",
+		period: "December 2019 – February 2027",
 		location: "Mandalay, Myanmar",
 		coursework: [
 			"Data Structures & Algorithms",
@@ -19,6 +64,13 @@ export const profile = {
 			"Database Fundamentals",
 			"Networking Basics",
 			"Problem Solving",
+			"Electronics",
+			"Computer Networking",
+			"Computer Architecture",
+			"Critical Thinking",
+			"Conceptual Thinking",
+			"Mobile Development",
+			"OOAD (Object-Oriented Analysis & Design)",
 		],
 	},
 	interests: [
@@ -34,6 +86,20 @@ export const profile = {
 		"System Design",
 	],
 	bio: `I'm a passionate Junior Full-Stack Developer and final year ECE student at MIIT (Myanmar Institute of Information Technology). My journey in web development started during my studies, and I've been continuously learning and building exciting projects ever since. I specialize in building modern web applications using React, Next.js, PHP, Laravel, and various databases. I believe in writing clean, maintainable code and creating user experiences that are both beautiful and functional.`,
+	workExperience: [
+		{
+			title: "Software/IoT Engineering Intern",
+			company: "Edypyramids, SINE, IIT Bombay",
+			period: "June 2026 – September 2026",
+			highlights: [
+				"Developed an ESP32-based IoT system for monitoring and controlling agricultural devices over a local network.",
+				"Implemented communication between ESP32 and frontend applications using HTTP/JSON.",
+				"Worked with sensors including soil moisture, DHT, LDR, water-level sensor, relay, and water pump.",
+				"Used technologies including React, TypeScript, React Native, Express.js, MongoDB, and ESP32/Arduino.",
+			],
+			technologies: ["React", "TypeScript", "React Native", "Express.js", "MongoDB", "ESP32/Arduino"],
+		},
+	],
 };
 
 export const portfolioKnowledge = {
@@ -68,9 +134,27 @@ export const portfolioKnowledge = {
 		url: link.url,
 	})),
 	portfolioUrl: "https://yeminaung-dev.vercel.app",
+	certificates: certificates.map((cert) => ({
+		title: cert.title,
+		issuer: cert.issuer,
+		date: cert.date,
+		description: cert.description,
+		skills: cert.skills,
+	})),
+	achievements: achievements.map((a) => ({
+		title: a.title,
+		description: a.description,
+	})),
+	blogs,
 };
 
-export const systemPrompt = `You are Ye Min Aung's personal portfolio assistant. Your role is to help visitors learn about Ye Min Aung — his skills, projects, experience, education, and technical background.
+export function getSystemPrompt(language: "en" | "mm" = "en"): string {
+	const languageInstruction =
+		language === "mm"
+			? `\n\n## Language\n\nThe user prefers Myanmar (Burmese) language. Always respond in Myanmar. Use proper Myanmar grammar and natural phrasing. Keep technical terms in English when commonly used (e.g., React, Next.js, IoT, API).`
+			: `\n\n## Language\n\nThe user prefers English. Always respond in English.`;
+
+	return `You are Ye Min Aung's personal portfolio assistant. Your role is to help visitors learn about Ye Min Aung — his skills, projects, experience, education, and technical background.
 
 ## Core Rules
 
@@ -100,8 +184,9 @@ When sharing contact information or social links, format them cleanly:
 - For phone: just show the number (e.g., 09 - 966 233 417)
 - For social links: use the format **Platform**: URL (e.g., **GitHub**: https://github.com/mryeminaung)
 - Do NOT use markdown link syntax like [text](url) — just show the URL directly
-- Do NOT repeat the URL twice
+- Do NOT repeat the URL twice${languageInstruction}
 
 ## Portfolio Knowledge
 
 ${JSON.stringify(portfolioKnowledge, null, 2)}`;
+}

@@ -1,7 +1,8 @@
 "use client";
 
+import Underline from "@/components/underline";
 import { cn } from "@/lib/utils";
-import { Code2, List, Package, Server, Smartphone, SlidersHorizontal } from "lucide-react";
+import { Code2, List, Package, Server, SlidersHorizontal, Smartphone } from "lucide-react";
 import { useState } from "react";
 import { skillCategories, skills } from "../constants/skills";
 import SkillCard from "./skill-card";
@@ -75,7 +76,13 @@ export default function SkillsListByCategory() {
 						<span className="text-xl md:text-2xl font-semibold">
 							{group.title}
 						</span>
-						<div className="flex-1 ml-3 border"></div>
+						<Underline
+							className={cn(
+								"flex-1 ml-3",
+								idx % 2 === 0 ? " bg-linear-to-l" : " bg-linear-to-r",
+							)}
+						/>
+						{/* <div className="flex-1 ml-3 border"></div> */}
 					</div>
 					{/* skills list */}
 					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5">

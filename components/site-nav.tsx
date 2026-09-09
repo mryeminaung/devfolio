@@ -3,7 +3,7 @@
 import {
 	Award,
 	BookOpen,
-	Briefcase,
+	Code2,
 	Home,
 	Mail,
 	Menu,
@@ -37,7 +37,7 @@ export default function SiteNav() {
 	const navLinks = [
 		{ name: "Home", path: "/", icon: Home },
 		{ name: "About", path: "/about-me", icon: User },
-		{ name: "Projects", path: "/projects", icon: Briefcase },
+		{ name: "Projects", path: "/projects", icon: Code2 },
 		{ name: "Achievements", path: "/achievements", icon: Award },
 		{ name: "Blogs", path: "/blogs", icon: BookOpen },
 		{ name: "Contact", path: "/contact-me", icon: Mail },

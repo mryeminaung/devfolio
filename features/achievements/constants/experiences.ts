@@ -1,16 +1,16 @@
 export const experiences = [
 	{
-		year: "2025 - Present",
-		title: "Full Stack Web Developer (Special Project 3002)",
+		year: "2025 - 2026",
+		title: "Full Stack Developer (Special Project 3002)",
 		company: "MIIT (Academic Project)",
 		description:
-			"Developing a decoupled Full-Stack application using Laravel and React (In Progress).",
+			"Developed Project InfoSphere — a role-based full-stack platform that digitizes and centralizes the academic project lifecycle at MIIT.",
 		knowledge: [
-			"Building a RESTful API architecture using Laravel and React.",
-			"Implementing secure Token-Based Authentication for session management.",
-			"Integrating TanStack Query for optimized data fetching and caching.",
-			"Developing a modern, accessible UI with Shadcn/UI and Tailwind CSS.",
-			"Designing relational database schemas using Laravel Eloquent ORM.",
+			"Built a decoupled Full-Stack application using Laravel and React.",
+			"Implemented secure Token-Based Authentication with Laravel Sanctum and role-based authorization.",
+			"Integrated TanStack Query for optimized data fetching and caching.",
+			"Developed a modern, accessible UI with Shadcn/UI and Tailwind CSS.",
+			"Designed relational database schemas using Laravel Eloquent ORM.",
 		],
 		skills: [
 			"React",
@@ -18,27 +18,21 @@ export const experiences = [
 			"TanStack Query",
 			"Shadcn/UI",
 			"Laravel Sanctum",
-			"REST API",
 		],
 	},
 	{
 		year: "2025 - 2026",
-		title: "Full Stack Web Developer (Personal Project)",
-		company: "Cocktail Explorer",
+		title: "Full Stack Developer (Special Project 3001)",
+		company: "MIIT (Academic Project)",
 		description:
-			"Designed and deployed a modern web application for cocktail enthusiasts using Next.js and Zustand.",
+			"Built an Automated Exam Scheduling System using CSP algorithm to generate conflict-free timetables with room and invigilator allocation.",
 		knowledge: [
-			"Implemented real-time search functionality and category filtering.",
-			"Managed global state using Zustand for a seamless user experience.",
-			"Integrated TheCocktailDB API to fetch and display dynamic data.",
-			"Optimized performance using Tanstack Query for data fetching.",
+			"Developed a custom scheduling algorithm for conflict-free timetable generation.",
+			"Built a comprehensive management dashboard for administrators.",
+			"Implemented real-time schedule updates and dynamic allocation logic.",
+			"Managed state with Zustand for a seamless user experience.",
+			"Used InertiaJS to bridge Laravel backend with React frontend.",
 		],
-		skills: [
-			"Next.js",
-			"Zustand",
-			"Tanstack Query",
-			"Tailwind CSS",
-			"API Integration",
-		],
+		skills: ["React", "Laravel", "InertiaJS", "Zustand", "MySQL"],
 	},
 ];

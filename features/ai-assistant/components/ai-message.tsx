@@ -2,6 +2,7 @@
 
 import { Bot, User } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { type Language } from "../constants/translations";
 
 interface Message {
 	role: "user" | "assistant";
@@ -10,9 +11,10 @@ interface Message {
 
 interface AIMessageProps {
 	message: Message;
+	language: Language;
 }
 
-export default function AIMessage({ message }: AIMessageProps) {
+export default function AIMessage({ message, language }: AIMessageProps) {
 	const isUser = message.role === "user";
 
 	return (
@@ -41,6 +43,7 @@ export default function AIMessage({ message }: AIMessageProps) {
 					isUser
 						? "bg-secondary-500/10 text-gray-800 dark:text-primary-200 rounded-tr-sm"
 						: "bg-primary-100 dark:bg-primary-800/50 text-gray-700 dark:text-primary-300 rounded-tl-sm border border-primary-200/50 dark:border-primary-700/50",
+					language === "mm" && "text-[13px]",
 				)}>
 				<div className="whitespace-pre-wrap break-words">
 					{formatMessage(message.content)}

@@ -62,7 +62,7 @@ export const projects: Project[] = [
 		result:
 			"A scalable academic project management platform that centralizes student and faculty workflows, improves project visibility, reduces manual administration, and provides a structured digital foundation for managing special projects and future academic project types.",
 		role: "Full-Stack Developer",
-		timeline: "Academic Project",
+		timeline: "6 months",
 		image: "/projects/02/thumbnail.png",
 		screenshots: ["/projects/02/00-vision.png"],
 		tags: [
@@ -110,7 +110,7 @@ export const projects: Project[] = [
 		result:
 			"Reduced scheduling time from days to minutes, eliminating conflicts and providing administrators with a clear, manageable dashboard for adjustments.",
 		role: "Full-Stack Developer",
-		timeline: "3 months",
+		timeline: "4 months",
 		image:
 			"https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=1080&auto=format&fit=crop",
 		screenshots: [
@@ -145,7 +145,7 @@ export const projects: Project[] = [
 		result:
 			"A lightweight and practical AI developer tool that streamlines code understanding and documentation workflows while demonstrating full-stack development, AI API integration, code-editor integration, responsive UI design, validation, error handling, and rate limiting.",
 		role: "Full-Stack Developer",
-		timeline: "3 weeks",
+		timeline: "4 months",
 		image: "/projects/04/thumbnail.png",
 		screenshots: [
 			"/projects/04/00-about-assistant.png",
@@ -197,7 +197,7 @@ export const projects: Project[] = [
 		result:
 			"A reliable note-taking experience that works offline and syncs instantly when connectivity returns, with a clean Material Design interface.",
 		role: "Android Developer",
-		timeline: "2 months",
+		timeline: "4 months",
 		image: "/projects/05/thumbnail.png",
 		screenshots: [
 			"/projects/05/00-auth-screens.png",
@@ -276,7 +276,7 @@ export const projects: Project[] = [
 		result:
 			"A polished, responsive cocktail discovery application that demonstrates modern Next.js development, API integration, reusable component architecture, client-side state management, responsive UI design, and persistent local favorites.",
 		role: "Frontend Developer",
-		timeline: "3 weeks",
+		timeline: "1 month",
 		image: "/projects/07/thumbnail.png",
 		screenshots: [
 			"/projects/07/04-cocktail-of-the-moment.png",

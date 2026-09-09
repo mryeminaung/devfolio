@@ -1,9 +1,11 @@
 "use client";
 
 import CornerAccent from "@/components/corner-accent";
+import { cn } from "@/lib/utils";
 import { MessageSquare, X } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useState } from "react";
+import { type Language, translations } from "../constants/translations";
 import AIChat from "./ai-chat";
 
 interface AIChatDialogProps {
@@ -12,6 +14,8 @@ interface AIChatDialogProps {
 
 export default function AIChatDialog({ trigger }: AIChatDialogProps) {
 	const [isOpen, setIsOpen] = useState(false);
+	const [language, setLanguage] = useState<Language>("en");
+	const t = translations[language];
 
 	// Close on Escape key
 	useEffect(() => {
@@ -80,19 +84,19 @@ export default function AIChatDialog({ trigger }: AIChatDialogProps) {
 							<div className="w-full max-w-md h-[600px] max-h-[90vh] bg-white dark:bg-primary-950 rounded-3xl border border-secondary-400/30 shadow-2xl shadow-secondary-500/10 flex flex-col overflow-hidden pointer-events-auto relative">
 								<CornerAccent
 									position="top-left"
-									className="z-10"
+									className="z-10 pointer-events-none"
 								/>
 								<CornerAccent
 									position="top-right"
-									className="z-10"
+									className="z-10 pointer-events-none"
 								/>
 								<CornerAccent
 									position="bottom-left"
-									className="z-10"
+									className="z-10 pointer-events-none"
 								/>
 								<CornerAccent
 									position="bottom-right"
-									className="z-10"
+									className="z-10 pointer-events-none"
 								/>
 
 								{/* Header */}
@@ -105,25 +109,55 @@ export default function AIChatDialog({ trigger }: AIChatDialogProps) {
 											/>
 										</div>
 										<div>
-											<h2 className="text-sm font-semibold text-gray-800 dark:text-white">
-												Ye's Personal Assistant
+											<h2 className={cn(
+												"text-sm font-semibold text-gray-800 dark:text-white",
+												language === "mm" && "text-[13px]",
+											)}>
+												{t.title}
 											</h2>
 											<p className="text-[10px] text-gray-400 dark:text-primary-500">
-												Powered by OpenRouter
+												{t.subtitle}
 											</p>
 										</div>
 									</div>
-									<button
-										onClick={() => setIsOpen(false)}
-										aria-label="Close chat"
-										className="w-8 h-8 rounded-full flex items-center justify-center text-gray-400 hover:text-gray-600 dark:hover:text-primary-300 hover:bg-primary-100 dark:hover:bg-primary-800 transition-colors">
-										<X size={16} />
-									</button>
+									<div className="flex items-center gap-2">
+										{/* Language Toggle */}
+										<div className="flex items-center rounded-full border border-primary-200/50 dark:border-primary-700/50 bg-primary-100/50 dark:bg-primary-800/50 p-0.5">
+											<button
+												onClick={() => setLanguage("en")}
+												aria-label="Switch to English"
+												className={cn(
+													"px-2 py-0.5 text-[10px] font-medium rounded-full transition-all duration-200",
+													language === "en"
+														? "bg-secondary-500 text-white shadow-sm"
+														: "text-gray-500 dark:text-primary-400 hover:text-gray-700 dark:hover:text-primary-300",
+												)}>
+												EN
+											</button>
+											<button
+												onClick={() => setLanguage("mm")}
+												aria-label="Switch to Myanmar"
+												className={cn(
+													"px-2 py-0.5 text-[10px] font-medium rounded-full transition-all duration-200",
+													language === "mm"
+														? "bg-secondary-500 text-white shadow-sm"
+														: "text-gray-500 dark:text-primary-400 hover:text-gray-700 dark:hover:text-primary-300",
+												)}>
+												MM
+											</button>
+										</div>
+										<button
+											onClick={() => setIsOpen(false)}
+											aria-label="Close chat"
+											className="w-8 h-8 rounded-full flex items-center justify-center text-gray-400 hover:text-gray-600 dark:hover:text-primary-300 hover:bg-primary-100 dark:hover:bg-primary-800 transition-colors">
+											<X size={16} />
+										</button>
+									</div>
 								</div>
 
 								{/* Chat content */}
 								<div className="flex-1 overflow-hidden">
-									<AIChat />
+									<AIChat language={language} onLanguageChange={setLanguage} />
 								</div>
 							</div>
 						</motion.div>

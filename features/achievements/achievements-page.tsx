@@ -1,15 +1,19 @@
 "use client";
 
+import Underline from "@/components/underline";
 import { ArrowDown, ArrowUp } from "lucide-react";
 import { useState } from "react";
+import { Certificate } from "./achievements.types";
 import CertificateCard from "./components/certificate-card";
 import CertificateModal from "./components/certificate-modal";
 import ExperienceTimeline from "./components/experience-timeline";
 import KeyAchievements from "./components/key-achievements";
 import { certificates } from "./constants/certificates";
-import { Certificate } from "./achievements.types";
 
-const ISSUERS = ["All", ...Array.from(new Set(certificates.map((c) => c.issuer)))];
+const ISSUERS = [
+	"All",
+	...Array.from(new Set(certificates.map((c) => c.issuer))),
+];
 
 function SectionHeading({ title }: { title: string }) {
 	return (
@@ -17,7 +21,7 @@ function SectionHeading({ title }: { title: string }) {
 			<h3 className="text-2xl md:text-3xl font-semibold text-center dark:text-white">
 				{title}
 			</h3>
-			<span className="border w-37.5 rounded-full mx-auto bg-secondary-400 h-0.5 border-secondary-400" />
+			<Underline />
 		</div>
 	);
 }
@@ -29,7 +33,9 @@ export default function AchievementsPage() {
 	const [sortOrder, setSortOrder] = useState<"newest" | "oldest">("newest");
 
 	const filtered =
-		active === "All" ? certificates : certificates.filter((c) => c.issuer === active);
+		active === "All"
+			? certificates
+			: certificates.filter((c) => c.issuer === active);
 
 	const sorted = [...filtered].sort((a, b) => {
 		const yearA = parseInt(a.date);
@@ -78,7 +84,9 @@ export default function AchievementsPage() {
 
 					{/* Sort by year */}
 					<div className="flex items-center gap-2 ml-auto">
-						<span className="text-xs text-gray-500 dark:text-primary-400">Sort:</span>
+						<span className="text-xs text-gray-500 dark:text-primary-400">
+							Sort:
+						</span>
 						<button
 							onClick={() => setSortOrder("newest")}
 							className={`flex items-center gap-1 px-3 py-1.5 rounded-full text-xs font-medium border transition-all duration-200 ${

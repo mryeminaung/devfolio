@@ -1,28 +1,24 @@
 "use client";
 
 import { Sparkles } from "lucide-react";
+import { type Language, translations } from "../constants/translations";
 
 interface SuggestedPromptsProps {
 	onSelect: (prompt: string) => void;
+	language: Language;
 }
 
-const SUGGESTED_PROMPTS = [
-	"Tell me about Ye Min",
-	"What projects has he built?",
-	"What is his tech stack?",
-	"Tell me about his IoT project",
-	"What are his strongest skills?",
-];
+export default function SuggestedPrompts({ onSelect, language }: SuggestedPromptsProps) {
+	const t = translations[language];
 
-export default function SuggestedPrompts({ onSelect }: SuggestedPromptsProps) {
 	return (
 		<div className="space-y-3">
 			<p className="text-xs text-gray-400 dark:text-primary-500 flex items-center gap-1.5">
 				<Sparkles size={12} />
-				Suggested questions
+				{t.suggestedQuestions}
 			</p>
 			<div className="flex flex-wrap gap-2">
-				{SUGGESTED_PROMPTS.map((prompt) => (
+				{t.suggestedPrompts.map((prompt) => (
 					<button
 						key={prompt}
 						onClick={() => onSelect(prompt)}

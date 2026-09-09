@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getOpenAIClient } from "@/lib/ai/client";
-import { systemPrompt } from "@/lib/ai/knowledge-base";
+import { getSystemPrompt } from "@/lib/ai/knowledge-base";
 
 const MAX_MESSAGES = 20;
 const MAX_CONTENT_LENGTH = 2000;
@@ -94,7 +94,7 @@ export async function POST(request: NextRequest) {
 
 		// Parse request body
 		const body = await request.json();
-		const { messages } = body;
+		const { messages, language = "en" } = body;
 
 		// Validate messages
 		if (!validateMessages(messages)) {
@@ -115,7 +115,7 @@ export async function POST(request: NextRequest) {
 
 		// Prepare messages for OpenAI
 		const openaiMessages = [
-			{ role: "system" as const, content: systemPrompt },
+			{ role: "system" as const, content: getSystemPrompt(language) },
 			...messages.map((m) => ({
 				role: m.role as "user" | "assistant",
 				content: m.content,

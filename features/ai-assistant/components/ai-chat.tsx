@@ -2,6 +2,7 @@
 
 import { AlertCircle, Bot, RefreshCw } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { type Language, translations } from "../constants/translations";
 import AIInput from "./ai-input";
 import AIMessage from "./ai-message";
 import SuggestedPrompts from "./suggested-prompts";
@@ -11,13 +12,19 @@ interface Message {
 	content: string;
 }
 
-export default function AIChat() {
+interface AIChatProps {
+	language: Language;
+	onLanguageChange: (lang: Language) => void;
+}
+
+export default function AIChat({ language, onLanguageChange }: AIChatProps) {
 	const [messages, setMessages] = useState<Message[]>([]);
 	const [input, setInput] = useState("");
 	const [isLoading, setIsLoading] = useState(false);
 	const [error, setError] = useState<string | null>(null);
 	const messagesEndRef = useRef<HTMLDivElement>(null);
 	const abortControllerRef = useRef<AbortController | null>(null);
+	const t = translations[language];
 
 	const scrollToBottom = useCallback(() => {
 		messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -55,7 +62,7 @@ export default function AIChat() {
 					headers: {
 						"Content-Type": "application/json",
 					},
-					body: JSON.stringify({ messages: conversationHistory }),
+					body: JSON.stringify({ messages: conversationHistory, language }),
 					signal: abortControllerRef.current.signal,
 				});
 
@@ -86,8 +93,7 @@ export default function AIChat() {
 					...prev,
 					{
 						role: "assistant",
-						content:
-							"I'm having trouble responding right now. Please try again later.",
+						content: t.errorMessage,
 					},
 				]);
 			} finally {
@@ -95,7 +101,7 @@ export default function AIChat() {
 				abortControllerRef.current = null;
 			}
 		},
-		[messages, isLoading],
+		[messages, isLoading, language],
 	);
 
 	const handleSuggestedPrompt = useCallback(
@@ -138,16 +144,15 @@ export default function AIChat() {
 						</div>
 						<div className="space-y-2">
 							<h3 className="text-lg font-semibold text-gray-800 dark:text-white">
-								Ask about Ye Min
+								{t.welcomeTitle}
 							</h3>
 							<p className="text-sm text-gray-500 dark:text-primary-400 max-w-xs">
-								I can tell you about his skills, projects, experience, and help
-								you navigate his portfolio.
+								{t.welcomeDescription}
 							</p>
 						</div>
 
 						{/* Suggested prompts */}
-						<SuggestedPrompts onSelect={handleSuggestedPrompt} />
+						<SuggestedPrompts onSelect={handleSuggestedPrompt} language={language} />
 					</div>
 				) : (
 					<>
@@ -155,6 +160,7 @@ export default function AIChat() {
 							<AIMessage
 								key={`${message.role}-${index}`}
 								message={message}
+								language={language}
 							/>
 						))}
 
@@ -181,7 +187,7 @@ export default function AIChat() {
 											/>
 										</div>
 										<span className="text-xs text-gray-400 dark:text-primary-500">
-											Thinking...
+											{t.thinking}
 										</span>
 									</div>
 								</div>
@@ -197,7 +203,7 @@ export default function AIChat() {
 									onClick={handleRetry}
 									className="ml-auto flex items-center gap-1 text-red-600 dark:text-red-400 hover:text-red-700 dark:hover:text-red-300 font-medium">
 									<RefreshCw size={12} />
-									Retry
+									{t.retry}
 								</button>
 							</div>
 						)}
@@ -213,6 +219,7 @@ export default function AIChat() {
 				onChange={setInput}
 				onSubmit={() => sendMessage(input)}
 				isLoading={isLoading}
+				language={language}
 			/>
 		</div>
 	);

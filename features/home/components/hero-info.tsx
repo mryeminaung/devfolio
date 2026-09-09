@@ -2,7 +2,8 @@
 
 import CornerAccent from "@/components/corner-accent";
 import { Badge } from "@/components/ui/badge";
-import { Download, Terminal } from "lucide-react";
+import { AIChatDialog } from "@/features/ai-assistant";
+import { Download, MessageSquare, Terminal } from "lucide-react";
 import Link from "next/link";
 import Typewriter from "./type-writer";
 
@@ -40,8 +41,17 @@ export default function HeroInfo() {
 					className="w-full justify-center md:w-fit py-2.5 px-7 hover:cursor-pointer rounded-xl border border-secondary-400/80 gap-x-3 relative overflow-hidden hover:bg-gray-100 dark:bg-primary-950 inline-flex dark:hover:bg-primary-900 bg-white font-medium text-black text-sm dark:text-white">
 					<CornerAccent position="top-left" />
 					<CornerAccent position="bottom-right" />
-					Download CV <Download size={20} />
+					Download CV <Download size={18} />
 				</Link>
+				<AIChatDialog
+					trigger={
+						<span className="hidden w-full justify-center md:w-fit py-2.5 px-7 hover:cursor-pointer rounded-xl border border-secondary-400/80 gap-x-3 relative overflow-hidden hover:bg-gray-100 dark:bg-primary-950 md:inline-flex dark:hover:bg-primary-900 bg-white font-medium text-black text-sm dark:text-white items-center">
+							<CornerAccent position="top-left" />
+							<CornerAccent position="bottom-right" />
+							Ask My AI <MessageSquare size={18} />
+						</span>
+					}
+				/>
 			</div>
 		</div>
 	);
