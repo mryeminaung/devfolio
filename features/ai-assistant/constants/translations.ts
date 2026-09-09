@@ -3,7 +3,7 @@ export type Language = "en" | "mm";
 export const translations = {
 	en: {
 		title: "Ye's Personal Assistant",
-		subtitle: "Powered by OpenRouter",
+		subtitle: "Your friendly assistant",
 		welcomeTitle: "Ask about Ye Min",
 		welcomeDescription:
 			"I can tell you about his skills, projects, experience, and help you navigate his portfolio.",
@@ -22,12 +22,12 @@ export const translations = {
 	},
 	mm: {
 		title: "ရဲမင်းအောင်၏ ကိုယ်ပိုင်လက်ထောက်",
-		subtitle: "OpenRouter ကို အသုံးပြုထားပါသည်",
-		welcomeTitle: "ရဲမင်းအောင်အကြောင်း မေးပါ",
+		subtitle: "သိချင်တာလေးရှိရင် မေးနိုင်ပါတယ်ရှင့်",
+		welcomeTitle: "ကိုရဲမင်းအောင်အကြောင်း မေးပါ",
 		welcomeDescription:
-			"သူ့စွမ်းရည်များ၊ ပရော့ဂျက်များ၊ အတွေ့အကြုံများအကြောင်း ပြောပြနိုင်ပြီး ပေါ့တ်ဖိုလီယိုကို လှည့်ပတ်ကြည့်ရှုနိုင်ပါသည်။",
+			"သူ့စွမ်းရည်များ၊ ပရော့ဂျက်များ၊ အတွေ့အကြုံများအကြောင်း ပြောပြနိုင်ပြီး ပေါ့တ်ဖိုလီယိုကို လှည့်ပတ်ကြည့်ရှုနိုင်ပါတယ်ရှင့်",
 		suggestedQuestions: "အကြံပြုမေးခွန်းများ",
-		placeholder: "ရဲမင်းအောင်၏ စွမ်းရည်၊ ပရော့ဂျက်၊ အတွေ့အကြုံအကြောင်း မေးပါ...",
+		placeholder: "ကိုရဲမင်းအောင်၏ စွမ်းရည်၊ ပရော့ဂျက်၊ အတွေ့အကြုံအကြောင်း မေးပါ...",
 		thinking: "စဉ်းစားနေသည်...",
 		errorMessage: "ယခုအချိန်တွင် တုံ့ပြန်ရန် အခက်အခဲရှိနေပါသည်။ နောက်မှ ထပ်ကြိုးစားကြည့်ပါ။",
 		retry: "ထပ်ကြိုးစားပါ",

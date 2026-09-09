@@ -10,21 +10,27 @@ import SuggestedPrompts from "./suggested-prompts";
 interface Message {
 	role: "user" | "assistant";
 	content: string;
+	timestamp: string;
 }
 
 interface AIChatProps {
 	language: Language;
 	onLanguageChange: (lang: Language) => void;
+	messages: Message[];
+	setMessages: React.Dispatch<React.SetStateAction<Message[]>>;
 }
 
-export default function AIChat({ language, onLanguageChange }: AIChatProps) {
-	const [messages, setMessages] = useState<Message[]>([]);
+export default function AIChat({ language, onLanguageChange, messages, setMessages }: AIChatProps) {
 	const [input, setInput] = useState("");
 	const [isLoading, setIsLoading] = useState(false);
 	const [error, setError] = useState<string | null>(null);
 	const messagesEndRef = useRef<HTMLDivElement>(null);
 	const abortControllerRef = useRef<AbortController | null>(null);
 	const t = translations[language];
+
+	const getTimestamp = () => {
+		return new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+	};
 
 	const scrollToBottom = useCallback(() => {
 		messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -42,7 +48,7 @@ export default function AIChat({ language, onLanguageChange }: AIChatProps) {
 			setError(null);
 
 			// Add user message
-			const userMessage: Message = { role: "user", content: content.trim() };
+			const userMessage: Message = { role: "user", content: content.trim(), timestamp: getTimestamp() };
 			setMessages((prev) => [...prev, userMessage]);
 			setInput("");
 			setIsLoading(true);
@@ -76,6 +82,7 @@ export default function AIChat({ language, onLanguageChange }: AIChatProps) {
 				const assistantMessage: Message = {
 					role: "assistant",
 					content: data.content,
+					timestamp: getTimestamp(),
 				};
 				setMessages((prev) => [...prev, assistantMessage]);
 			} catch (err: unknown) {
@@ -94,6 +101,7 @@ export default function AIChat({ language, onLanguageChange }: AIChatProps) {
 					{
 						role: "assistant",
 						content: t.errorMessage,
+						timestamp: getTimestamp(),
 					},
 				]);
 			} finally {

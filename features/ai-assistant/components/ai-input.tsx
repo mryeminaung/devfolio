@@ -53,8 +53,9 @@ export default function AIInput({
 					"flex-1 resize-none rounded-xl border border-primary-200/50 dark:border-primary-700/50 bg-white dark:bg-primary-800/50 px-4 py-2.5 text-sm text-gray-800 dark:text-primary-200 placeholder:text-gray-400 dark:placeholder:text-primary-500 focus:outline-none focus:ring-2 focus:ring-secondary-400/50 focus:border-secondary-400/50 transition-all duration-200",
 					"min-h-[42px] max-h-[120px]",
 					isLoading && "opacity-50 cursor-not-allowed",
-					language === "mm" && "text-[13px]",
+					"text-[13px]",
 				)}
+				style={{ fontFamily: "var(--font-chat)" }}
 			/>
 			<button
 				onClick={handleSubmit}

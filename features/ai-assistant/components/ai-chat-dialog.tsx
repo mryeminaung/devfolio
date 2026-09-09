@@ -8,6 +8,12 @@ import { useEffect, useState } from "react";
 import { type Language, translations } from "../constants/translations";
 import AIChat from "./ai-chat";
 
+interface Message {
+	role: "user" | "assistant";
+	content: string;
+	timestamp: string;
+}
+
 interface AIChatDialogProps {
 	trigger?: React.ReactNode;
 }
@@ -15,6 +21,7 @@ interface AIChatDialogProps {
 export default function AIChatDialog({ trigger }: AIChatDialogProps) {
 	const [isOpen, setIsOpen] = useState(false);
 	const [language, setLanguage] = useState<Language>("en");
+	const [messages, setMessages] = useState<Message[]>([]);
 	const t = translations[language];
 
 	// Close on Escape key
@@ -157,7 +164,7 @@ export default function AIChatDialog({ trigger }: AIChatDialogProps) {
 
 								{/* Chat content */}
 								<div className="flex-1 overflow-hidden">
-									<AIChat language={language} onLanguageChange={setLanguage} />
+									<AIChat language={language} onLanguageChange={setLanguage} messages={messages} setMessages={setMessages} />
 								</div>
 							</div>
 						</motion.div>

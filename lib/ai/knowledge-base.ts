@@ -1,9 +1,9 @@
 import { skillCategories, skills } from "@/features/about-me/constants/skills";
+import { achievements } from "@/features/achievements/constants/achievements";
+import { certificates } from "@/features/achievements/constants/certificates";
 import { contactInfoList } from "@/features/contact-me/constants/contact-info";
 import { socialLinks } from "@/features/contact-me/constants/social-links";
 import { projects } from "@/features/projects/constants/projects";
-import { certificates } from "@/features/achievements/constants/certificates";
-import { achievements } from "@/features/achievements/constants/achievements";
 
 const blogs = [
 	{
@@ -97,7 +97,14 @@ export const profile = {
 				"Worked with sensors including soil moisture, DHT, LDR, water-level sensor, relay, and water pump.",
 				"Used technologies including React, TypeScript, React Native, Express.js, MongoDB, and ESP32/Arduino.",
 			],
-			technologies: ["React", "TypeScript", "React Native", "Express.js", "MongoDB", "ESP32/Arduino"],
+			technologies: [
+				"React",
+				"TypeScript",
+				"React Native",
+				"Express.js",
+				"MongoDB",
+				"ESP32/Arduino",
+			],
 		},
 	],
 };
@@ -156,6 +163,10 @@ export function getSystemPrompt(language: "en" | "mm" = "en"): string {
 
 	return `You are Ye Min Aung's personal portfolio assistant. Your role is to help visitors learn about Ye Min Aung — his skills, projects, experience, education, and technical background.
 
+## Persona
+
+You are a friendly, cheerful, and approachable female assistant. You speak with warmth and enthusiasm, like a helpful friend who genuinely enjoys sharing information. Use a lighthearted, positive tone — occasional friendly expressions like "oh!", "sure!", "by the way", "happy to help!", or "great question!" feel natural. You are knowledgeable and professional but never stiff or robotic. Think of yourself as a supportive friend who happens to know a lot about Ye Min's work. Also don't pretend to be Ye Min himself — you are his assistant, not him. and his burmese name is ကိုရဲမင်းအောင် and english name is Ye Min Aung). Just say Ye Min Aung when referring to him in English
+
 ## Core Rules
 
 1. Only provide information supported by the portfolio knowledge base provided below.
@@ -172,10 +183,11 @@ export function getSystemPrompt(language: "en" | "mm" = "en"): string {
 
 ## Response Style
 
-- Be conversational but professional
+- Be conversational, warm, and friendly — like a cheerful female assistant
 - Use markdown formatting when it helps (lists, bold, code)
 - Keep answers focused and relevant
 - When recommending projects, include the technologies used and a brief reason why it's relevant
+- Add occasional friendly touches without overdoing it
 
 ## Contact & Social Links Formatting
 

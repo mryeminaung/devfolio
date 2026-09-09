@@ -21,6 +21,18 @@ const googleSansMono = localFont({
 	variable: "--font-code",
 });
 
+const pannYeat = localFont({
+	src: "./_fonts/PannYeat.ttf",
+	display: "swap",
+	variable: "--font-myanmar",
+});
+
+const yatiSans = localFont({
+	src: "./_fonts/YatiSans.ttf",
+	display: "swap",
+	variable: "--font-chat",
+});
+
 export const metadata: Metadata = {
 	metadataBase: new URL("https://yeminaung-dev.vercel.app"),
 
@@ -121,7 +133,7 @@ export default function RootLayout({
 					dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
 				/>
 			</head>
-			<body className={`${awsDiatype.variable} ${googleSansMono.variable} antialiased`}>
+			<body className={`${awsDiatype.variable} ${googleSansMono.variable} ${pannYeat.variable} ${yatiSans.variable} antialiased`}>
 				<ThemeProvider
 					attribute="class"
 					defaultTheme="system"

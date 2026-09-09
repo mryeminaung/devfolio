@@ -7,6 +7,7 @@ import { type Language } from "../constants/translations";
 interface Message {
 	role: "user" | "assistant";
 	content: string;
+	timestamp: string;
 }
 
 interface AIMessageProps {
@@ -37,17 +38,23 @@ export default function AIMessage({ message, language }: AIMessageProps) {
 			</div>
 
 			{/* Message bubble */}
-			<div
-				className={cn(
-					"max-w-[85%] px-4 py-2.5 rounded-2xl text-sm leading-relaxed",
-					isUser
-						? "bg-secondary-500/10 text-gray-800 dark:text-primary-200 rounded-tr-sm"
-						: "bg-primary-100 dark:bg-primary-800/50 text-gray-700 dark:text-primary-300 rounded-tl-sm border border-primary-200/50 dark:border-primary-700/50",
-					language === "mm" && "text-[13px]",
-				)}>
-				<div className="whitespace-pre-wrap break-words">
-					{formatMessage(message.content)}
+			<div className={cn("max-w-[85%]", isUser ? "flex flex-col items-end" : "flex flex-col items-start")}>
+				<div
+					className={cn(
+						"px-4 py-2.5 rounded-2xl text-sm leading-relaxed",
+						isUser
+							? "bg-secondary-500/10 text-gray-800 dark:text-primary-200 rounded-tr-sm"
+							: "bg-primary-100 dark:bg-primary-800/50 text-gray-700 dark:text-primary-300 rounded-tl-sm border border-primary-200/50 dark:border-primary-700/50",
+						"text-[13px]",
+					)}
+					style={{ fontFamily: "var(--font-chat)" }}>
+					<div className="whitespace-pre-wrap break-words">
+						{formatMessage(message.content)}
+					</div>
 				</div>
+				<span className="text-[10px] text-gray-400 dark:text-primary-600 mt-1">
+					{message.timestamp}
+				</span>
 			</div>
 		</div>
 	);

@@ -18,7 +18,7 @@ const ISSUERS = [
 function SectionHeading({ title }: { title: string }) {
 	return (
 		<div className="flex mb-12 flex-col gap-y-3">
-			<h3 className="text-2xl md:text-3xl font-semibold text-center dark:text-white">
+			<h3 className="text-xl md:text-2xl font-semibold text-center dark:text-white">
 				{title}
 			</h3>
 			<Underline />
@@ -57,7 +57,12 @@ export default function AchievementsPage() {
 		<section>
 			{/* Key Achievements */}
 			<div className="mb-20">
-				<SectionHeading title="Key Achievements" />
+				<div className="flex mb-12 flex-col gap-y-3">
+					<h3 className="text-xl md:text-3xl font-semibold text-center dark:text-white">
+						Key Achievements
+					</h3>
+					<Underline />
+				</div>
 				<KeyAchievements />
 			</div>
 
