@@ -1,37 +1,36 @@
 "use client";
 
 import CornerAccent from "@/components/corner-accent";
-import { GraduationCap } from "lucide-react";
+import { Briefcase, Code2 } from "lucide-react";
 import { motion } from "motion/react";
 
-const education = [
+const workExperience = [
 	{
-		degree: "B.E (Hons) in Electronics and Communication Engineering",
-		institution: "Myanmar Institute of Information Technology (MIIT)",
-		period: "December 2019 – February 2027",
-		coursework: [
-			"Data Structures & Algorithms",
-			"Software Engineering",
-			"Database Fundamentals",
-			"Networking Basics",
-			"Problem Solving",
-			"Electronics",
-			"Computer Networking",
-			"Computer Architecture",
-			"Critical Thinking",
-			"Conceptual Thinking",
-			"Mobile Development",
-			"OOAD (Object-Oriented Analysis & Design)",
+		title: "Software/IoT Engineering Intern",
+		company: "Edypyramids, SINE, IIT Bombay",
+		period: "June 2026 – September 2026",
+		highlights: [
+			"Developed an ESP32-based IoT system for monitoring and controlling agricultural devices over a local network.",
+			"Implemented communication between ESP32 and frontend applications using HTTP/JSON.",
+			"Worked with sensors including soil moisture, DHT, LDR, water-level sensor, relay, and water pump.",
+		],
+		technologies: [
+			"React",
+			"TypeScript",
+			"React Native",
+			"Express.js",
+			"MongoDB",
+			"ESP32/Arduino",
 		],
 	},
 ];
 
-export default function EducationSection() {
+export default function WorkExperienceSection() {
 	return (
 		<div className="space-y-5">
-			{education.map((edu, i) => (
+			{workExperience.map((work, i) => (
 				<motion.div
-					key={edu.degree}
+					key={work.title}
 					initial={{ y: 24, opacity: 0 }}
 					whileInView={{ y: 0, opacity: 1 }}
 					transition={{ duration: 0.55, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
@@ -43,33 +42,41 @@ export default function EducationSection() {
 
 					<div className="flex items-start gap-4">
 						<div className="shrink-0 flex h-12 w-12 items-center justify-center rounded-xl border border-secondary-400/30 bg-secondary-400/5 text-secondary-400">
-							<GraduationCap size={22} strokeWidth={1.8} />
+							<Code2 size={22} strokeWidth={1.8} />
 						</div>
 
 						<div className="flex-1 min-w-0">
 							<div className="flex flex-wrap items-center gap-2 mb-1">
 								<span className="text-xs font-medium px-2.5 py-0.5 rounded-full border border-secondary-400/30 bg-secondary-400/10 text-secondary-500 dark:text-secondary-400">
-									{edu.period}
+									{work.period}
 								</span>
 							</div>
 
 							<h3 className="text-base md:text-lg font-semibold dark:text-white leading-snug mt-1">
-								{edu.degree}
+								{work.title}
 							</h3>
 							<p className="text-sm text-gray-500 dark:text-primary-400 mt-1">
-								{edu.institution}
+								{work.company}
 							</p>
 
+							<ul className="mt-4 space-y-2">
+								{work.highlights.map((h) => (
+									<li
+										key={h}
+										className="text-sm text-gray-600 dark:text-primary-300 flex items-start gap-2">
+										<span className="shrink-0 mt-1.5 h-1.5 w-1.5 rounded-full bg-secondary-400" />
+										{h}
+									</li>
+								))}
+							</ul>
+
 							<div className="mt-4">
-								<p className="text-xs uppercase tracking-widest text-gray-400 dark:text-primary-500 mb-2">
-									Relevant Coursework
-								</p>
 								<div className="flex flex-wrap gap-2">
-									{edu.coursework.map((c) => (
+									{work.technologies.map((t) => (
 										<span
-											key={c}
+											key={t}
 											className="text-xs px-3 py-1 rounded-full border border-secondary-400/20 bg-secondary-400/5 dark:text-secondary-400 text-secondary-600">
-											{c}
+											{t}
 										</span>
 									))}
 								</div>

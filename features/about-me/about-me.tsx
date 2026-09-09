@@ -6,6 +6,7 @@ import Link from "next/link";
 import CurrentlyLearning from "./components/currently-learning";
 import EducationSection from "./components/education-section";
 import SkillsListByCategory from "./components/skills-list-by-category";
+import WorkExperienceSection from "./components/work-experience-section";
 
 function SectionHeading({ title }: { title: string }) {
 	return (
@@ -13,7 +14,8 @@ function SectionHeading({ title }: { title: string }) {
 			<h3 className="text-xl md:text-2xl font-semibold dark:text-white text-center">
 				{title}
 			</h3>
-			<span className="border w-37.5 rounded-full mx-auto bg-secondary-400 h-0.5 border-secondary-400" />
+			<Underline />
+			{/* <span className="border w-37.5 rounded-full mx-auto bg-secondary-400 h-0.5 border-secondary-400" /> */}
 		</div>
 	);
 }
@@ -139,6 +141,12 @@ export default function AboutMePage() {
 			<div className="mb-20">
 				<SectionHeading title="Technical Skills" />
 				<SkillsListByCategory />
+			</div>
+
+			{/* Work Experience */}
+			<div className="mb-20">
+				<SectionHeading title="Work Experience" />
+				<WorkExperienceSection />
 			</div>
 
 			{/* Education */}

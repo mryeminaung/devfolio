@@ -10,12 +10,20 @@ const DIAGONALS = [
 ] as const;
 
 const STATUS_MAP: Record<string, { label: string; color: string }> = {
-	ongoing: { label: "ONGOING", color: "text-emerald-400 border-emerald-400/40 bg-emerald-400/8" },
-	completed: { label: "COMPLETED", color: "text-secondary-400 border-secondary-400/40 bg-secondary-400/8" },
+	ongoing: {
+		label: "ONGOING",
+		color: "text-emerald-400 border-emerald-400/40 bg-emerald-400/8",
+	},
+	completed: {
+		label: "COMPLETED",
+		color: "text-secondary-400 border-secondary-400/40 bg-secondary-400/8",
+	},
 };
 
 function getStatus(year: string) {
-	return year.toLowerCase().includes("present") ? STATUS_MAP.ongoing : STATUS_MAP.completed;
+	return year.toLowerCase().includes("present")
+		? STATUS_MAP.ongoing
+		: STATUS_MAP.completed;
 }
 
 export default function ExperienceTimeline() {
@@ -43,29 +51,38 @@ export default function ExperienceTimeline() {
 							key={index}
 							initial={{ x: index % 2 === 0 ? -30 : 30, opacity: 0 }}
 							whileInView={{ x: 0, opacity: 1 }}
-							transition={{ duration: 0.6, delay: index * 0.12, ease: [0.22, 1, 0.36, 1] }}
+							transition={{
+								duration: 0.6,
+								delay: index * 0.12,
+								ease: [0.22, 1, 0.36, 1],
+							}}
 							viewport={{ once: true, amount: 0.2 }}
 							className="relative pl-16">
-
 							{/* Timeline dot */}
 							<motion.div
 								initial={{ scale: 0 }}
 								whileInView={{ scale: 1 }}
-								transition={{ duration: 0.4, delay: index * 0.12 + 0.3, ease: [0.22, 1, 0.36, 1] }}
+								transition={{
+									duration: 0.4,
+									delay: index * 0.12 + 0.3,
+									ease: [0.22, 1, 0.36, 1],
+								}}
 								viewport={{ once: true, amount: 0.2 }}
-								className="absolute left-4 top-6 w-4 h-4 rounded-full border-2 border-secondary-400 bg-primary-950 z-10"
-							>
+								className="absolute left-4 top-6 w-4 h-4 rounded-full border-2 border-secondary-400 bg-primary-950 z-10">
 								<motion.div
 									initial={{ scale: 0 }}
 									whileInView={{ scale: 1 }}
-									transition={{ duration: 0.3, delay: index * 0.12 + 0.5, ease: [0.22, 1, 0.36, 1] }}
+									transition={{
+										duration: 0.3,
+										delay: index * 0.12 + 0.5,
+										ease: [0.22, 1, 0.36, 1],
+									}}
 									viewport={{ once: true, amount: 0.2 }}
 									className="absolute inset-1 rounded-full bg-secondary-400"
 								/>
 							</motion.div>
 
 							<div className="relative overflow-hidden rounded-2xl border border-secondary-400/20 bg-white dark:bg-primary-950/50 hover:border-secondary-400/40 hover:shadow-lg hover:shadow-secondary-400/8 transition-[border-color,box-shadow] duration-300 transform-gpu">
-
 								<CornerAccent position={c1} />
 								<CornerAccent position={c2} />
 
@@ -75,7 +92,8 @@ export default function ExperienceTimeline() {
 										<span className="font-mono text-xs tracking-widest text-secondary-400/60">
 											PROJECT / {num}
 										</span>
-										<span className={`font-mono text-[10px] font-semibold tracking-wider px-2.5 py-0.5 rounded-full border ${status.color}`}>
+										<span
+											className={`font-mono text-[10px] font-semibold tracking-wider px-2.5 py-0.5 rounded-full border ${status.color}`}>
 											{status.label}
 										</span>
 									</div>
@@ -97,7 +115,9 @@ export default function ExperienceTimeline() {
 										{/* What I built / learned */}
 										<ul className="space-y-2.5">
 											{exp.knowledge.map((fact) => (
-												<li key={fact} className="flex items-start gap-2.5 text-sm text-gray-500 dark:text-primary-300">
+												<li
+													key={fact}
+													className="flex items-start gap-2.5 text-sm text-gray-500 dark:text-primary-300">
 													<span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-secondary-400" />
 													{fact}
 												</li>
