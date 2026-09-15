@@ -10,7 +10,8 @@ export const translations = {
 		suggestedQuestions: "Suggested questions",
 		placeholder: "Ask about Ye Min's skills, projects, experience...",
 		thinking: "Thinking...",
-		errorMessage: "I'm having trouble responding right now. Please try again later.",
+		errorMessage:
+			"I'm having trouble responding right now. Please try again later.",
 		retry: "Retry",
 		suggestedPrompts: [
 			"Tell me about Ye Min",
@@ -22,14 +23,16 @@ export const translations = {
 	},
 	mm: {
 		title: "ရဲမင်းအောင်၏ ကိုယ်ပိုင်လက်ထောက်",
-		subtitle: "သိချင်တာလေးရှိရင် မေးနိုင်ပါတယ်ရှင့်",
+		subtitle: "သိချင်တာလေးရှိရင် မေးနိုင်ပါတယ်",
 		welcomeTitle: "ကိုရဲမင်းအောင်အကြောင်း မေးပါ",
 		welcomeDescription:
 			"သူ့စွမ်းရည်များ၊ ပရော့ဂျက်များ၊ အတွေ့အကြုံများအကြောင်း ပြောပြနိုင်ပြီး ပေါ့တ်ဖိုလီယိုကို လှည့်ပတ်ကြည့်ရှုနိုင်ပါတယ်ရှင့်",
 		suggestedQuestions: "အကြံပြုမေးခွန်းများ",
-		placeholder: "ကိုရဲမင်းအောင်၏ စွမ်းရည်၊ ပရော့ဂျက်၊ အတွေ့အကြုံအကြောင်း မေးပါ...",
+		placeholder:
+			"ကိုရဲမင်းအောင်၏ စွမ်းရည်၊ ပရော့ဂျက်၊ အတွေ့အကြုံအကြောင်း မေးပါ...",
 		thinking: "စဉ်းစားနေသည်...",
-		errorMessage: "ယခုအချိန်တွင် တုံ့ပြန်ရန် အခက်အခဲရှိနေပါသည်။ နောက်မှ ထပ်ကြိုးစားကြည့်ပါ။",
+		errorMessage:
+			"ယခုအချိန်တွင် တုံ့ပြန်ရန် အခက်အခဲရှိနေပါသည်။ နောက်မှ ထပ်ကြိုးစားကြည့်ပါ။",
 		retry: "ထပ်ကြိုးစားပါ",
 		suggestedPrompts: [
 			"ရဲမင်းအောင်အကြောင်း ပြောပြပါ",
